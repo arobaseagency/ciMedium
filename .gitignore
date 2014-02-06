@@ -1,0 +1,14 @@
+*.class
+*.orig
+*.pyc
+*.pyo
+*.rej
+.hg
+
+*.komodoproject
+.project
+.hgignore
+
+.komodotools/
+application/*/logs
+application/*/cache

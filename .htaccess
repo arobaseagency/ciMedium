@@ -1,0 +1,20 @@
+Options +MultiViews
+
+RewriteEngine On
+
+
+#RewriteBase /
+
+
+# Application Admin backend
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$  admin.php/$1 [L,QSA]
+
+
+
+RewriteCond $1 !^(index\.php|images|assets/|robots\.txt)
+# Application Public Frontend
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]

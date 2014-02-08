@@ -8,7 +8,6 @@ class Forum extends CI_Controller
     {
         parent::__construct();
 
-        $this->output->enable_profiler(true);
     }
 
 

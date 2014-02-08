@@ -9,13 +9,13 @@
 
 	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
 
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+	<link href="<?php echo asset_css('front/bootstrap.min'); ?>" rel="stylesheet">
+	<link href="<?php echo asset_css('front/bootstrap-responsive.min'); ?>" rel="stylesheet">
+	<link href="<?php echo asset_css('front/style'); ?>" rel="stylesheet">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
+    <script src="<?php echo asset_js('html5shiv'); ?>"></script>
   <![endif]-->
 
   <!-- Fav and touch icons -->
@@ -23,22 +23,28 @@
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
-  <link rel="shortcut icon" href="img/favicon.png">
+  <link rel="shortcut icon" href="<?php echo asset_img('front/favicon.png'); ?>">
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="<?php echo asset_js('jquery.min'); ?>"></script>
+	<script type="text/javascript" src="<?php echo asset_js('front/bootstrap.min'); ?>"></script>
 </head>
 
 <body>
+
 <div class="container">
 	<div class="row">
 		<div class="span12">
 			<div class="navbar">
 				<div class="navbar-inner">
 					<div class="container-fluid">
-						 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar collapsed"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="#" class="brand">Title</a>
-						<div class="nav-collapse navbar-responsive-collapse in collapse">
+						<button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <a href="#" class="brand">Title</a>
+						<nav class="nav-collapse" role="navigation">
 							<ul class="nav">
 								<li class="active">
 									<a href="#">Home</a>
@@ -75,33 +81,7 @@
 									</ul>
 								</li>
 							</ul>
-							<ul class="nav pull-right">
-								<li>
-									<a href="#">Link</a>
-								</li>
-								<li class="divider-vertical">
-								</li>
-								<li class="dropdown">
-									 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown<strong class="caret"></strong></a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="#">Action</a>
-										</li>
-										<li>
-											<a href="#">Another action</a>
-										</li>
-										<li>
-											<a href="#">Something else here</a>
-										</li>
-										<li class="divider">
-										</li>
-										<li>
-											<a href="#">Separated link</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</div>
+						</nav>
 
 					</div>
 				</div>
@@ -349,5 +329,7 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript" src="<?php echo asset_js('front/script'); ?>"></script>
 </body>
 </html>

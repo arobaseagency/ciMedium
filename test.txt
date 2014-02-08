@@ -1,5 +1,0 @@
-petit text à modifier
-
-<?php echo phpinfo(); ?>
-
-troisième modif

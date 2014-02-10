@@ -10,7 +10,7 @@
 	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
 
 	<link href="<?php echo asset_css('front/bootstrap.min'); ?>" rel="stylesheet">
-	<link href="<?php echo asset_css('front/bootstrap-responsive.min'); ?>" rel="stylesheet">
+    <link href="<?php echo asset_css('front/bootstrap-responsive.min'); ?>" rel="stylesheet">
 	<link href="<?php echo asset_css('front/style'); ?>" rel="stylesheet">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -30,6 +30,10 @@
 </head>
 
 <body>
+
+<a id="logo" href="#" title="Voyance Online - Retour Accueil">
+    <img src="<?php echo asset_img('logo-site.png'); ?>" alt="logo voyance online">
+</a>
 	
 <div class="navbar navbar-static-top">
 	<div class="navbar-inner">
@@ -40,26 +44,21 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a href="#" class="brand">Title</a>
+            <a href="#" class="brand">
+                Voyance <span>Online</span>
+            </a>
 			<nav class="nav-collapse" role="navigation">
 				<ul class="nav">
-					<li class="active">
-						<a href="#">Home</a>
-					</li>
-					<li>
-						<a href="#">Link</a>
-					</li>
-					<li>
-						<a href="#">Link</a>
-					</li>
 					<li class="dropdown">
-						 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown<strong class="caret"></strong></a>
-						<ul class="dropdown-menu">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+						  Voyants en ligne <strong class="caret"></strong>
+				        </a>
+				        <ul class="dropdown-menu">
 							<li>
-								<a href="#">Action</a>
+								<a href="#">Nos Forfaits</a>
 							</li>
 							<li>
-								<a href="#">Another action</a>
+								<a href="#">FAQ</a>
 							</li>
 							<li>
 								<a href="#">Something else here</a>
@@ -77,69 +76,123 @@
 							</li>
 						</ul>
 					</li>
+					
+					<li>
+				        <a href="#">Nos Forfaits</a>
+					</li>
+					
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+						  Aide <strong class="caret"></strong>
+				        </a>
+				        <ul class="dropdown-menu">
+							<li>
+								<a href="#">Nos Forfaits</a>
+							</li>
+							<li>
+								<a href="#">FAQ</a>
+							</li>
+							<li>
+								<a href="#">Something else here</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li class="nav-header">
+								Nav header
+							</li>
+							<li>
+								<a href="#">Separated link</a>
+							</li>
+							<li>
+								<a href="#">One more separated link</a>
+							</li>
+						</ul>
+					</li>
+					
 				</ul>
 			</nav>
-
+            
+            <ul class="nav pull-right">
+                <li>
+                    <a href="#">
+                        <i class="icon-edit icon-white"></i> Inscription
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-user icon-white"></i> Login
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <form id="login-form" class="form-horizontal">
+                              <div class="control-group">
+                                <label class="control-label" for="inputEmail">Email</label>
+                                <div class="controls">
+                                  <input type="text" id="inputEmail" class="input-medium" placeholder="Email">
+                                </div>
+                              </div>
+                              <div class="control-group">
+                                <label class="control-label" for="inputPassword">Password</label>
+                                <div class="controls">
+                                  <input type="password" id="inputPassword" class="input-medium" placeholder="Password">
+                                </div>
+                              </div>
+                              <div class="control-group">
+                                <div class="controls">
+                                  <label class="checkbox">
+                                    <input type="checkbox"> Remember me
+                                    <a href="#" rel="tooltip" title="Si vous désirez rester connecter"><i class="icon-info-sign"></i></a>
+                                  </label>
+                                  <div class="divider"></div>
+                                  <p>
+                                      <i class="icon-circle-arrow-right"></i> 
+                                      <a href="#">Mot de passe Oublié</a>
+                                  </p>
+                                  <button type="submit" class="btn btn-primary">Login</button>
+                                </div>
+                              </div>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                <li class="divider-vertical"></li>
+                <li>
+                    <form class="navbar-form">
+                      <div class="input-append">
+                          <input type="text" class="span2">
+                          <button type="submit" class="btn btn-primary">
+                              <i class="icon-search icon-white"></i>
+                          </button>
+                      </div>
+                    </form>
+                </li>
+            </ul>
+            
 		</div>
 	</div>
 
 </div>
 
 <div class="container">
-	<div class="row">
-		<div class="span12">
-			
-		</div>
-	</div>
-	<div class="row">
-		<div class="span12">
-			<div class="carousel slide" id="carousel-625984">
-				<ol class="carousel-indicators">
-					<li data-slide-to="0" data-target="#carousel-625984">
-					</li>
-					<li data-slide-to="1" data-target="#carousel-625984">
-					</li>
-					<li data-slide-to="2" data-target="#carousel-625984">
-					</li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="item active left">
-						<img alt="" src="http://lorempixel.com/1600/500/sports/1">
-						<div class="carousel-caption">
-							<h4>
-								First Thumbnail label
-							</h4>
-							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-							</p>
-						</div>
-					</div>
-					<div class="item next left">
-						<img alt="" src="http://lorempixel.com/1600/500/sports/2">
-						<div class="carousel-caption">
-							<h4>
-								Second Thumbnail label
-							</h4>
-							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-							</p>
-						</div>
-					</div>
-					<div class="item">
-						<img alt="" src="http://lorempixel.com/1600/500/sports/3">
-						<div class="carousel-caption">
-							<h4>
-								Third Thumbnail label
-							</h4>
-							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-							</p>
-						</div>
-					</div>
-				</div> <a data-slide="prev" href="#carousel-625984" class="left carousel-control">‹</a> <a data-slide="next" href="#carousel-625984" class="right carousel-control">›</a>
-			</div>
-		</div>
-	</div>
+    <section class="row">
+        <div class="span12" style="min-height:300px;">
+            <h1>MON SLIDER</h1>
+        </div>
+    </section>
+</div>
+
+<div id="block-content" class="container">
+    <div class="row">
+        <div class="span12">
+            <ul class="breadcrumb">
+              <li><a href="#">Home</a> <span class="divider">/</span></li>
+              <li><a href="#">Library</a> <span class="divider">/</span></li>
+              <li class="active">Data</li>
+            </ul>
+        </div>
+    </div>
+    
 	<div class="row">
 		<div class="span3">
 			<div class="accordion" id="accordion-553022">
@@ -193,51 +246,54 @@
 				</li>
 			</ul><img alt="140x140" src="http://lorempixel.com/140/140/">
 		</div>
+		<!-- FIN SIDEBAR -->
+		
+		
+		<!-- CONTENEUR -->
 		<div class="span9">
-			<div class="row">
-				<div class="span4">
-					<img alt="140x140" src="http://lorempixel.com/140/140/">
-				</div>
-				<div class="span4">
-					<img alt="140x140" src="http://lorempixel.com/140/140/">
-				</div>
-				<div class="span4">
-					<img alt="140x140" src="http://lorempixel.com/140/140/">
-				</div>
-			</div>
-			<div class="row">
-				<div class="span4">
-					<img alt="140x140" src="http://lorempixel.com/140/140/">
-				</div>
-				<div class="span4">
-					<img alt="140x140" src="http://lorempixel.com/140/140/">
-				</div>
-				<div class="span4">
-					<img alt="140x140" src="http://lorempixel.com/140/140/">
-				</div>
-			</div>
-			<div class="row">
-				<div class="span4">
-					<img alt="140x140" src="http://lorempixel.com/140/140/">
-				</div>
-				<div class="span4">
-					<img alt="140x140" src="http://lorempixel.com/140/140/">
-				</div>
-				<div class="span4">
-					<img alt="140x140" src="http://lorempixel.com/140/140/">
-				</div>
-			</div>
-			<div class="row">
-				<div class="span4">
-					<img alt="140x140" src="http://lorempixel.com/140/140/">
-				</div>
-				<div class="span4">
-					<img alt="140x140" src="http://lorempixel.com/140/140/">
-				</div>
-				<div class="span4">
-					<img alt="140x140" src="http://lorempixel.com/140/140/">
-				</div>
-			</div>
+			<article id="zone-voyant" class="row-fluid">
+				
+				<ul class="thumbnails">
+				    <li class="span4">
+				        <div class="caption">
+				            <h3>nom du voyant</h3>
+				        </div>
+				        <div class="photo pull-left"><img src="http://lorempixel.com/130/100/people/1/" alt=""></div>
+				        <div class="fiche pull-right">
+				            <ul>
+				                <li><i class="icon-shopping-cart"></i> 1.90 €</li>
+				                <li><i class="icon-flag"></i> France</li>
+				                <li><i class="icon-folder-open"></i> 20 ans</li>
+				            </ul>
+				            <br>
+				            <button class="btn btn-success">Online</button>
+				        </div>
+				        <div class="describ">
+				            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, officia!</p>
+				        </div>
+				    </li>
+				    <li class="span4">
+				        <div class="caption">
+				            <h3>nom du voyant</h3>
+				        </div>
+				        <div class="thumbnail pull-left"><img src="http://lorempixel.com/130/100/people/9/" alt=""></div>
+				        <div class="describ">
+				            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, officia!</p>
+				        </div>
+				    </li>
+				    <li class="span4">
+				        <div class="caption">
+				            <h3>nom du voyant</h3>
+				        </div>
+				        <div class="thumbnail pull-left"><img src="http://lorempixel.com/130/100/people/7/" alt=""></div>
+				        <div class="describ">
+				            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, officia!</p>
+				        </div>
+				    </li>
+				</ul>
+				
+			</article>
+			
 			<div class="pagination">
 				<ul>
 					<li>

@@ -1,12 +1,79 @@
 /* CSS3 */
 
 body {
-  background: -webkit-radial-gradient( center top, circle, #FFFCFC, #CFCFD1);
-  background: -moz-radial-gradient( center top, circle, #FFFCFC, #CFCFD1);
-  background: -ms-radial-gradient( center top, circle, #FFFCFC, #CFCFD1);
-  background: -o-radial-gradient( center top, circle, #FFFCFC, #CFCFD1);
-  background: radial-gradient( circle, center top, #FFFCFC, #CFCFD1);
-
-  min-height: 1024px;
+  background: url('../../img/front/background-head.jpg') no-repeat center 3em #fff;
 }
 
+#logo {
+    z-index: 999;
+    position:absolute;
+    background-color: #FFF;
+    padding: 2.5em 1.2em;
+    border-radius: 100%;
+    top: -4.6em;
+    left: 45%;
+    border: 5px solid #616060;
+}
+
+#logo img {
+    position:relative;
+    top: 25px;
+    left: 0;
+}
+
+#block-content {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 2em 1em;
+    border: 1px solid #cecece;
+}
+
+#login-form {
+    padding:0.5em;
+    margin-bottom: 0;
+}
+#login-form .controls { margin-left:85px; }
+#login-form .control-label { width:75px; }
+
+/*_____________________ CONTENUE _____________________________*/
+
+#zone-voyant {
+    
+}
+#zone-voyant .thumbnails li {
+    background: #fff;
+    border: 1px solid #CECECE;
+}
+#zone-voyant .thumbnails .caption {
+    background-color: #95C900;
+    padding: 5px 10px;
+}
+#zone-voyant .caption h3 {
+    line-height: 1.3em;
+    font-size: 1.3em;
+    font-weight: normal;
+    color: #FCFCFC;
+    margin: 0;
+    text-transform: capitalize;
+    text-shadow: 1px -1px 0px #5F831E;
+}
+#zone-voyant .thumbnails li .describ {
+    padding: 10px;   
+    border-top: 1px dashed #E0DCDC;
+    clear: both;
+}
+#zone-voyant li .photo {
+    padding: 10px 5px;
+    border: none;
+}
+#zone-voyant li .photo > img {
+    background-color:#fff;
+    border: 1px solid #CECECE;
+    padding: 3px;
+}
+#zone-voyant li .fiche {
+    width: 45%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#zone-voyant li .fiche ul {list-style-type: none;margin:0;padding:none;}
+#zone-voyant li .fiche li {border:none;}

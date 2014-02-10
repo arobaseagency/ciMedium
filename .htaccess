@@ -13,7 +13,7 @@ RewriteEngine On
 
 
 
-RewriteCond $1 !^(index\.php|images|assets/|robots\.txt)
+RewriteCond $1 !^(index\.php|img|images|assets/|robots\.txt)
 # Application Public Frontend
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

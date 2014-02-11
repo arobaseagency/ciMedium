@@ -4,6 +4,61 @@ body {
   background: url('../../img/front/background-head.jpg') no-repeat center 3em #fff;
 }
 
+/* ______________________ CSS GENERIQUE ______________________ */
+
+.f-image {
+    position: relative;
+    display: block;
+}
+.f-image .f-overlay {
+    opacity: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.3s ease-out;
+}
+.f-image:hover .f-overlay {
+    opacity: 0.5;
+}
+.f-image i {
+    position: relative;
+    top: 40%;
+    left: 0;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.f-image:hover i {left: 40%;}
+
+/* ______________________ CUSTOM BOOTSTRAP ______________________ */
+
+.navbar .nav>li>a:focus, .navbar .nav>li>a:hover {
+    color: #fff;
+    text-shadow: 1px -1px 0 #537008;
+}
+.navbar .nav li.dropdown.active>.dropdown-toggle, .navbar .nav li.dropdown.open.active>.dropdown-toggle, .navbar .nav li.dropdown.open>.dropdown-toggle {
+    color: #fff;
+    text-shadow: 1px -1px 0 #537008;
+}
+.navbar-static-top .dropdown-menu { 
+    opacity:0.8; 
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    -ms-border-radius: 0px;
+    border-radius: 0px;
+}
+
+/* ______________________________________________________________ */
+
 #logo {
     z-index: 999;
     position:absolute;
@@ -34,10 +89,25 @@ body {
 #login-form .controls { margin-left:85px; }
 #login-form .control-label { width:75px; }
 
-/*_____________________ CONTENUE _____________________________*/
+/*_____________________ CONTENUE ZONE VOYANT _____________________________*/
 
 #zone-voyant {
     
+}
+#zone-voyant .thumbnails > li .label {
+    position: absolute;
+    margin-top: -8px;
+    margin-left: -18px;
+    -webkit-transform: rotate(-37deg);
+    -moz-transform: rotate(-37deg);
+    transform: rotate(-37deg);
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+}
+#zone-voyant .thumbnails > li:hover .label {
+    -webkit-transform: scale(1.2) rotate(-37deg);
+    -moz-transform: scale(1.2) rotate(-37deg);
+    transform: scale(1.2) rotate(-37deg);
 }
 #zone-voyant .thumbnails li {
     background: #fff;
@@ -65,7 +135,7 @@ body {
     padding: 10px 5px;
     border: none;
 }
-#zone-voyant li .photo > img {
+#zone-voyant li .photo img {
     background-color:#fff;
     border: 1px solid #CECECE;
     padding: 3px;
@@ -74,6 +144,20 @@ body {
     width: 45%;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-size:12px;
 }
 #zone-voyant li .fiche ul {list-style-type: none;margin:0;padding:none;}
 #zone-voyant li .fiche li {border:none;}
+
+#zone-voyant li .specialite {
+    padding: 10px;
+    border-top: 1px dashed #E0DCDC;
+}
+#zone-voyant .specialite strong { float:left; }
+#zone-voyant .specialite ul { margin:0;}
+#zone-voyant .specialite li {
+    border:none;
+    padding: 0 10px;
+}
+
+.grille-voyant .pagination {text-align: center;}

@@ -12,6 +12,8 @@
 	<link href="<?php echo asset_css('front/bootstrap.min'); ?>" rel="stylesheet">
     <link href="<?php echo asset_css('front/bootstrap-responsive.min'); ?>" rel="stylesheet">
 	<link href="<?php echo asset_css('front/style'); ?>" rel="stylesheet">
+	
+	<link href="<?php echo asset_css('rating'); ?>" rel="stylesheet">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -183,15 +185,6 @@
 </div>
 
 <div id="block-content" class="container">
-    <div class="row">
-        <div class="span12">
-            <ul class="breadcrumb">
-              <li><a href="#">Home</a> <span class="divider">/</span></li>
-              <li><a href="#">Library</a> <span class="divider">/</span></li>
-              <li class="active">Data</li>
-            </ul>
-        </div>
-    </div>
     
 	<div class="row">
 		<div class="span3">
@@ -200,9 +193,25 @@
 					<div class="accordion-heading">
 						 <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-553022" href="#accordion-element-408954">Collapsible Group Item #1</a>
 					</div>
-					<div id="accordion-element-408954" class="accordion-body collapse">
+					<div id="accordion-element-408954" class="accordion-body collapse in">
 						<div class="accordion-inner">
-							Anim pariatur cliche...
+							<ul class="nav nav-list">
+                                <li class="nav-header">
+                                    List header
+                                </li>
+                                <li class="active">
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">Library</a>
+                                </li>
+                                <li>
+                                    <a href="#">Applications</a>
+                                </li>
+                                <li class="nav-header">
+                                    Another list header
+                                </li>
+                            </ul>
 						</div>
 					</div>
 				</div>
@@ -217,87 +226,146 @@
 					</div>
 				</div>
 			</div>
-			<ul class="nav nav-list">
-				<li class="nav-header">
-					List header
-				</li>
-				<li class="active">
-					<a href="#">Home</a>
-				</li>
-				<li>
-					<a href="#">Library</a>
-				</li>
-				<li>
-					<a href="#">Applications</a>
-				</li>
-				<li class="nav-header">
-					Another list header
-				</li>
-				<li>
-					<a href="#">Profile</a>
-				</li>
-				<li>
-					<a href="#">Settings</a>
-				</li>
-				<li class="divider">
-				</li>
-				<li>
-					<a href="#">Help</a>
-				</li>
-			</ul><img alt="140x140" src="http://lorempixel.com/140/140/">
+			
+			<figure>
+			    <img alt="140x140" src="http://lorempixel.com/160/160/" class="img-polaroid">
+			</figure>
 		</div>
 		<!-- FIN SIDEBAR -->
 		
 		
 		<!-- CONTENEUR -->
-		<div class="span9">
+		<section class="span9 grille-voyant">
 			<article id="zone-voyant" class="row-fluid">
 				
 				<ul class="thumbnails">
 				    <li class="span4">
+				        <span class="label label-info"><strong>New !</strong></span>
 				        <div class="caption">
-				            <h3>nom du voyant</h3>
+				            <h3>nom du voyant 
+				                <span class="pull-right">
+				                    <i class="icon-star"></i>
+				                    <i class="icon-star"></i>
+				                    <i class="icon-star"></i>
+				                    <i class="icon-star-empty"></i>
+				                    <i class="icon-star-empty"></i>
+				                </span>
+				            </h3>
+				            <div class="f-rating"></div>
 				        </div>
-				        <div class="photo pull-left"><img src="http://lorempixel.com/130/100/people/1/" alt=""></div>
+				        <div class="photo pull-left">
+				            <a href="#" class="f-image">
+				                <span class="f-overlay"><i class="icon-eye-open icon-white"></i></span>
+				                <img src="http://lorempixel.com/130/100/people/1/" alt="">
+				            </a>
+				        </div>
 				        <div class="fiche pull-right">
 				            <ul>
-				                <li><i class="icon-shopping-cart"></i> 1.90 €</li>
-				                <li><i class="icon-flag"></i> France</li>
-				                <li><i class="icon-folder-open"></i> 20 ans</li>
+				                <li><strong>Tarifs:</strong> 1.90 €</li>
+				                <li><strong>Pays:</strong> France</li>
+				                <li><strong>Expérience:</strong> 20 ans</li>
 				            </ul>
 				            <br>
-				            <button class="btn btn-success">Online</button>
+				            <button class="btn btn-info">
+				                <i class="icon-eye-open icon-white"></i>
+				                 Online
+				            </button>
 				        </div>
 				        <div class="describ">
 				            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, officia!</p>
+				        </div>
+				        <div class="specialite">
+				            <strong>Spécialité: </strong>
+				            <ul class="nav nav-pills">
+				                <li><i class="icon-headphones" rel="tooltip" title="Audio"></i></li>
+				                <li><i class="icon-heart" rel="tooltip" title="Sentiment & Coeur"></i></li>
+				                <li><i class="icon-envelope" rel="tooltip" title="Consultattion par Email"></i></li>
+				                <li><i class="icon-tint" rel="tooltip" title="Par Pendule"></i></li>
+				            </ul>
 				        </div>
 				    </li>
 				    <li class="span4">
 				        <div class="caption">
 				            <h3>nom du voyant</h3>
+				            <div class="f-rating"></div>
 				        </div>
-				        <div class="thumbnail pull-left"><img src="http://lorempixel.com/130/100/people/9/" alt=""></div>
+				        <div class="photo pull-left">
+				            <a href="#" class="f-image">
+				                <span class="f-overlay"><i class="icon-eye-open icon-white"></i></span>
+				                <img src="http://lorempixel.com/130/100/people/9/" alt="">
+				            </a>
+				        </div>
+				        <div class="fiche pull-right">
+				            <ul>
+				                <li><strong>Tarifs:</strong> 1.90 €</li>
+				                <li><strong>Pays:</strong> France</li>
+				                <li><strong>Expérience:</strong> 20 ans</li>
+				            </ul>
+				            <br>
+				            <button class="btn btn-info">
+				                <i class="icon-eye-open icon-white"></i>
+				                 Online
+				            </button>
+				        </div>
 				        <div class="describ">
 				            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, officia!</p>
 				        </div>
+				        <div class="specialite">
+				            <strong>Spécialité: </strong>
+				            <ul class="nav nav-pills">
+				                <li><i class="icon-headphones" rel="tooltip" title="Audio"></i></li>
+				                <li><i class="icon-heart" rel="tooltip" title="Sentiment & Coeur"></i></li>
+				                <li><i class="icon-envelope" rel="tooltip" title="Consultattion par Email"></i></li>
+				                <li><i class="icon-tint" rel="tooltip" title="Par Pendule"></i></li>
+				            </ul>
+				        </div>
 				    </li>
+				    
 				    <li class="span4">
 				        <div class="caption">
 				            <h3>nom du voyant</h3>
+				            <div class="f-rating"></div>
 				        </div>
-				        <div class="thumbnail pull-left"><img src="http://lorempixel.com/130/100/people/7/" alt=""></div>
+				        <div class="photo pull-left">
+				            <a href="#" class="f-image">
+				                <span class="f-overlay"><i class="icon-eye-open icon-white"></i></span>
+				                <img src="http://lorempixel.com/130/100/people/7/" alt="">
+				            </a>
+				        </div>
+				        <div class="fiche pull-right">
+				            <ul>
+				                <li><strong>Tarifs:</strong> 1.90 €</li>
+				                <li><strong>Pays:</strong> France</li>
+				                <li><strong>Expérience:</strong> 20 ans</li>
+				            </ul>
+				            <br>
+				            <button class="btn disabled">
+				                <i class="icon-eye-close"></i>
+				                 Online
+				            </button>
+				        </div>
 				        <div class="describ">
 				            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, officia!</p>
+				        </div>
+				        <div class="specialite">
+				            <strong>Spécialité: </strong>
+				            <ul class="nav nav-pills">
+				                <li><i class="icon-headphones" rel="tooltip" title="Audio"></i></li>
+				                <li><i class="icon-heart" rel="tooltip" title="Sentiment & Coeur"></i></li>
+				                <li><i class="icon-envelope" rel="tooltip" title="Consultattion par Email"></i></li>
+				                <li><i class="icon-tint" rel="tooltip" title="Par Pendule"></i></li>
+				            </ul>
 				        </div>
 				    </li>
 				</ul>
 				
 			</article>
 			
-			<div class="pagination">
+			<hr>
+			<div class="pagination pagination-large">
 				<ul>
 					<li>
-						<a href="#">Prev</a>
+						<a href="#"><i class="icon-chevron-left"></i></a>
 					</li>
 					<li>
 						<a href="#">1</a>
@@ -315,11 +383,11 @@
 						<a href="#">5</a>
 					</li>
 					<li>
-						<a href="#">Next</a>
+						<a href="#"><i class="icon-chevron-right"></i></a>
 					</li>
 				</ul>
 			</div>
-		</div>
+		</section>
 	</div>
 	<div class="row">
 		<div class="span12">
@@ -389,5 +457,6 @@
 </div>
 
 <script type="text/javascript" src="<?php echo asset_js('front/script'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset_js('rating'); ?>"></script>
 </body>
 </html>

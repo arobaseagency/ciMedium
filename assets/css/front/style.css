@@ -53,26 +53,40 @@ body {
 
 /* -------------------- FLAG drapeaux -----------------------*/
 .flag {
-	width: 18px;
-	height: 12px;
+/*	width: 18px;
+	height: 12px;*/
 	background:url(../../img/front/flags.png) no-repeat;
 	display: inline-block;
 }
 
-.flag.flag-be {background-position: -18px 0}
-.flag.flag-ca {background-position: -36px 0}
-.flag.flag-de {background-position: -54px 0}
-.flag.flag-es {background-position: 0 -12px}
-.flag.flag-fr {background-position: -18px -12px}
-.flag.flag-gb {background-position: -36px -12px}
-.flag.flag-gp {background-position: -54px -12px}
-.flag.flag-gy {background-position: 0 -24px}
-.flag.flag-ht {background-position: -18px -24px}
-.flag.flag-it {background-position: -36px -24px}
-.flag.flag-mc {background-position: -54px -24px}
-.flag.flag-pt {background-position: 0 -36px}
-.flag.flag-se {background-position: -18px -36px}
-.flag.flag-us {background-position: -36px -36px}
+.argentina { background-position:  -0px -0px; height: 16px; width: 24px; }
+.austria { background-position:  -0px -16px; height: 16px; width: 24px; }
+.belgium { background-position:  -0px -32px; height: 16px; width: 24px; }
+.brazil { background-position:  -0px -48px; height: 16px; width: 24px; }
+.canada { background-position:  -0px -64px; height: 16px; width: 24px; }
+.china { background-position:  -0px -80px; height: 16px; width: 24px; }
+.denmark { background-position:  -24px -0px; height: 16px; width: 24px; }
+.england { background-position:  -24px -16px; height: 16px; width: 24px; }
+.finland { background-position:  -24px -32px; height: 16px; width: 24px; }
+.france { background-position:  -24px -48px; height: 16px; width: 24px; }
+.germany { background-position:  -24px -64px; height: 16px; width: 24px; }
+.guinea { background-position:  -24px -80px; height: 16px; width: 24px; }
+.guyana { background-position:  -48px -0px; height: 16px; width: 24px; }
+.haiti { background-position:  -48px -16px; height: 16px; width: 24px; }
+.iceland { background-position:  -48px -32px; height: 16px; width: 24px; }
+.ireland { background-position:  -48px -48px; height: 16px; width: 24px; }
+.italy { background-position:  -48px -64px; height: 16px; width: 24px; }
+.japan { background-position:  -48px -80px; height: 16px; width: 24px; }
+.koera { background-position:  -72px -0px; height: 16px; width: 24px; }
+.luxembourg { background-position:  -72px -16px; height: 16px; width: 24px; }
+.malaysia { background-position:  -72px -32px; height: 16px; width: 24px; }
+.panama { background-position:  -72px -48px; height: 16px; width: 24px; }
+.portugal { background-position:  -72px -64px; height: 16px; width: 24px; }
+.russia { background-position:  -72px -80px; height: 16px; width: 24px; }
+.spain { background-position:  -96px -0px; height: 16px; width: 24px; }
+.suisse { background-position:  -96px -16px; height: 16px; width: 24px; }
+.usa { background-position:  -96px -32px; height: 16px; width: 24px; }
+
 
 /* ______________________ CUSTOM BOOTSTRAP ______________________ */
 
@@ -85,8 +99,330 @@ body {
     color: #fff;
     text-shadow: 1px -1px 0 #537008;
 }
-#navigation .dropdown-menu { 
-    opacity:0.9; 
+#navigation .dropdown-menu {
+    opacity:0.9;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    -ms-border-radius: 0px;
+    border-radius: 0px;
+}
+#navigation .tpl-flag .dropdown-menu, #navigation .tpl-flag .dropdown-menu li {
+    min-width: inherit;
+    text-align: center;
+}
+
+#sidebar-left .nav>li>a {
+    background-image: -webkit-linear-gradient(to right, transparent 50%, #95C900 50%);
+    background-image: -moz-linear-gradient(to right, transparent 50%, #95C900 50%);
+    background-image: -o-linear-gradient(to right, transparent 50%, #95C900 50%);
+    background-image: linear-gradient(to right, transparent 50%, #95C900 50%);
+    
+    background-position: 0 0;
+    background-size: 200% auto;
+    transition: all .1500s ease-in;
+}
+#sidebar-left .nav>li>a:hover, .nav-list>.active>a {
+    color: #FFF;
+    text-shadow: 1px -1px 0px #768F48;
+    background-position: 100% 0;
+}
+
+#slideshow {
+    margin-top: 35px;
+}
+#slideshow .carousel-indicators {
+    top: inherit;
+    bottom: 0;
+    right: 40%;
+}
+#slideshow .carousel-indicators li {
+    overflow: hidden;
+    background-color: #616060;
+    border-radius: 0;
+    width: 50px;
+    height:5px;
+    opacity: 0.5;
+}
+#slideshow .carousel-indicators .active {
+    background-color: #fff;
+    opacity: 0.7;
+}
+#slideshow .carousel-caption {
+    background: none;
+    top: 10%;
+    left: 32%;
+    bottom: inherit;
+}
+#slideshow .carousel-caption h2, #slideshow .carousel-caption h3, #slideshow .carousel-caption p {
+    margin-top:0;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    line-height:inherit;
+}
+#slideshow .carousel-caption h2, #slideshow .carousel-caption h3 {
+    font-size:3em;
+}
+#slideshow .carousel-caption p {
+    font-size:2em;
+    font-weight: bold;
+    margin-left: 2em;
+    margin-bottom: 7px;
+}
+#sidebar-left .form-search button {padding:2px;}
+
+/* ______________________________________________________________ */
+
+#logo {
+    z-index: 999;
+    position:absolute;
+    background-color: #FFF;
+    padding: 2.2em 0.9em;
+    border-radius: 100%;
+    top: -4.6em;
+    left: 45%;
+    border: 5px solid #616060;
+}
+
+#logo img {
+    position:relative;
+    top: 20px;
+    left: 0;
+}
+
+#block-content {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 2em 1em;
+    border: 1px solid #cecece;
+}
+
+#login-form {
+    padding:0.5em;
+    margin-bottom: 0;
+}
+#login-form .controls { margin-left:85px; }
+#login-form .control-label { width:75px; }
+
+/*_____________________ CONTENUE ZONE VOYANT _____________________________*/
+
+#zone-voyant {
+
+}
+#zone-voyant .thumbnails > li .label {
+    position: absolute;
+    margin-top: -8px;
+    margin-left: -18px;
+    -webkit-transform: rotate(-37deg);
+    -moz-transform: rotate(-37deg);
+    transform: rotate(-37deg);
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+}
+#zone-voyant .thumbnails > li:hover .label {
+    -webkit-transform: scale(1.2) rotate(-37deg);
+    -moz-transform: scale(1.2) rotate(-37deg);
+    transform: scale(1.2) rotate(-37deg);
+}
+#zone-voyant .thumbnails li {
+    background: #fff;
+    border: 1px solid #CECECE;
+}
+#zone-voyant .thumbnails .caption {
+    background-color: #95C900;
+    padding: 5px 10px;
+}
+#zone-voyant .caption h3 {
+    line-height: 1.3em;
+    font-size: 1.1em;
+    font-weight: normal;
+    color: #FCFCFC;
+    margin: 0;
+    text-transform: capitalize;
+    text-shadow: 1px -1px 0px #768F48;
+}
+#zone-voyant .thumbnails li .describ {
+    padding: 10px;
+    border-top: 1px dashed #E0DCDC;
+    clear: both;
+}
+#zone-voyant li .photo {
+    padding: 10px 5px;
+    border: none;
+}
+#zone-voyant li .photo img {
+    background-color:#fff;
+    border: 1px solid #CECECE;
+    padding: 3px;
+}
+#zone-voyant li .fiche {
+    width: 45%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size:12px;
+}
+#zone-voyant li .fiche ul {list-style-type: none;margin:0;padding:none;}
+#zone-voyant li .fiche li {border:none;}
+
+#zone-voyant li .specialite {
+    padding: 10px;
+    border-top: 1px dashed #E0DCDC;
+    background-color: #ECECEC;
+}
+#zone-voyant .specialite strong { float:left; }
+#zone-voyant .specialite ul { margin:0;}
+#zone-voyant .specialite li {
+    border:none;
+    padding: 0 10px;
+    background: none;
+}
+
+.grille-voyant .pagination {text-align: center;}
+
+
+/*_____________________ SIDEBAR LEFT _____________________________*/
+
+#sidebar-left .accordion-heading {
+    background-color: #ECECEC;
+}
+#sidebar-left .accordion-heading a {
+    color:#505050;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+#sidebar-left .accordion-heading a > i {opacity: 0.8;}
+#sidebar-left .accordion-group {
+    margin-bottom: 0;
+    border-top: 0;
+}
+#sidebar-left .accordion-group:first-child {border-top:1px solid #E5E5E5;}
+
+
+/*_____________________ FOOTER _____________________________*/
+
+#footer {
+    background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 162, color-stop(0%, #666666), color-stop(100%, #333333));
+    background-image: -webkit-radial-gradient(center top, farthest-corner circle, #666666 0%, #333333 100%);
+    background-image: -moz-radial-gradient(center top, farthest-corner circle, #666666 0%, #333333 100%);
+    background-image: -ms-radial-gradient(center top, farthest-corner circle, #666666 0%, #333333 100%);
+    background-image: -o-radial-gradient(center top, farthest-corner circle, #666666 0%, #333333 100%);
+    background-image: radial-gradient(farthest-corner circle at center top, #666666 0%, #333333 100%);
+    border-top: 10px solid #B9E23D;
+    color: #C7C7C7;
+    text-shadow: -1px -1px 0 #242424;
+}
+#footer ul {list-style-type: none;}
+#footer ul li:before {
+    content: '\2022';
+    padding: 10px;
+    text-shadow: -1px -1px 0 #242424;
+}
+#footer footer {
+    padding: 2em 1em;
+}
+/* CSS3 */
+
+body {
+  background: url('../../img/front/background-head.jpg') no-repeat center 3em #fff;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -ms-background-size: contain;
+  background-size: contain;
+}
+
+/* ______________________ CSS GENERIQUE ______________________ */
+
+.f-image {
+    position: relative;
+    display: block;
+}
+.f-image .f-overlay {
+    opacity: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.3s ease-out;
+}
+.f-image:hover .f-overlay {
+    opacity: 0.5;
+}
+.f-image i {
+    position: relative;
+    top: 40%;
+    left: 0;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.f-image:hover i {left: 40%;}
+
+#hover-zetop {
+    display: none;
+    z-index: 300;
+    position: fixed;
+    right: 0;
+    bottom: 5%;
+    opacity: 0.4;
+}
+
+/* -------------------- FLAG drapeaux -----------------------*/
+.flag {
+/*	width: 18px;
+	height: 12px;*/
+	background:url(../../img/front/flags.png) no-repeat;
+	display: inline-block;
+}
+
+.argentina { background-position:  -0px -0px; height: 16px; width: 24px; }
+.austria { background-position:  -0px -16px; height: 16px; width: 24px; }
+.belgium { background-position:  -0px -32px; height: 16px; width: 24px; }
+.brazil { background-position:  -0px -48px; height: 16px; width: 24px; }
+.canada { background-position:  -0px -64px; height: 16px; width: 24px; }
+.china { background-position:  -0px -80px; height: 16px; width: 24px; }
+.denmark { background-position:  -24px -0px; height: 16px; width: 24px; }
+.england { background-position:  -24px -16px; height: 16px; width: 24px; }
+.finland { background-position:  -24px -32px; height: 16px; width: 24px; }
+.france { background-position:  -24px -48px; height: 16px; width: 24px; }
+.germany { background-position:  -24px -64px; height: 16px; width: 24px; }
+.guinea { background-position:  -24px -80px; height: 16px; width: 24px; }
+.guyana { background-position:  -48px -0px; height: 16px; width: 24px; }
+.haiti { background-position:  -48px -16px; height: 16px; width: 24px; }
+.iceland { background-position:  -48px -32px; height: 16px; width: 24px; }
+.ireland { background-position:  -48px -48px; height: 16px; width: 24px; }
+.italy { background-position:  -48px -64px; height: 16px; width: 24px; }
+.japan { background-position:  -48px -80px; height: 16px; width: 24px; }
+.koera { background-position:  -72px -0px; height: 16px; width: 24px; }
+.luxembourg { background-position:  -72px -16px; height: 16px; width: 24px; }
+.malaysia { background-position:  -72px -32px; height: 16px; width: 24px; }
+.panama { background-position:  -72px -48px; height: 16px; width: 24px; }
+.portugal { background-position:  -72px -64px; height: 16px; width: 24px; }
+.russia { background-position:  -72px -80px; height: 16px; width: 24px; }
+.spain { background-position:  -96px -0px; height: 16px; width: 24px; }
+.suisse { background-position:  -96px -16px; height: 16px; width: 24px; }
+.usa { background-position:  -96px -32px; height: 16px; width: 24px; }
+
+
+/* ______________________ CUSTOM BOOTSTRAP ______________________ */
+
+.navbar .nav>li>a, .navbar .brand { padding: 10px 10px 10px; }
+.nav .nav>li>a:focus, .navbar .nav>li>a:hover {
+    color: #fff;
+    text-shadow: 1px -1px 0 #537008;
+}
+.navbar .nav li.dropdown.active>.dropdown-toggle, .navbar .nav li.dropdown.open.active>.dropdown-toggle, .navbar .nav li.dropdown.open>.dropdown-toggle {
+    color: #fff;
+    text-shadow: 1px -1px 0 #537008;
+}
+#navigation .dropdown-menu {
+    opacity:0.9;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     -o-border-radius: 0px;
@@ -176,7 +512,7 @@ body {
 /*_____________________ CONTENUE ZONE VOYANT _____________________________*/
 
 #zone-voyant {
-    
+
 }
 #zone-voyant .thumbnails > li .label {
     position: absolute;
@@ -211,7 +547,7 @@ body {
     text-shadow: 1px -1px 0px #768F48;
 }
 #zone-voyant .thumbnails li .describ {
-    padding: 10px;   
+    padding: 10px;
     border-top: 1px dashed #E0DCDC;
     clear: both;
 }
@@ -290,8 +626,3 @@ body {
 #footer footer {
     padding: 2em 1em;
 }
-
-
-
-
-

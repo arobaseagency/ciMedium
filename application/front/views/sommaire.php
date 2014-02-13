@@ -13,7 +13,7 @@
     <link href="<?php echo asset_css('front/bootstrap-responsive.min'); ?>" rel="stylesheet">
     <link href="<?php echo asset_css('front/carousel'); ?>" rel="stylesheet">
 	<link href="<?php echo asset_css('front/style'); ?>" rel="stylesheet">
-	
+
 	<link href="<?php echo asset_css('rating'); ?>" rel="stylesheet">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -38,7 +38,7 @@
 <a id="logo" href="#" title="Voyance Online - Retour Accueil">
     <img src="<?php echo asset_img('logo-site.png'); ?>" alt="logo voyance online">
 </a>
-	
+
 <div id="navigation" class="navbar navbar-static-top">
 	<div class="navbar-inner">
 		<div class="container">
@@ -80,14 +80,14 @@
 							</li>
 						</ul>
 					</li>
-					
+
 					<li>
 				        <a href="#">Nos Forfaits</a>
 					</li>
-					
+
 				</ul>
 			</nav>
-            
+
             <ul class="nav pull-right">
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -116,7 +116,7 @@
                         </li>
                     </ul>
                 </li>
-                
+
                 <li>
                     <a href="#">
                         <i class="icon-edit icon-white"></i> Inscription
@@ -150,7 +150,7 @@
                                   </label>
                                   <div class="divider"></div>
                                   <p>
-                                      <i class="icon-circle-arrow-right"></i> 
+                                      <i class="icon-circle-arrow-right"></i>
                                       <a href="#">Mot de passe Oublié</a>
                                   </p>
                                   <button type="submit" class="btn btn-primary">Login</button>
@@ -162,18 +162,20 @@
                 </li>
                 <li class="divider-vertical"></li>
                 <li class="dropdown tpl-flag">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="flag flag-fr"></i>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Français">
+                        <i class="flag france"></i>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><i class="flag flag-be"></i></a></li>
-                        <li><a href="#"><i class="flag flag-ca"></i></a></li>
-                        <li><a href="#"><i class="flag flag-de"></i></a></li>
+                        <li><a href="#" title="Belge"><i class="flag belgium"></i></a></li>
+                        <li><a href="#" title="Canada"><i class="flag canada"></i></a></li>
+                        <li><a href="#" title="Anglais"><i class="flag england"></i></a></li>
+                        <li><a href="#" title="Allemand"><i class="flag germany"></i></a></li>
+                        <li><a href="#" title="Américain"><i class="flag usa"></i></a></li>
                     </ul>
                 </li>
             </ul>
-            
+
 		</div>
 	</div>
 
@@ -183,7 +185,7 @@
 <div class="container">
     <section class="row">
         <div class="span12">
-            
+
             <div id="slideshow" class="carousel slide" data-interval="3000">
               <!-- Carousel items -->
               <div class="carousel-inner">
@@ -212,24 +214,24 @@
                     </div>
                 </div>
               </div>
-              
+
               <ol class="carousel-indicators">
                 <li data-target="#slideshow" data-slide-to="0" class="active"></li>
                 <li data-target="#slideshow" data-slide-to="1"></li>
                 <li data-target="#slideshow" data-slide-to="2"></li>
               </ol>
             </div>
-            
+
         </div>
     </section>
 </div>
 
 <div id="block-content" class="container">
-    
+
 	<div class="row">
-		
+
 		<aside id="sidebar-left" class="span3">
-			
+
 			<div class="row">
 			    <div class="span3">
                     <form class="form-search" role="search">
@@ -237,13 +239,13 @@
                         <button type="submit" class="btn btn-link"><i class="icon-search"></i></button>
                     </form>
                 </div>
-			
+
                 <div class="span3">
                     <div class="accordion" id="accordion-553022">
                         <div class="accordion-group">
                             <div class="accordion-heading">
                                  <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-553022" href="#accordion-element-408954">
-                                    <i class="icon-plus-sign"></i> Catégorie
+                                    <i class="icon-minus-sign"></i> Catégorie
                                 </a>
                             </div>
                             <div id="accordion-element-408954" class="accordion-body collapse in">
@@ -261,6 +263,15 @@
                                         <li>
                                             <a href="#">Applications</a>
                                         </li>
+                                        <li>
+                                            <a href="#">Event</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Jeux</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Astrologie</a>
+                                        </li>
                                         <li class="nav-header">
                                             Another list header
                                         </li>
@@ -270,7 +281,7 @@
                         </div>
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                 <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-553022" href="#accordion-element-8105">Aide & FAQ</a>
+                                 <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-553022" href="#accordion-element-8105"><i class="icon-plus-sign"></i> Aide & FAQ</a>
                             </div>
                             <div id="accordion-element-8105" class="accordion-body collapse">
                                 <div class="accordion-inner">
@@ -278,10 +289,10 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                 <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-553022" href="#accordion-element-5">Forfait & Paiement</a>
+                                 <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-553022" href="#accordion-element-5"><i class="icon-plus-sign"></i> Forfait & Paiement</a>
                             </div>
                             <div id="accordion-element-5" class="accordion-body collapse">
                                 <div class="accordion-inner">
@@ -292,7 +303,7 @@
                     </div>
                 </div>
                 <!-- FIN BLOC ACCORDEON -->
-			
+
                 <div class="span3">
                     <figure>
                         <img alt="140x140" src="http://lorempixel.com/160/160/" class="img-polaroid">
@@ -302,18 +313,18 @@
             <!-- FIN ROW -->
 		</aside>
 		<!-- FIN SIDEBAR -->
-		
-		
+
+
 		<!-- CONTENEUR -->
 		<section class="span9 grille-voyant">
 			<article id="zone-voyant" class="row-fluid">
-				
+
 				<?php for($i=0; $i < 6; $i++): ?>
 				<ul class="thumbnails">
 				    <li class="span4">
 				        <span class="label label-info"><strong>New !</strong></span>
 				        <div class="caption">
-				            <h3>nom du voyant 
+				            <h3>nom du voyant
 				                <span class="pull-right">
 				                    <i class="icon-star"></i>
 				                    <i class="icon-star"></i>
@@ -391,7 +402,7 @@
 				            </ul>
 				        </div>
 				    </li>
-				    
+
 				    <li class="span4">
 				        <div class="caption">
 				            <h3>nom du voyant</h3>
@@ -428,13 +439,13 @@
 				            </ul>
 				        </div>
 				    </li>
-				    
+
 				</ul>
 				<!-- FIN ROW THUMBNAILS -->
 				<?php endfor; ?>
-				
+
 			</article>
-			
+
 			<hr>
 			<div class="pagination pagination-large">
 				<ul>
@@ -463,7 +474,7 @@
 			</div>
 		</section>
 	</div>
-	
+
 </div>
 
 <div id="footer">

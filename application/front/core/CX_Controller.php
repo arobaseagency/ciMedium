@@ -8,7 +8,7 @@ class CX_Controller extends CI_Controller
     {
         parent::__construct();
 
-		$this->output->enable_profiler(false);
+		$this->output->enable_profiler(true);
     }
 
 }

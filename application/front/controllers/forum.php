@@ -12,16 +12,19 @@ class Forum extends CX_Controller
 
     public function index()
     {
-        echo "hello forum !";
+        echo "hello forum";
     }
 
     public function showtemplate()
     {
-        $data = array();
-        $data['title'] = "mon titre h1 !";
-        $data['foo'] = "une variable simple";
+        $data = array(
+            'title' => "Mon titre de page",
+            'message' => "Mon message",
+            'foo' => "variable foo",
+        );
 
         $this->layout->view('vueTest', $data);
+
     }
 
 

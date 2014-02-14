@@ -3,7 +3,7 @@
     <?php for($i=0; $i < 6; $i++): ?>
     <ul class="thumbnails">
         <li class="span4">
-            <span class="label label-info"><strong>New !</strong></span>
+            <span class="tpl-new label label-info"><strong>New !</strong></span>
             <div class="caption">
                 <h3>nom du voyant
                     <span class="pull-right">

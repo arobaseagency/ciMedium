@@ -28,18 +28,16 @@
 
 	<div class="row">
 
-		<aside id="sidebar-left" class="span3">
-
-			<?php include 'elements/sidebar-left.php'; ?>
-            <!-- FIN ROW -->
-		</aside>
-		<!-- FIN SIDEBAR -->
-
-
 		<!-- CONTENEUR -->
 		<section class="span9 grille-voyant">
 			<?php echo $layout_content; ?>
 		</section>
+
+        <aside id="sidebar-left" class="span3">
+			<?php include 'elements/sidebar-right.php'; ?>
+            <!-- FIN ROW -->
+		</aside>
+		<!-- FIN SIDEBAR -->
 	</div>
 
 </div>

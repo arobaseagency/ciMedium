@@ -1,0 +1,84 @@
+/* ______________________ CUSTOM BOOTSTRAP ______________________ */
+
+hr {border-top: 1px solid #C7C7C7;}
+
+.navbar .nav>li>a, .navbar .brand { padding: 10px 10px 10px; }
+.nav .nav>li>a:focus, .navbar .nav>li>a:hover {
+    color: #fff;
+    text-shadow: 1px -1px 0 #537008;
+}
+.navbar .nav li.dropdown.active>.dropdown-toggle, .navbar .nav li.dropdown.open.active>.dropdown-toggle, .navbar .nav li.dropdown.open>.dropdown-toggle {
+    color: #fff;
+    text-shadow: 1px -1px 0 #537008;
+}
+#navigation .dropdown-menu {
+    opacity:0.9;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    -ms-border-radius: 0px;
+    border-radius: 0px;
+}
+#navigation .tpl-flag .dropdown-menu, #navigation .tpl-flag .dropdown-menu li {
+    min-width: inherit;
+    text-align: center;
+}
+
+#sidebar-left .nav>li>a {
+    background-image: -webkit-linear-gradient(to right, transparent 50%, #95C900 50%);
+    background-image: -moz-linear-gradient(to right, transparent 50%, #95C900 50%);
+    background-image: -o-linear-gradient(to right, transparent 50%, #95C900 50%);
+    background-image: linear-gradient(to right, transparent 50%, #95C900 50%);
+
+    background-position: 0 0;
+    background-size: 200% auto;
+    transition: all .1500s ease-in;
+}
+#sidebar-left .nav>li>a:hover, .nav-list>.active>a {
+    color: #FFF;
+    text-shadow: 1px -1px 0px #768F48;
+    background-position: 100% 0;
+}
+
+#slideshow {
+    margin-top: 35px;
+}
+#slideshow .carousel-indicators {
+    top: inherit;
+    bottom: 0;
+    right: 40%;
+}
+#slideshow .carousel-indicators li {
+    overflow: hidden;
+    background-color: #616060;
+    border-radius: 0;
+    width: 50px;
+    height:5px;
+    opacity: 0.5;
+}
+#slideshow .carousel-indicators .active {
+    background-color: #fff;
+    opacity: 0.7;
+}
+#slideshow .carousel-caption {
+    background: none;
+    top: 10%;
+    left: 32%;
+    bottom: inherit;
+}
+#slideshow .carousel-caption h2, #slideshow .carousel-caption h3, #slideshow .carousel-caption p {
+    margin-top:0;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    line-height:inherit;
+}
+#slideshow .carousel-caption h2, #slideshow .carousel-caption h3 {
+    font-size:3em;
+}
+#slideshow .carousel-caption p {
+    font-size:2em;
+    font-weight: bold;
+    margin-left: 2em;
+    margin-bottom: 7px;
+}
+#sidebar-left .form-search button {padding:2px;}

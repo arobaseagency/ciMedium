@@ -20,6 +20,7 @@ class Home extends CX_Controller
 
     public function index()
     {
+
         parent::$items['title'] = "Mon titre de page !";
 
         $this->layout->view('accueil', parent::$items);

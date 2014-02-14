@@ -1,0 +1,222 @@
+/* BOUTON REVENIR EN HAUT */
+#hover-zetop {
+    display: none;
+    z-index: 300;
+    position: fixed;
+    right: 0;
+    bottom: 5%;
+    opacity: 0.4;
+}
+
+/* ---------------CAROUSSEL HOME PAGE------------------------ */
+
+.carousel {
+  position: relative;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-inner > .item {
+  position: relative;
+  display: none;
+  -webkit-transition: 0.6s ease-in-out left;
+     -moz-transition: 0.6s ease-in-out left;
+       -o-transition: 0.6s ease-in-out left;
+          transition: 0.6s ease-in-out left;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  line-height: 1;
+}
+
+.carousel-inner > .active,
+.carousel-inner > .next,
+.carousel-inner > .prev {
+  display: block;
+}
+
+.carousel-inner > .active {
+  left: 0;
+}
+
+.carousel-inner > .next,
+.carousel-inner > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.carousel-inner > .next {
+  left: 100%;
+}
+
+.carousel-inner > .prev {
+  left: -100%;
+}
+
+.carousel-inner > .next.left,
+.carousel-inner > .prev.right {
+  left: 0;
+}
+
+.carousel-inner > .active.left {
+  left: -100%;
+}
+
+.carousel-inner > .active.right {
+  left: 100%;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 40%;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 30px;
+  color: #ffffff;
+  text-align: center;
+  background: #222222;
+  border: 3px solid #ffffff;
+  -webkit-border-radius: 23px;
+     -moz-border-radius: 23px;
+          border-radius: 23px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.carousel-control.right {
+  right: 15px;
+  left: auto;
+}
+
+.carousel-control:hover,
+.carousel-control:focus {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+.carousel-indicators {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 5;
+  margin: 0;
+  list-style: none;
+}
+
+.carousel-indicators li {
+  display: block;
+  float: left;
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  text-indent: -999px;
+  background-color: #ccc;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.carousel-indicators .active {
+  background-color: #fff;
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  background: #333333;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.carousel-caption h4,
+.carousel-caption p {
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.carousel-caption h4 {
+  margin: 0 0 5px;
+}
+
+.carousel-caption p {
+  margin-bottom: 0;
+}
+
+/* -------------------- FLAG drapeaux -----------------------*/
+.flag {
+/*	width: 18px;
+	height: 12px;*/
+	background:url(../../img/front/flags.png) no-repeat;
+	display: inline-block;
+}
+
+.argentina { background-position:  -0px -0px; height: 16px; width: 24px; }
+.austria { background-position:  -0px -16px; height: 16px; width: 24px; }
+.belgium { background-position:  -0px -32px; height: 16px; width: 24px; }
+.brazil { background-position:  -0px -48px; height: 16px; width: 24px; }
+.canada { background-position:  -0px -64px; height: 16px; width: 24px; }
+.china { background-position:  -0px -80px; height: 16px; width: 24px; }
+.denmark { background-position:  -24px -0px; height: 16px; width: 24px; }
+.england { background-position:  -24px -16px; height: 16px; width: 24px; }
+.finland { background-position:  -24px -32px; height: 16px; width: 24px; }
+.france { background-position:  -24px -48px; height: 16px; width: 24px; }
+.germany { background-position:  -24px -64px; height: 16px; width: 24px; }
+.guinea { background-position:  -24px -80px; height: 16px; width: 24px; }
+.guyana { background-position:  -48px -0px; height: 16px; width: 24px; }
+.haiti { background-position:  -48px -16px; height: 16px; width: 24px; }
+.iceland { background-position:  -48px -32px; height: 16px; width: 24px; }
+.ireland { background-position:  -48px -48px; height: 16px; width: 24px; }
+.italy { background-position:  -48px -64px; height: 16px; width: 24px; }
+.japan { background-position:  -48px -80px; height: 16px; width: 24px; }
+.koera { background-position:  -72px -0px; height: 16px; width: 24px; }
+.luxembourg { background-position:  -72px -16px; height: 16px; width: 24px; }
+.malaysia { background-position:  -72px -32px; height: 16px; width: 24px; }
+.panama { background-position:  -72px -48px; height: 16px; width: 24px; }
+.portugal { background-position:  -72px -64px; height: 16px; width: 24px; }
+.russia { background-position:  -72px -80px; height: 16px; width: 24px; }
+.spain { background-position:  -96px -0px; height: 16px; width: 24px; }
+.suisse { background-position:  -96px -16px; height: 16px; width: 24px; }
+.usa { background-position:  -96px -32px; height: 16px; width: 24px; }
+
+/* CSS POUR LE SYSTEM DE VOTE PLUGIN */
+.ui-rater > span {
+  vertical-align: top;
+}
+
+.ui-rater-rating {
+  margin-left: .8em
+}
+
+.ui-rater-starsOff, .ui-rater-starsOn {
+  display: inline-block;
+  height: 18px;
+  background: url(stars.png) repeat-x 0 0px;
+}
+
+.ui-rater-starsOn {
+  display: block;
+  max-width: 90px;
+  top: 0;
+  background-position: 0 -36px;
+}
+
+.ui-rater-starsHover {
+  background-position: 0 -18px!important;
+}

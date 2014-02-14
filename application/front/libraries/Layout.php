@@ -41,7 +41,7 @@ class Layout
 
     public function view($view, $data = null, $return = false)
     {
-        $this->data['layout_content'] .= $this->ci->load->view($view, $data, true);
+        $this->data['layout_content'] = $this->ci->load->view($view, $data, true);
 
         if($return)
         {

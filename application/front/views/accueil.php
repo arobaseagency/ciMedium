@@ -2,9 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>:: <?php echo $layout_title; ?> ::</title>
+    <title>Bootstrap, from LayoutIt!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <?php echo meta($meta); ?>
 
     <link href="<?php echo asset_css('front/bootstrap.min'); ?>" rel="stylesheet">

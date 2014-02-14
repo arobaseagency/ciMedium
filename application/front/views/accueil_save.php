@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Bootstrap, from LayoutIt!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <title>Bootstrap, from LayoutIt!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php echo meta($meta); ?>
 
-	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
-
-	<link href="<?php echo asset_css('front/bootstrap.min'); ?>" rel="stylesheet">
+    <link href="<?php echo asset_css('front/bootstrap.min'); ?>" rel="stylesheet">
     <link href="<?php echo asset_css('front/bootstrap-responsive.min'); ?>" rel="stylesheet">
     <link href="<?php echo asset_css('front/carousel'); ?>" rel="stylesheet">
-	<link href="<?php echo asset_css('front/style'); ?>" rel="stylesheet">
+    <link href="<?php echo asset_css('front/style'); ?>" rel="stylesheet">
 
-	<link href="<?php echo asset_css('rating'); ?>" rel="stylesheet">
+    <link href="<?php echo asset_css('rating'); ?>" rel="stylesheet">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
     <script src="<?php echo asset_js('html5shiv'); ?>"></script>
   <![endif]-->
 
-  <!-- Fav and touch icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
-  <link rel="shortcut icon" href="<?php echo asset_img('front/favicon.png'); ?>">
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="<?php echo asset_img('front/favicon.png'); ?>">
 
 	<script type="text/javascript" src="<?php echo asset_js('jquery.min'); ?>"></script>
 	<script type="text/javascript" src="<?php echo asset_js('front/bootstrap.min'); ?>"></script>
@@ -35,7 +32,7 @@
 <body>
 <a id="hover-zetop" href="#" title="Retour en Haut"><img src="<?php echo assets('/img/jsicon-top.png'); ?>" alt="retour en haut automatiquement"></a>
 
-<a id="logo" href="#" title="Voyance Online - Retour Accueil">
+<a id="logo" class="hidden-phone" href="#" title="Voyance Online - Retour Accueil">
     <img src="<?php echo asset_img('logo-site.png'); ?>" alt="logo voyance online">
 </a>
 
@@ -85,96 +82,96 @@
 				        <a href="#">Nos Forfaits</a>
 					</li>
 
-				</ul>
-			</nav>
+				</ul><!-- FIN NAVIGATION LEFT -->
 
-            <ul class="nav pull-right">
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                      Aide <strong class="caret"></strong>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">Nos Forfaits</a>
-                        </li>
-                        <li>
-                            <a href="#">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="#">Something else here</a>
-                        </li>
-                        <li class="divider">
-                        </li>
-                        <li class="nav-header">
-                            Nav header
-                        </li>
-                        <li>
-                            <a href="#">Separated link</a>
-                        </li>
-                        <li>
-                            <a href="#">One more separated link</a>
-                        </li>
-                    </ul>
-                </li>
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                          Aide <strong class="caret"></strong>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Nos Forfaits</a>
+                            </li>
+                            <li>
+                                <a href="#">FAQ</a>
+                            </li>
+                            <li>
+                                <a href="#">Something else here</a>
+                            </li>
+                            <li class="divider">
+                            </li>
+                            <li class="nav-header">
+                                Nav header
+                            </li>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+                            <li>
+                                <a href="#">One more separated link</a>
+                            </li>
+                        </ul>
+                    </li>
 
-                <li>
-                    <a href="#">
-                        <i class="icon-edit icon-white"></i> Inscription
-                    </a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="icon-user icon-white"></i> Login
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <form id="login-form" class="form-horizontal">
-                              <div class="control-group">
-                                <label class="control-label" for="inputEmail">Email</label>
-                                <div class="controls">
-                                  <input type="text" id="inputEmail" class="input-medium" placeholder="Email">
-                                </div>
-                              </div>
-                              <div class="control-group">
-                                <label class="control-label" for="inputPassword">Password</label>
-                                <div class="controls">
-                                  <input type="password" id="inputPassword" class="input-medium" placeholder="Password">
-                                </div>
-                              </div>
-                              <div class="control-group">
-                                <div class="controls">
-                                  <label class="checkbox">
-                                    <input type="checkbox"> Remember me
-                                    <a href="#" rel="tooltip" title="Si vous désirez rester connecter"><i class="icon-info-sign"></i></a>
-                                  </label>
-                                  <div class="divider"></div>
-                                  <p>
-                                      <i class="icon-circle-arrow-right"></i>
-                                      <a href="#">Mot de passe Oublié</a>
-                                  </p>
-                                  <button type="submit" class="btn btn-primary">Login</button>
-                                </div>
-                              </div>
-                            </form>
-                        </li>
-                    </ul>
-                </li>
-                <li class="divider-vertical"></li>
-                <li class="dropdown tpl-flag">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Français">
-                        <i class="flag france"></i>
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#" title="Belge"><i class="flag belgium"></i></a></li>
-                        <li><a href="#" title="Canada"><i class="flag canada"></i></a></li>
-                        <li><a href="#" title="Anglais"><i class="flag england"></i></a></li>
-                        <li><a href="#" title="Allemand"><i class="flag germany"></i></a></li>
-                        <li><a href="#" title="Américain"><i class="flag usa"></i></a></li>
-                    </ul>
-                </li>
-            </ul>
+                    <li>
+                        <a href="#">
+                            <i class="icon-edit icon-white"></i> Inscription
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-user icon-white"></i> Login
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <form id="login-form" class="form-horizontal">
+                                  <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Email</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputEmail" class="input-medium" placeholder="Email">
+                                    </div>
+                                  </div>
+                                  <div class="control-group">
+                                    <label class="control-label" for="inputPassword">Password</label>
+                                    <div class="controls">
+                                      <input type="password" id="inputPassword" class="input-medium" placeholder="Password">
+                                    </div>
+                                  </div>
+                                  <div class="control-group">
+                                    <div class="controls">
+                                      <label class="checkbox">
+                                        <input type="checkbox"> Remember me
+                                        <a href="#" rel="tooltip" title="Si vous désirez rester connecter"><i class="icon-info-sign"></i></a>
+                                      </label>
+                                      <div class="divider"></div>
+                                      <p>
+                                          <i class="icon-circle-arrow-right"></i>
+                                          <a href="#">Mot de passe Oublié</a>
+                                      </p>
+                                      <button type="submit" class="btn btn-primary">Login</button>
+                                    </div>
+                                  </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li class="dropdown tpl-flag">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Français">
+                            <i class="flag france"></i>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" title="Belge"><i class="flag belgium"></i></a></li>
+                            <li><a href="#" title="Canada"><i class="flag canada"></i></a></li>
+                            <li><a href="#" title="Anglais"><i class="flag england"></i></a></li>
+                            <li><a href="#" title="Allemand"><i class="flag germany"></i></a></li>
+                            <li><a href="#" title="Américain"><i class="flag usa"></i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+			</nav><!-- FIN NAVIGATION RIGHT -->
 
 		</div>
 	</div>

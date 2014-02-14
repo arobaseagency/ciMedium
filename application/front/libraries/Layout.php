@@ -8,16 +8,20 @@ class Layout
 
     public $data = array();
     private $layout = "default";
-    protected $folderName = "layouts/";
+    protected $folderName = "layouts";
 
 
     public function __construct()
     {
         $this->ci =& get_instance();
 
+        // initialisation du contenu layout
+        $this->data['layout_content'] = null;
+
         $uriClass = $this->ci->router->fetch_class();
         $uriMethode = $this->ci->router->fetch_method();
         $this->data['layout_title'] = ucwords($uriClass . ' - ' . $uriMethode);
+
     }
 
     public function setTitle($title)
@@ -25,33 +29,30 @@ class Layout
         return $this->data['layout_title'] = $title;
     }
 
-    // Methode pour changer le layout qui sera utilisé
-    public function setLayout($layoutName)
+    public function initLayout($name)
     {
-        $this->layout = $layoutName;
+        $this->layout = $name;
     }
 
-    // Methode pour récupérer le chemin du layout courant;
     public function getLayout()
     {
-        return $this->folderName . $this->layout;
+        return $this->folderName . '/' . $this->layout;
     }
 
-    public function view($filename, $data = array(), $return = false)
+    public function view($view, $data = null, $return = false)
     {
-        $this->data['layout_content'] = $this->ci->load->view($filename, $data, $return);
+        $this->data['layout_content'] .= $this->ci->load->view($view, $data, true);
 
         if($return)
         {
-            // Si le dernier paramètre est à true alors on renvoit les variables afin de les stockers
-            $output = $this->ci->load->view($this->getLayout(), $data, true);
-
+            $output = $this->ci->load->view($this->getLayout(), $this->data, true);
             return $output;
         } else {
-            // Si le dernier parmaètre vaut false alors on renvoie les variables et les affiches directement
-            // dans le navigateur
             $this->ci->load->view($this->getLayout(), $this->data, false);
         }
     }
+
+
+
 
 }

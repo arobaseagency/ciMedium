@@ -15,19 +15,16 @@ class Home extends CX_Controller
     public function __construct()
     {
         parent::__construct();
-
+        # layout par défaut "default.php"
     }
 
     public function index()
     {
-        $data['title'] = "Mon titre de page !";
-        $this->load->view('sommaire', $data);
+        parent::$items['title'] = "Mon titre de page !";
+
+        $this->layout->view('accueil', parent::$items);
     }
 
-    public function showfront()
-    {
-        echo "ma méthode show du frontend";
-    }
 
 
 }

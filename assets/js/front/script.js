@@ -16,6 +16,13 @@
         $("html, body").animate({ scrollTop: 0 }, 600);
         return false;
     });
+    
+    
+    // RATING VOTES
+    $('.f-rating').rating({
+        showCancel: false
+    });
+    
 
     // Dropdown effet slide
     $('#navigation .dropdown-toggle').click(function(e) {

@@ -101,6 +101,7 @@ body {
 #zone-voyant .thumbnails .caption {
     background-color: #95C900;
     padding: 5px 10px;
+    overflow: hidden;
 }
 #zone-voyant .caption h3 {
     line-height: 1.3em;

@@ -5,16 +5,16 @@
         <li class="span4">
             <span class="tpl-new label label-info"><strong>New !</strong></span>
             <div class="caption">
-                <h3>nom du voyant
-                    <span class="pull-right">
-                        <i class="icon-star"></i>
-                        <i class="icon-star"></i>
-                        <i class="icon-star"></i>
-                        <i class="icon-star-empty"></i>
-                        <i class="icon-star-empty"></i>
-                    </span>
-                </h3>
-                <div class="f-rating"></div>
+                <h3 class="pull-left">nom du voyant</h3>
+                <div class="pull-right">
+                    <select class="f-rating">
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3" selected="selected"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                    </select>
+                </div>
             </div>
             <div class="photo pull-left">
                 <a href="#" class="f-image">

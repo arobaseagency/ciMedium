@@ -14,6 +14,14 @@ class Auth extends CX_Controller
 
     }
 
+    public function test()
+    {
+        $this->config->load('auth');
+        $config = $this->config->item('auth');
+
+        var_dump($config);
+    }
+
     public function login()
     {
 
@@ -29,6 +37,9 @@ class Auth extends CX_Controller
 
     }
 
+    /**
+     *   Route : auth/inscription
+     **/
     public function subscription()
     {
 

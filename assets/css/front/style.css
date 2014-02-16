@@ -10,6 +10,10 @@ body {
 
 /* ______________________ CSS GENERIQUE ______________________ */
 
+.img-loader-medium {
+  display: block;
+}
+
 .f-image {
     position: relative;
     display: block;
@@ -41,6 +45,12 @@ body {
     transition: all 0.2s linear;
 }
 .f-image:hover i {left: 40%;}
+
+form .needful {
+  color: #FF0000;
+  font-weight: bold;
+  margin-right: 3px;
+}
 
 /* ______________________________________________________________ */
 

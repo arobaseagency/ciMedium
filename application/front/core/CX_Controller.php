@@ -26,4 +26,10 @@ class CX_Controller extends CI_Controller
         self::$items['meta'] = $meta;
     }
 
+
+    public function _roles_sessions()
+    {
+        
+    }
+
 }

@@ -61,7 +61,7 @@ $config['uri_protocol']	= 'AUTO';
 
 #### vous pouvez mettre n'importe quel extension CI ignorera l'extension ou bien
 #### vous pouvez très bien ne rien mettre du tout
-$config['url_suffix'] = 'html';
+$config['url_suffix'] = '';
 
 /*
 |--------------------------------------------------------------------------

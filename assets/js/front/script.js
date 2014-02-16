@@ -16,13 +16,18 @@
         $("html, body").animate({ scrollTop: 0 }, 600);
         return false;
     });
-    
-    
+
+
+    // Gestion des butons radio de type button
+    $('[data-toggle="buttons-radio"]').find('button').on('click', function() {
+        $(this).siblings('input').val($(this).val());
+    });
+
     // RATING VOTES
     $('.f-rating').rating({
         showCancel: false
     });
-    
+
 
     // Dropdown effet slide
     $('#navigation .dropdown-toggle').click(function(e) {

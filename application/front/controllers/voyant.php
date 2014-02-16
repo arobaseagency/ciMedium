@@ -18,7 +18,6 @@ class Voyant extends CX_Controller
     {
     }
 
-
     public function profile($name=null)
     {
         parent::$items['title'] = "Mon titre de page !";

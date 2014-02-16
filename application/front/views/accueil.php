@@ -5,7 +5,7 @@
         <li class="span4">
             <span class="tpl-new label label-info"><strong>New !</strong></span>
             <div class="caption">
-                <h3 class="pull-left">nom du voyant</h3>
+                <h3 class="pull-left"><a href="voyant/profile">nom du voyant</a></h3>
                 <div class="pull-right">
                     <select class="f-rating">
                         <option value="1"></option>
@@ -24,8 +24,8 @@
             </div>
             <div class="fiche pull-right">
                 <ul>
-                    <li><strong>Tarifs:</strong> <span class="badge badge-warning">1.90 €</span></li>
-                    <li><strong>Pays:</strong> <span class="flag flag-fr"></span></li>
+                    <li><strong>Tarifs:</strong> <span class="label label-warning">1.90 €</span></li>
+                    <li><strong>Pays:</strong> <span class="flag france"></span></li>
                     <li><strong>Expérience:</strong> 20 ans</li>
                 </ul>
                 <br>
@@ -49,8 +49,16 @@
         </li>
         <li class="span4">
             <div class="caption">
-                <h3>nom du voyant</h3>
-                <div class="f-rating"></div>
+                <h3 class="pull-left">nom du voyant</h3>
+                <div class="pull-right">
+                    <select class="f-rating">
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3" selected="selected"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                    </select>
+                </div>
             </div>
             <div class="photo pull-left">
                 <a href="#" class="f-image">
@@ -86,8 +94,16 @@
 
         <li class="span4">
             <div class="caption">
-                <h3>nom du voyant</h3>
-                <div class="f-rating"></div>
+                <h3 class="pull-left">nom du voyant</h3>
+                <div class="pull-right">
+                    <select class="f-rating">
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3" selected="selected"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                    </select>
+                </div>
             </div>
             <div class="photo pull-left">
                 <a href="#" class="f-image">

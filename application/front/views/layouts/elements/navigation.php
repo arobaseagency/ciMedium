@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a href="#" class="brand">
+            <a href="<?php echo base_url(); ?>" class="brand" title="">
                 Voyance <span>Online</span>
             </a>
 			<nav class="nav-collapse" role="navigation">
@@ -76,7 +76,7 @@
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="#act-inscription-form" role="button" data-toggle="modal">
                             <i class="icon-edit icon-white"></i> Inscription
                         </a>
                     </li>
@@ -139,3 +139,6 @@
 	</div>
 
 </div>
+
+<!-- modal du formulaire d'inscription -->
+<?php $this->load->view('auth/inscription'); ?>

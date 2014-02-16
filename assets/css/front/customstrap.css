@@ -1,5 +1,12 @@
 /* ______________________ CUSTOM BOOTSTRAP ______________________ */
 
+h1 {color:#95C900;font-size:23px;}
+h2 {font-size: 20px;}
+h3 {font-size: 18px;}
+h4 {font-size: 16px;}
+
+h1, h2, h3, h4 {line-height: normal;}
+
 hr {border-top: 1px solid #C7C7C7;}
 
 .navbar .nav>li>a, .navbar .brand { padding: 10px 10px 10px; }
@@ -82,3 +89,47 @@ hr {border-top: 1px solid #C7C7C7;}
     margin-bottom: 7px;
 }
 #sidebar-left .form-search button {padding:2px;}
+
+/****  TABS *****/
+.nav-tabs {
+  margin-bottom: -1px;
+}
+.nav-tabs>li>a {
+  border-radius: 0;
+  background: #f2f2f2;
+  border: 1px solid #ddd;
+}
+.nav-tabs>.active>a, .nav-tabs>.active>a:hover {
+  border-top: 4px solid #b9e23d;
+}
+.tab-content {
+  border: 1px solid #DDD;
+  padding: 1em;
+}
+
+/* TALBEAU */
+#t-planning {width: 60%;margin:auto;background:#F5F5F5;}
+#t-planning td, .table th {
+  padding: 4px 3px;
+  font-size: 11px;
+}
+#t-planning th {font-weight: normal;text-align: center;}
+#t-planning thead {
+  background: #b9e23d;
+  color: #fff;
+}
+
+
+/****  MODAL BOX *****/
+.modal-header {
+  border-bottom: 1px dashed #eee;
+  background: #95C900;
+  color: #fff;
+  text-shadow: 1px -1px 0px #768F48;
+}
+.modal-footer {
+  border-top: 1px dashed #eee;
+  background: #D6D6D6;
+  color:#fff;
+}
+.modal form {margin:0;}

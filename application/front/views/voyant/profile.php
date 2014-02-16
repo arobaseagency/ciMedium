@@ -26,6 +26,7 @@
         </div>
     </div>
 
+    <hr>
     <div class="row-fluid">
         <div class="span12">
             <ul id="f-tab-voyant" class="nav nav-tabs">
@@ -41,15 +42,14 @@
             </ul>
 
             <div class="tab-content">
-                <div id="tb-bio" class="tab-pane fade active in">
+                <div id="tb-bio" class="tab-pane fade">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur tempora distinctio quis sapiente laudantium dolores sed quidem molestiae debitis quibusdam.</p>
                 </div>
-                <div id="tb-planning" class="tab-pane fade">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio eveniet rerum quod quas atque.</p>
+                <div id="tb-planning" class="tab-pane fade active in">
+                    <?php include 'tab_planning.php'; ?>
                 </div>
                 <div id="tb-comment" class="tab-pane fade">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores a animi praesentium nam amet sapiente at dolorem eum magnam ut nemo neque obcaecati doloremque reiciendis illum consequuntur hic sunt dolorum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores a animi praesentium nam amet sapiente at dolorem eum magnam ut nemo neque obcaecati doloremque reiciendis illum consequuntur hic sunt dolorum.</p>
+                    <?php include 'tab_comments.php'; ?>
                 </div>
             </div>
         </div>

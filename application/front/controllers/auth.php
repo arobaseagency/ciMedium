@@ -42,8 +42,20 @@ class Auth extends CX_Controller
      **/
     public function subscription()
     {
+        $this->load->library('form_validation');
+        if($this->input->is_ajax_request())
+        {
+            if($this->form_validation->run('register'))
+            {
+                echo "formulaire réussi !";
+                $this->load->view('auth/inscription');
+            } else {
+                var_dump($this->input->post());
+                $this->load->view('auth/inscription');
+            }
+        }
 
-        $this->layout->view('auth/inscription', parent::$items);
+        //$this->load->view('auth/inscription');
     }
 
 }

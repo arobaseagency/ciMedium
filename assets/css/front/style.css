@@ -11,7 +11,12 @@ body {
 /* ______________________ CSS GENERIQUE ______________________ */
 
 .img-loader-medium {
-  display: block;
+  background: url('../../img/front/loader.gif') no-repeat center center rgba(255, 255, 255, 0.7);
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
 }
 
 .f-image {

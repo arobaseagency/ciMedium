@@ -69,6 +69,7 @@ $autoload['libraries'] = array('database',
 
 $autoload['helper'] = array('url',
                             'assets',
+                            'layout',
                             'security',
 							'html',
                             'form',

@@ -95,7 +95,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 
 /*
@@ -248,7 +248,7 @@ $config['encryption_key'] = 'CXDUBLOIJLEIGNIT';
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']		= 'voyance_session';
+$config['sess_cookie_name']		= 'voyanceonline';
 $config['sess_expiration']		= 7200;
 $config['sess_expire_on_close']	= FALSE;
 $config['sess_encrypt_cookie']	= FALSE;
@@ -297,8 +297,8 @@ $config['global_xss_filtering'] = TRUE;
 | 'csrf_cookie_name' = The cookie name
 | 'csrf_expire' = The number in seconds the token should expire.
 */
-$config['csrf_protection'] = TRUE;
-$config['csrf_token_name'] = 'csrf_test_voyance';
+$config['csrf_protection'] = false;
+$config['csrf_token_name'] = 'csrf_voyance';
 $config['csrf_cookie_name'] = 'csrf_cookie_voyance';
 $config['csrf_expire'] = 7200;
 

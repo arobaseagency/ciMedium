@@ -6,5 +6,18 @@
  */
 function tp_form_error($inputName)
 {
-    echo form_error($inputName, '<span class="help-inline">', '</span>');
+    return form_error($inputName, '<span class="help-inline">', '</span>');
+}
+
+
+/*
+ * fonction pour afficher la class error du bootstrap afin de colorer en rouge
+ * les éléments de formulaire
+ */
+function tp_class_error($inputName)
+{
+    if( tp_form_error($inputName) != false )
+    {
+        echo "error";
+    }
 }

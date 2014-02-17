@@ -19,7 +19,8 @@
 
 
     // Gestion des butons radio de type button
-    $('[data-toggle="buttons-radio"]').find('button').on('click', function() {
+    //$('[data-toggle="buttons-radio"]').find('button')
+    $(document).on('click', '.f-btnradio', function() {
         $(this).siblings('input').val($(this).val());
     });
 

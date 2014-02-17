@@ -50,12 +50,11 @@ class Auth extends CX_Controller
                 echo "formulaire réussi !";
                 $this->load->view('auth/inscription');
             } else {
-                var_dump($this->input->post());
-                $this->load->view('auth/inscription');
+                $this->load->view('auth/_form-inscription');
             }
         }
 
-        //$this->load->view('auth/inscription');
+        $this->load->view('auth/inscription');
     }
 
 }

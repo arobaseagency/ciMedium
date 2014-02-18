@@ -76,7 +76,7 @@
                     </li>
 
                     <li>
-                        <a href="#act-inscription-form" role="button" data-toggle="modal">
+                        <a href="<?php echo base_url('auth/inscription'); ?>" title="Inscription voyance en ligne">
                             <i class="icon-edit icon-white"></i> Inscription
                         </a>
                     </li>
@@ -139,6 +139,3 @@
 	</div>
 
 </div>
-
-<!-- modal du formulaire d'inscription -->
-<?php $this->load->view('auth/inscription'); ?>

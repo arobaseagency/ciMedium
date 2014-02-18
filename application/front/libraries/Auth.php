@@ -6,8 +6,11 @@ class Auth
 
     private $ci;
 
-    private $roles = array();
     private $config = array();
+
+    protected $roles = array();
+
+    protected $user = array();
 
 
     public function __construct()
@@ -27,7 +30,22 @@ class Auth
 
     public function hash($password)
     {
+        $this->ci->load->library('encrypt');
 
+        $passwordCrypted = $this->ci->encrypt->encode($password);
+
+        return $passwordCrypted;
+    }
+
+
+    public function register($data)
+    {
+
+    }
+
+    private function set_user_session($data = array())
+    {
+        
     }
 
     public function login()

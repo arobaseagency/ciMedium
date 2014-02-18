@@ -47,6 +47,22 @@ hr {border-top: 1px solid #C7C7C7;}
     background-position: 100% 0;
 }
 
+#sidebar-right .nav>li>a {
+    background-image: -webkit-linear-gradient(to right, transparent 50%, #95C900 50%);
+    background-image: -moz-linear-gradient(to right, transparent 50%, #95C900 50%);
+    background-image: -o-linear-gradient(to right, transparent 50%, #95C900 50%);
+    background-image: linear-gradient(to right, transparent 50%, #95C900 50%);
+
+    background-position: 0 0;
+    background-size: 200% auto;
+    transition: all .1500s ease-in;
+}
+#sidebar-right .nav>li>a:hover, .nav-list>.active>a {
+    color: #FFF;
+    text-shadow: 1px -1px 0px #768F48;
+    background-position: 100% 0;
+}
+
 #slideshow {
     margin-top: 35px;
 }
@@ -105,6 +121,7 @@ hr {border-top: 1px solid #C7C7C7;}
 .tab-content {
   border: 1px solid #DDD;
   padding: 1em;
+  min-height: 180px;
 }
 
 /* TALBEAU */

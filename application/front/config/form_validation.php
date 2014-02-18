@@ -3,8 +3,8 @@
 $config = array(
     'register' => array(
         array(
-            'field' => 'accoumpt_type',
-            'rules' => 'trim'
+            'field' => 'code',
+            'rules' => 'trim|required|xss_clean|regex_match[/^voyant|consultant$/]'
         ),
         array(
             'field' => 'username',
@@ -21,6 +21,10 @@ $config = array(
         array(
             'field' => 'email',
             'rules' => 'trim|required|valid_email|xss_clean'
+        ),
+        array(
+            'field' => 'sex',
+            'rules' => 'trim|required|xss_clean|regex_match[/^homme|femme$/]'
         )
     )
 );

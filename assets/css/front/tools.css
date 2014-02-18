@@ -3,8 +3,8 @@
     display: none;
     z-index: 300;
     position: fixed;
-    right: 0;
-    bottom: 5%;
+    right: 1%;
+    bottom: 10%;
     opacity: 0.4;
 }
 
@@ -241,4 +241,17 @@
 	margin-left: 150px;
 	text-align: center;
 	width: 60px;
+}
+
+
+/**************** flash box msg *************/
+#flash-msg {
+  z-index: 300;
+  position: absolute;
+  top: 30%;
+  right: 25%;
+  width: 19%;
+  display: none;
+  opacity: 0.8;
+  border: 1px solid #808080;
 }

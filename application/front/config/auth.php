@@ -8,3 +8,4 @@ $config['auth']['type'] = array(
     'voyant',
     'consultant'
 );
+

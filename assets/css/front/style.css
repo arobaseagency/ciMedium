@@ -19,6 +19,10 @@ body {
   z-index: 5;
 }
 
+h1, h2 {
+  text-shadow: -1px -1px 1px #49700D;
+}
+
 .f-image {
     position: relative;
     display: block;
@@ -55,6 +59,11 @@ form .needful {
   color: #FF0000;
   font-weight: bold;
   margin-right: 3px;
+}
+
+/* class de conteneur */
+.no-slideshow {
+  margin-top: 10em;
 }
 
 /* ______________________________________________________________ */
@@ -168,21 +177,29 @@ form .needful {
 .grille-voyant .pagination {text-align: center;}
 
 
-#sidebar-left .accordion-heading {
+#sidebar-left .accordion-heading, #sidebar-right .accordion-heading {
     background-color: #ECECEC;
 }
-#sidebar-left .accordion-heading a {
+#sidebar-left .accordion-heading a,
+#sidebar-right .accordion-heading a {
     color:#505050;
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
 }
-#sidebar-left .accordion-heading a > i {opacity: 0.8;}
-#sidebar-left .accordion-group {
+#sidebar-left .accordion-heading a > i,
+#sidebar-right .accordion-heading a > i {opacity: 0.8;}
+
+#sidebar-left .accordion-group, #sidebar-right .accordion-group {
     margin-bottom: 0;
     border-top: 0;
 }
-#sidebar-left .accordion-group:first-child {border-top:1px solid #E5E5E5;}
+#sidebar-left .accordion-group:first-child,
+#sidebar-right .accordion-group:first-child {border-top:1px solid #E5E5E5;}
+
+#sidebar-left .accordion-group, #sidebar-right .accordion-group {
+  background: #fff;
+}
 
 /*_____________________ PAGE PROFILE VOYANT _____________________________*/
 

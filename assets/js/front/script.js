@@ -55,22 +55,27 @@
 
     // Animation du contenu
     var tp_content = $('.grille-voyant');
-    var tp_sidebar = $('#sidebar-left');
-    tp_content.css({
-        position: "relative",
-        right: "-30%",
-        opacity: 0
-    });
-    tp_sidebar.hide();
-    $(document).ready(function() {
-        tp_content.delay(400).animate({
-            right: 0,
-            opacity: 1
-        }, 600, 'swing');
+    var tp_sidebar_left = $('#sidebar-left');
+    var tp_sidebar_right = $('#sidebar-right');
 
-        tp_sidebar.delay(300).fadeIn(600, 'swing');
-    });
+    if($('#block-content section').hasClass('grille-voyant')) {
+      tp_content.css({
+          position: "relative",
+          right: "-30%",
+          opacity: 0
+      });
+      tp_sidebar_left.hide();
 
+      $(document).ready(function() {
+
+          tp_content.delay(400).animate({
+              right: 0,
+              opacity: 1
+          }, 600, 'swing');
+
+          tp_sidebar_left.delay(300).fadeIn(600, 'swing');
+      });
+    }
 
     // Onglet tab des voyants
     $('#f-tab-voyant a').click(function (e) {
@@ -79,6 +84,8 @@
     })
 
 
+    // animation flash message box
+    $('#flash-msg').delay(700).fadeIn('slow');
 
 
 })(jQuery);

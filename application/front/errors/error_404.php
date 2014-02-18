@@ -1,35 +1,64 @@
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
-<title>404 Page Not Found</title>
-<style type="text/css">
+    <meta charset="UTF-8">
+    <title>:: 404 Page introuvable ::</title>
 
+<style>
+html { height: 100%; }
 body {
-background-color:	#fff;
-margin:				40px;
-font-family:		Lucida Grande, Verdana, Sans-serif;
-font-size:			12px;
-color:				#000;
+background-color: #fff;
+font-family: 'Tahoma', sans-serif;
+font-weight: bold;
 }
-
-#content  {
-border:				#999 1px solid;
-background-color:	#fff;
-padding:			20px 20px 12px 20px;
-}
-
 h1 {
-font-weight:		normal;
-font-size:			14px;
-color:				#990000;
-margin:				0 0 4px 0;
+color: #3F3F3F;
+display: block;
+position: absolute;
+font-size: 30em;
+margin: 0;
+left: 25%;
+top: -3%;
+opacity: 0.7;
+z-index: 2;
+font-weight: normal;
 }
+.green { color:#A2C924;}
+#text {
+color: #A2C924;
+z-index: 4;
+position: absolute;
+padding: 0 10px;
+top: 29%;
+left: 23%;
+text-align: right;
+width: 36em;
+font-size: 15px;
+}
+#text p {
+margin: 0;
+background: #FFF;
+padding: 0;
+text-transform: uppercase;
+}
+.fontbig {font-size:39px;}
+a {text-decoration: none;font-size:13px;color:#919191;}
+#image {position: absolute;top: 43%;left: 13%;}
 </style>
 </head>
 <body>
-	<div id="content">
-        <h2>ERROR FRONTEND</h2>
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
-	</div>
+
+    <h1><?php //echo $heading; ?>40<span class="green">4</span></h1>
+    <div id="text">
+        <p style="text-align:left;"><span class="fontbig">O</span>ooops...</p>
+        <p>
+            la page que vous essayer de voir, n'existe pas !
+        <?php //echo $message; ?>
+        </p>
+        <p><a href="<?php site_url(); ?>" title="Retour à la page d'accueil">Retour vers l'accueil</a></p>
+    </div>
+
+    <img id="image" src="../../assets/img/front/404.jpg">
+
 </body>
 </html>

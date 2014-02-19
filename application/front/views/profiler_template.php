@@ -1,19 +1,19 @@
 <style type="text/css">
-	#codeigniter-profiler { clear: both; background: #000000; opacity: 0.7; padding: 0 5px; font-family: Helvetica, sans-serif; font-size: 10px; line-height: 12px; position: fixed; width: 100%; min-width: 69em; z-index: 1000; }
-	#codeigniter-profiler:hover { background: #353535; opacity: 1.0; }
+	#codeigniter-profiler { clear: both; background: #000000; opacity: 0.8; padding: 0 5px; font-family: Helvetica, sans-serif; font-size: 10px; line-height: 12px; position: fixed; width: 99.20%; min-width: 69em; z-index: 1000; }
+	#codeigniter-profiler:hover { background: #000; opacity: 1.0; }
 
-	#codeigniter-profiler.bottom-right { bottom:0; right: 0; -webkit-border-top-left-radius: 7px; -moz-border-radius-topleft: 7px; border-top-left-radius: 7px; -webkit-box-shadow: -1px -1px 10px #C0C0C0; -moz-box-shadow: -1px -1px 10px #C0C0C0; box-shadow: -1px -1px 10px #C0C0C0; }
-	#codeigniter-profiler.bottom-left { bottom:0; top: auto; -webkit-border-top-right-radius: 7px; -moz-border-radius-topright: 7px; border-top-right-radius: 7px; -webkit-box-shadow: 1px -1px 10px #C0C0C0; -moz-box-shadow: 1px -1px 10px #C0C0C0; box-shadow: 1px -1px 10px #C0C0C0; }
-	#codeigniter-profiler.top-left { top:0; left: 0; -webkit-border-bottom-right-radius: 7px; -moz-border-radius-bottomright: 7px; border-bottom-right-radius: 7px;-webkit-box-shadow: 1px 1px 10px #C0C0C0; -moz-box-shadow: 1px 1px 10px #C0C0C0; box-shadow: 1px 1px 10px #C0C0C0; }
-	#codeigniter-profiler.top-right { top: 0; right: 0; -webkit-border-bottom-left-radius: 7px; -moz-border-radius-bottomleft: 7px; border-bottom-left-radius: 7px; -webkit-box-shadow: -1px 1px 10px #C0C0C0; -moz-box-shadow: -1px 1px 10px #C0C0C0; box-shadow: -1px 1px 10px #C0C0C0; }
+	#codeigniter-profiler.bottom-right { bottom:0; right: 0;-webkit-box-shadow: -1px -1px 10px #C0C0C0; -moz-box-shadow: -1px -1px 10px #C0C0C0; box-shadow: -1px -1px 10px #C0C0C0; }
+	#codeigniter-profiler.bottom-left { bottom:0; top: auto;-webkit-box-shadow: 1px -1px 10px #C0C0C0; -moz-box-shadow: 1px -1px 10px #C0C0C0; box-shadow: 1px -1px 10px #C0C0C0; }
+	#codeigniter-profiler.top-left { top:0; left: 0;-webkit-box-shadow: 1px 1px 10px #C0C0C0; -moz-box-shadow: 1px 1px 10px #C0C0C0; box-shadow: 1px 1px 10px #C0C0C0; }
+	#codeigniter-profiler.top-right { top: 0; right: 0;-webkit-box-shadow: -1px 1px 10px #C0C0C0; -moz-box-shadow: -1px 1px 10px #C0C0C0; box-shadow: -1px 1px 10px #C0C0C0; }
 
 	.ci-profiler-box { padding: 10px; margin: 0 0 10px 0; max-height: 300px; overflow: auto; color: #fff; font-family: Monaco, 'Lucida Console', 'Courier New', monospace; font-size: 11px !important; }
-	.ci-profiler-box h2 { font-family: Helvetica, sans-serif; font-weight: bold; font-size: 16px !important; padding: 0; line-height: 2.0; }
+	.ci-profiler-box h2 { font-family: Helvetica, sans-serif; font-weight: bold; font-size: 16px !important; padding: 0; line-height: 2.0; text-shadow:none; }
 
-	#ci-profiler-menu a:link, #ci-profiler-menu a:visited { display: inline-block; padding: 7px 0; margin: 0; color: #337ACF; text-decoration: none; font-weight: bold; cursor: pointer; text-align: center; width: 15.5%; border-bottom: 4px solid #444; }
-	#ci-profiler-menu a:hover, #ci-profiler-menu a.current { background-color: #4F4E4E; border-color: #999; }
-	#ci-profiler-menu a span { display: block; font-weight: bold; font-size: 16px !important; line-height: 1.2; }
-    #ci-profiler-menu a#ci-profiler-menu-exit {border-bottom:none;}
+	#ci-profiler-menu a:link, #ci-profiler-menu a:visited { display: inline-block; padding: 3px 0; margin: 0; color: #337ACF; text-decoration: none; font-weight: bold; cursor: pointer; text-align: center; width: 15.5%; border-bottom: 4px solid #444; }
+	#ci-profiler-menu a:hover, #ci-profiler-menu a.current { background-color: #2B2B2B; border-color: #999; }
+	#ci-profiler-menu a span { display: block; font-weight: bold; font-size: 14px !important; line-height: 1.2; }
+    #ci-profiler-menu a#ci-profiler-menu-exit {border-bottom:none;padding:7px 0;}
     #ci-profiler-menu a#ci-profiler-menu-exit:hover {background-color:inherit;opacity:0.5;}
 
 	#ci-profiler-menu-time span, #ci-profiler-benchmarks h2 { color: #B72F09; }
@@ -25,7 +25,6 @@
 
 	#codeigniter-profiler table { width: 100%; }
 	#codeigniter-profiler table.main td { padding: 7px 15px; text-align: left; vertical-align: top; color: #000; line-height: 1; background: #F0F0F0 !important; font-size: 12px !important; }
-	#codeigniter-profiler table.main tr:hover td { background: #F9F9F9 !important; }
 	#codeigniter-profiler table.main code { font-family: inherit; padding: 0; background: transparent; border: 0; color: #fff; }
 
 	#codeigniter-profiler table .hilight { color: #000D70 !important; }
@@ -39,6 +38,7 @@
 current = null;
 currentvar = null;
 currentli = null;
+
 function show (obj, el)
 {
 	if (obj == current) {
@@ -66,6 +66,7 @@ function remove_class(obj, clas){
 		document.getElementById(obj).className = document.getElementById(obj).className.replace(/\bclass\b/, '');
 	}
 }
+
 </script>
 
 <div id="codeigniter-profiler" class="bottom-right">

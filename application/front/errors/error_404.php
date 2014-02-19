@@ -55,10 +55,10 @@ a {text-decoration: none;font-size:13px;color:#919191;}
             la page que vous essayer de voir, n'existe pas !
         <?php //echo $message; ?>
         </p>
-        <p><a href="<?php site_url(); ?>" title="Retour à la page d'accueil">Retour vers l'accueil</a></p>
+        <p><a href="<?php site_url(); ?>" title="Retour à la page d'accueil">Retour où vous êtiez.</a></p>
     </div>
 
-    <img id="image" src="../../assets/img/front/404.jpg">
+    <img id="image" src="<?php echo base_url('assets/img/front/404.jpg'); ?>">
 
 </body>
 </html>

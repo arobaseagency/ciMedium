@@ -13,6 +13,8 @@
 <article class="row-fluid">
 
     <div class="span12">
+
+        <?php if($codepage == 'inscription'): ?>
         <h1>Inscription avec Succès !!</h1>
         <hr>
         <div class="alert alert-info">
@@ -24,6 +26,19 @@
                 Si vous ne confirmer pas cet email, vous devrez réhitérer votre inscription.
             </p>
         </div>
+        <?php endif; ?>
+
+        <?php if($codepage == 'activation'): ?>
+        <h1>Compte Activé !!</h1>
+        <hr>
+        <div class="alert alert-success">
+            <h2>Information</h2>
+            <p>
+                Votre compte a bien été activé ! Vous pouvez désormer vous connecter et participer
+                à la communauté.
+            </p>
+        </div>
+        <?php endif; ?>
     </div>
 
 </article>

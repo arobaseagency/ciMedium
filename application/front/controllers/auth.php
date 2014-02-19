@@ -9,19 +9,13 @@ class Auth extends CX_Controller
         parent::__construct();
 
         $this->layout->initLayout('two-column');
+        $this->config->load('auth');
+        $this->load->library('auth_lib');
     }
 
     public function index()
     {
 
-    }
-
-    public function test()
-    {
-        $this->config->load('auth');
-        $config = $this->config->item('auth');
-
-        var_dump($config);
     }
 
     public function login()
@@ -67,11 +61,20 @@ class Auth extends CX_Controller
                     'create_at' => date('Y-m-d H:i:s'),
                     'roles_id'  => $role->id,
                 );
-                $this->users_model->add_user($dataUser);
+                $modelQueryUser = $this->users_model->add_user($dataUser);
 
                 $idUser = $this->users_model->insert_id();
 
-                $this->metasUsers_model->add_metas($idUser, array('sex' => $post['sex']));
+                $modelQueryMetas = $this->metasUsers_model->add_metas($idUser,
+                                                                      array('sex' => $post['sex']));
+
+                if( ($modelQueryUser != false) and ($modelQueryMetas != false) )
+                {
+                    // on envoi l'email d'activation
+                    Console::log('Query User:'.$modelQueryUser);
+                    Console::log('Query Meta:'.$modelQueryMetas);
+                    Console::log('email envoyé');
+                }
 
                 // Si l'enregistrement a réussi on redirige vers la page d'accueil
                 //redirect('', 'location');
@@ -83,26 +86,50 @@ class Auth extends CX_Controller
     }
 
 
+    public function activation($key)
+    {
+        if(isset($key))
+        {
+
+
+
+        } else {
+            show_404();
+        }
+    }
+
+
     /*
      *  methode qui prend en variable un nom définit
      *  qui permet de renvoyer vers la page de confirmation.php
      *  et d'afficher le bon contenu
      */
-    public function confirmation($typeconfirme = null)
+    public function confirmation($type_content = null)
     {
         $tpl = array();
-        switch($typeconfirme)
+
+        $confcode = $this->config->item('auth');
+        // on stock le tableau codepage du fichier config de auth
+        $confcode = $confcode['codepage'];
+
+        switch($type_content)
         {
             case "inscription":
-                $tpl = "inscription validé";
+                // On stock le nom du type de contenu que l'on souhaite
+                $tpl['codepage'] = $confcode['inscription']['code'];
+                $this->layout->setTitle($confcode['inscription']['title']);
                 break;
+
             case "activation-compte":
-                $tpl = "activation-compte";
+                $tpl['codepage'] = $confcode['activation']['code'];
+                $this->layout->setTitle($confcode['activation']['title']);
                 break;
+
             default:
-                show_404('/404');
+                show_404();
 
         }
+
         $this->layout->view('auth/confirmation.php', $tpl);
     }
 

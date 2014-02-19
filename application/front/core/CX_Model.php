@@ -17,6 +17,21 @@ class CX_Model extends CI_Model
     {
         parent::__construct();
     }
+	
+	
+	/*
+     *  @param $lastId (int)
+     *  @return (int) $this->db->insert_id()
+     *
+     *  Méthode qui permet d'ajouter le dernier id d'une requête ($this->db->insert_id())
+     *  de CodeIgniter dans l'attribut $this->last_id;
+     */
+    protected function set_insert_last_id($lastQueryId)
+    {
+        $this->last_id = $lastQueryId;
+    }
+	
+	
 
     /*
      *  Retourne le dernier ID de la requête en respectant le nom utilisé dans codeIgniter
@@ -29,17 +44,19 @@ class CX_Model extends CI_Model
         return $this->last_id;
     }
 
-    /*
-     *  @param $lastId (int)
-     *  @return (int) $this->db->insert_id()
-     *
-     *  Méthode qui permet d'ajouter le dernier id d'une requête ($this->db->insert_id())
-     *  de CodeIgniter dans l'attribut $this->last_id;
-     */
-    protected function set_insert_last_id($lastQueryId)
-    {
-        $this->last_id = $lastQueryId;
-    }
+    
+	
+	/**
+	 * @param (int) $id
+	 * 
+	 * retourne la requête, il faut ensuite afficher le résultat avec les méthodes de CI model
+	 * result(), row() ou bien row_array() etc...
+	 */
+	public function get_by_id($id)
+	{
+		return $this->db->get_where($this->table, array('id' => $id));
+	}
+	
 
     /*
      *  insert new data
@@ -73,18 +90,16 @@ class CX_Model extends CI_Model
 
 
     /*
-     * select data in table
+     * select data in table plusieurs résultats
      */
     public function read($select = '*', $where = array(), $nb = null, $start = null)
     {
-        $query = $this->db->select($select)
+        return 	$this->db->select($select)
                             ->from($this->table)
                             ->where($where)
                             ->limit($nb, $start)
-                            ->get()
-                            ->result();
-
-        return $query;
+							->get()
+							->result();
     }
 
 

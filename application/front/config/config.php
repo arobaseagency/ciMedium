@@ -16,6 +16,11 @@
 */
 $config['base_url']	= 'http://localhost/Voyance/';
 
+
+// Ajout de la variable de configuration site_name
+$config['site_name'] = "Voyance Online";
+
+
 /*
 |--------------------------------------------------------------------------
 | Index File

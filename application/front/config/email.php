@@ -15,7 +15,9 @@ $config['charset'] = 'utf-8';
 $config['newline'] = "\r\n";
 
 $config['wordwrap'] = TRUE;
-$config['useragent'] = 'Soiree-Pub';
+$config['useragent'] = 'Voyance Online';
+
+$config['site_email'] = "voyance@local.com";
 
 
 /* End of file email.php */

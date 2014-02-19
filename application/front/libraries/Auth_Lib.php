@@ -29,10 +29,11 @@ class Auth_Lib
         log_message('debug', "Auth Library initialized");
     }
 
-    public function check_user($email, $password)
+    public function verify_user($email, $password)
     {
 
     }
+
 
     public function hash($password)
     {
@@ -54,10 +55,39 @@ class Auth_Lib
      *  retourne une clé crypté
      *  @return string $key
      */
-    public function generate_key_email($iduser)
+    public function generate_key_email($email)
     {
-        $this->CI->load->model($this->model['users']);
+
     }
+	
+	
+	/**
+	 * @param (string) $email l'email du destinataire
+	 * @param (string) $haskey l'email qui aura été crypté
+	 * @param (array) $vars si vous souhaitez passer des données pour le template de mail
+	 * 
+	 * @return (string) print debug pour email
+	 */
+	public function send_email_activation($email, $haskey, $vars = null)
+	{
+		$this->CI->load->library('email');
+		$this->CI->config->load('email');
+		
+		$data = array();
+		$data['activation_link'] = base_url("auth/activation/" . $haskey);
+		
+		$content = $this->CI->load->view('email/activation', $data, true);
+		
+		$this->CI->email->from($this->CI->config->item('site_email'), $this->CI->config->item('site_name'))
+						->to($email)
+						->subject("Activation de votre Compte")
+						->message($content);
+						
+		$this->CI->email->send();
+		
+		return $this->CI->email->print_debugger();
+		
+	}
 
 
     private function set_user_session($data = array())

@@ -11,8 +11,8 @@ class Users_model extends CX_Model
     {
         parent::__construct();
     }
-
-
+	
+	
     public function add_user($data = array(), $datameta = null)
     {
         $this->db->trans_start();

@@ -11,6 +11,7 @@ class Auth extends CX_Controller
         $this->layout->initLayout('two-column');
         $this->config->load('auth');
         $this->load->library('auth_lib');
+		
     }
 
     public function index()
@@ -61,26 +62,27 @@ class Auth extends CX_Controller
                     'create_at' => date('Y-m-d H:i:s'),
                     'roles_id'  => $role->id,
                 );
-                $modelQueryUser = $this->users_model->add_user($dataUser);
-
+                
+                $this->users_model->add_user($dataUser);
+				
+				// on récupère l'id de la dernière requête
                 $idUser = $this->users_model->insert_id();
 
-                $modelQueryMetas = $this->metasUsers_model->add_metas($idUser,
-                                                                      array('sex' => $post['sex']));
+                $statutQuery = $this->metasUsers_model->add_metas($idUser, array('sex' => $post['sex']));
 
-                if( ($modelQueryUser != false) and ($modelQueryMetas != false) )
-                {
-                    // on envoi l'email d'activation
-                    Console::log('Query User:'.$modelQueryUser);
-                    Console::log('Query Meta:'.$modelQueryMetas);
-                    Console::log('email envoyé');
-                }
-
-                // Si l'enregistrement a réussi on redirige vers la page d'accueil
-                //redirect('', 'location');
+				if($statutQuery)
+				{
+					// Si l'enregistrement a réussi on redirige vers la page d'accueil
+                	//redirect('', 'location');
+                	Console::log(sha1($post['email']));
+					$hashKeyActivation = sha1($post['email']);
+					
+					$this->auth_lib->send_email_activation($post['email'], $hashKeyActivation);
+				}
 
             }
         }
+
 
         $this->layout->view('auth/inscription', $tpl);
     }
@@ -90,7 +92,6 @@ class Auth extends CX_Controller
     {
         if(isset($key))
         {
-
 
 
         } else {

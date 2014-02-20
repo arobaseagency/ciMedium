@@ -108,7 +108,7 @@
 										<div class="contentEditableContainer contentTextEditable">
 											<div class="contentEditable" align='center'>
 												<p  style='text-align:left;color:#999999;font-size:14px;font-weight:normal;line-height:19px;'>
-													Bravo ! Vous veneez de créer un compte sur voyance-Online !
+													V&eacute;licitation <b><?php echo $username; ?></b> ! Vous veneez de cr&eacute;er un compte sur voyance-Online !
 													<br>
 													<br>
 													Pour activer votre compte veuillez cliquer sur le lien
@@ -116,8 +116,9 @@
 						<?php echo $activation_link; ?>
 					</a>
 													<br>
+                                                    Le lien d'activation sera valable 24 h, une fois pass&eacute; ce d&eacute;lais vous devrez renouveller une inscription.
 													<br>
-													Cheers,
+													Nous vous remercions.
 													<br>
 													<span style='color:#222222;'>Peter Parker</span>
 												</p>

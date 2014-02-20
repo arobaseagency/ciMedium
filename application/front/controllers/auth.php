@@ -11,7 +11,7 @@ class Auth extends CX_Controller
         $this->layout->initLayout('two-column');
         $this->config->load('auth');
         $this->load->library('auth_lib');
-		
+
     }
 
     public function index()
@@ -33,6 +33,7 @@ class Auth extends CX_Controller
     {
 
     }
+
 
     /**
      *   Route : auth/inscription
@@ -57,33 +58,36 @@ class Auth extends CX_Controller
                 $dataUser = array(
                     'username'  => $post['username'],
                     'email'     => $post['email'],
-                    'password'  => $this->encrypt->encode($post['password']),
+                    'password'  => $this->auth_lib->hashage($post['password']),
                     'ip'        => $_SERVER['REMOTE_ADDR'],
                     'create_at' => date('Y-m-d H:i:s'),
                     'roles_id'  => $role->id,
                 );
-                
+
+                // ajout des données dans la table users
                 $this->users_model->add_user($dataUser);
-				
+
 				// on récupère l'id de la dernière requête
                 $idUser = $this->users_model->insert_id();
 
+                // ajout des données dans la table metas_users
                 $statutQuery = $this->metasUsers_model->add_metas($idUser, array('sex' => $post['sex']));
 
-				if($statutQuery)
+				if($statutQuery === true)
 				{
 					// Si l'enregistrement a réussi on redirige vers la page d'accueil
                 	//redirect('', 'location');
                 	Console::log(sha1($post['email']));
 					$hashKeyActivation = sha1($post['email']);
-					
-					$this->auth_lib->send_email_activation($post['email'], $hashKeyActivation);
+
+					$this->auth_lib->send_email_activation($post['email'], $post['username']);
 				}
 
             }
         }
 
-
+        $sql = $this->db->get_where('users', array('email' => 'anuman@local.fr'));
+        Console::log($sql->row_array());
         $this->layout->view('auth/inscription', $tpl);
     }
 
@@ -93,6 +97,14 @@ class Auth extends CX_Controller
         if(isset($key))
         {
 
+            $status = $this->auth_lib->verify_activation($key);
+
+            if($status === true)
+            {
+                redirect('/auth/confirmation/activation-compte');
+            } else {
+                show_404();
+            }
 
         } else {
             show_404();

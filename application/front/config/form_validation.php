@@ -8,7 +8,7 @@ $config = array(
         ),
         array(
             'field' => 'username',
-            'rules' => 'trim|required|xss_clean|min_length[5]|max_length[12]'
+            'rules' => 'trim|required|xss_clean|min_length[5]|max_length[12]|is_unique[users.username]'
         ),
         array(
             'field' => 'password',
@@ -20,7 +20,7 @@ $config = array(
         ),
         array(
             'field' => 'email',
-            'rules' => 'trim|required|valid_email|xss_clean'
+            'rules' => 'trim|required|valid_email|xss_clean|is_unique[users.email]'
         ),
         array(
             'field' => 'sex',

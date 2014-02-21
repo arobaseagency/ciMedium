@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Roles_model extends CX_Model
+class Groups_model extends CX_Model
 {
 
     protected $table = 'roles';
@@ -16,7 +16,7 @@ class Roles_model extends CX_Model
      * @param $name string
      * @return single row object
      */
-    public function get_role_by_code($name)
+    public function get_group_by_code($name)
     {
         $name = strtolower($name);
 
@@ -25,12 +25,8 @@ class Roles_model extends CX_Model
         return $query->row();
     }
 
-    public function get_role($id)
-    {
 
-    }
-
-    public function get_all_roles()
+    public function get_all_groups()
     {
 
     }

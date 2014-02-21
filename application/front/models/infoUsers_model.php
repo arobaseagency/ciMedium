@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class MetasUsers_model extends CX_Model
+class InfoUsers_model extends CX_Model
 {
 
     protected $table = 'metas_users';
@@ -13,7 +13,7 @@ class MetasUsers_model extends CX_Model
     }
 
 
-    public function add_metas($iduser, $data = array())
+    public function add_infos($iduser, $data = array())
     {
         $this->db->trans_start();
 

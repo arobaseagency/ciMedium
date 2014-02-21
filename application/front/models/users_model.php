@@ -13,7 +13,7 @@ class Users_model extends CX_Model
     }
 	
 	
-    public function add_user($data = array(), $datameta = null)
+    public function add_user($data = array(), $datainfos = null)
     {
         $this->db->trans_start();
 
@@ -32,7 +32,7 @@ class Users_model extends CX_Model
             return false;
         } else {
             /*
-            if(isset($datameta) AND is_array($datameta))
+            if(isset($datainfos) AND is_array($datameta))
             {
                 $lastId = $this->db->insert_id();
                 $this->load->model('MetasUsers_model');

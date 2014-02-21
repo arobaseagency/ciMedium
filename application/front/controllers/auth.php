@@ -10,7 +10,7 @@ class Auth extends CX_Controller
 
         $this->layout->initLayout('two-column');
         $this->config->load('auth');
-        $this->load->library('auth_lib');
+        $this->load->library('authcx');
 		
     }
 
@@ -48,8 +48,8 @@ class Auth extends CX_Controller
             {
                 $post = $this->input->post();
                 $this->load->model('users_model');
-                $this->load->model('metasUsers_model');
-                $this->load->model('roles_model');
+                $this->load->model('infoUsers_model');
+                $this->load->model('groups_model');
 
                 $role = $this->roles_model->get_role_by_code($post['code']);
                 $this->load->library('encrypt');

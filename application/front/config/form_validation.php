@@ -21,10 +21,6 @@ $config = array(
         array(
             'field' => 'email',
             'rules' => 'trim|required|valid_email|xss_clean'
-        ),
-        array(
-            'field' => 'sex',
-            'rules' => 'trim|required|xss_clean|regex_match[/^homme|femme$/]'
         )
     )
 );

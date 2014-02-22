@@ -78,14 +78,14 @@
     }
 
     // Onglet tab des voyants
-    $('#f-tab-voyant a').click(function (e) {
+    $('#f-tab-voyant a').click(function(e) {
       e.preventDefault();
       $(this).tab('show');
-    })
+    });
 
 
     // animation flash message box
     $('#flash-msg').delay(700).fadeIn('slow');
-
+    
 
 })(jQuery);

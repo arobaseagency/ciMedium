@@ -28,14 +28,25 @@
         </div>
         <?php endif; ?>
 
-        <?php if($codepage == 'activation'): ?>
-        <h1>Compte Activé !!</h1>
+        <?php if($codepage == 'activate'): ?>
+        <h1>Votre Compte est Activé !!</h1>
         <hr>
         <div class="alert alert-success">
             <h2>Information</h2>
             <p>
                 Votre compte a bien été activé ! Vous pouvez désormer vous connecter et participer
                 à la communauté.
+            </p>
+        </div>
+        <?php endif; ?>
+        
+        <?php if($codepage == 'yet_activate'): ?>
+        <h1>Votre Compte est Déjà Activé</h1>
+        <hr>
+        <div class="alert alert-success">
+            <h2>Information</h2>
+            <p>
+                Votre compte a déjà été activé ! Vous n'avez plus besoin de le réactiver.
             </p>
         </div>
         <?php endif; ?>

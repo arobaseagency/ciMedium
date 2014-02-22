@@ -9,8 +9,7 @@ class Auth extends CX_Controller
         parent::__construct();
 
         $this->layout->initLayout('two-column');
-        $this->config->load('auth');
-        $this->load->library('authcx');
+        $this->load->library('AuthCx');
 		
     }
 
@@ -39,19 +38,14 @@ class Auth extends CX_Controller
      **/
     public function registration()
     {
-        $tpl = array();
-
+		
         $this->load->library('form_validation');
         if($this->input->post())
         {
             if($this->form_validation->run('register'))
             {
                 $post = $this->input->post();
-                $this->load->model('users_model');
-                $this->load->model('infoUsers_model');
-                $this->load->model('groups_model');
 
-                $role = $this->roles_model->get_role_by_code($post['code']);
                 $this->load->library('encrypt');
 
                 $dataUser = array(
@@ -60,16 +54,12 @@ class Auth extends CX_Controller
                     'password'  => $this->encrypt->encode($post['password']),
                     'ip'        => $_SERVER['REMOTE_ADDR'],
                     'create_at' => date('Y-m-d H:i:s'),
-                    'roles_id'  => $role->id,
+                    'activation_code' => sha1(time()),
                 );
-                
-                $this->users_model->add_user($dataUser);
 				
-				// on récupère l'id de la dernière requête
-                $idUser = $this->users_model->insert_id();
-
-                $statutQuery = $this->metasUsers_model->add_metas($idUser, array('sex' => $post['sex']));
-
+				$this->authcx->register($dataUser, $post['code']);
+				
+                $statutQuery = false;
 				if($statutQuery)
 				{
 					// Si l'enregistrement a réussi on redirige vers la page d'accueil
@@ -84,16 +74,28 @@ class Auth extends CX_Controller
         }
 
 
-        $this->layout->view('auth/inscription', $tpl);
+        $this->layout->view('auth/inscription');
     }
 
 
     public function activation($key)
     {
-        if(isset($key))
+        if($key)
         {
-
-
+			$rowUser = $this->db->get_where('users', array('activation_code' => $key))->row();
+			
+			if(count($rowUser) == 1 and $rowUser->actived == false)
+			{
+				$data = array("actived" => 1);
+				$this->db->update('users', $data, "id = ".$rowUser->id);
+				
+				// rajouter method AuthCX afin de se connecter et d'envoyer en session les variables
+				
+				redirect('/auth/confirmation/activation-compte');
+			} else {
+				redirect('/auth/confirmation/deja-actif');
+			}
+			
         } else {
             show_404();
         }
@@ -117,13 +119,18 @@ class Auth extends CX_Controller
         {
             case "inscription":
                 // On stock le nom du type de contenu que l'on souhaite
-                $tpl['codepage'] = $confcode['inscription']['code'];
-                $this->layout->setTitle($confcode['inscription']['title']);
+                $tpl['codepage'] = "inscription";
+                $this->layout->setTitle("Inscription | Enregistrement");
                 break;
 
             case "activation-compte":
-                $tpl['codepage'] = $confcode['activation']['code'];
-                $this->layout->setTitle($confcode['activation']['title']);
+                $tpl['codepage'] = "activate";
+                $this->layout->setTitle("Activation de votre Compte");
+                break;
+			
+			case "deja-actif":
+                $tpl['codepage'] = "yet_activate";
+                $this->layout->setTitle("Compte déjà activé");
                 break;
 
             default:

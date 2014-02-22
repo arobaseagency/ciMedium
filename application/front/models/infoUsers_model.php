@@ -4,7 +4,7 @@
 class InfoUsers_model extends CX_Model
 {
 
-    protected $table = 'metas_users';
+    protected $table = 'info_users';
 
 
     public function __construct()
@@ -29,8 +29,8 @@ class InfoUsers_model extends CX_Model
 
         if($this->db->trans_status() === FALSE)
         {
-            $this->session->set_flashdata('msg', "error~<h3>Query:</h3><p>Erreur d'enregistrement des metas</p>");
-            log_message('error', "Les enregistrement pour les metas a échoué");
+            $this->session->set_flashdata('msg', "error~<h3>Query:</h3><p>Erreur d'enregistrement des infos</p>");
+            log_message('error', "Les enregistrement pour les infos a échoué");
             return false;
         } else {
             return true;

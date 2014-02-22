@@ -17,7 +17,21 @@ $config['newline'] = "\r\n";
 $config['wordwrap'] = TRUE;
 $config['useragent'] = 'Voyance Online';
 
-$config['site_email'] = "voyance@local.com";
+
+/**
+ * ========================== EMAIL CONFIGURATION SITE APPLICATION ============================
+ */
+$config['email'] = array(
+
+	'website' 	=> 'voyance@local.fr',
+	
+	'webmaster' => '',
+	
+	'support' 	=> '',
+	
+	'contact'	=> '',
+
+);
 
 
 /* End of file email.php */

@@ -4,7 +4,7 @@
 class Groups_model extends CX_Model
 {
 
-    protected $table = 'roles';
+    protected $table = 'groups';
 
     public function __construct()
     {
@@ -22,7 +22,7 @@ class Groups_model extends CX_Model
 
         $query = $this->db->select()->get_where($this->table, array('code' => $name));
 
-        return $query->row();
+        return $query;
     }
 
 

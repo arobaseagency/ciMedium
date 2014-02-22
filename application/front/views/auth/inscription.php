@@ -63,20 +63,6 @@
         </div>
     </div>
 
-    <div class="control-group <?php tp_class_error('sex'); ?>">
-        <label for="sex" class="control-label"><span class="needful">*</span>Sex:</label>
-        <div class="controls">
-            <label class="radio">
-                <input type="radio" name="sex" value="homme" <?php echo set_radio('sex', 'homme'); ?>>
-                Homme
-            </label>
-            <label class="radio">
-                <input type="radio" name="sex" value="femme" <?php echo set_radio('sex', 'femme'); ?>>
-                Femme
-            </label>
-            <?php echo tp_form_error('sex'); ?>
-        </div>
-    </div>
     <!-- FIN FORMULAIRE INPUT -->
     <p>
         (<span class="needful">*</span>): <i>Les champs comportants cette étoile doivent être remplient obligatoirement.</i>

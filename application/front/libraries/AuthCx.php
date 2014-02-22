@@ -21,33 +21,8 @@ class AuthCx
     {
         $this->CI =& get_instance();
 		
-        if(!$this->CI->config->load('auth'))
-        {
-            log_message('error', "Le fichier de configuration auth.php n'a pas été trouvé");
-        }
-        $this->config = $this->CI->config->item('auth');
-
         log_message('debug', "Auth Library initialized");
     }
-	
-	
-	
-	public function __call($method, $arguments)
-	{
-		if(!method_exists($this->{__CLASS__}, $method))
-		{
-			throw new Exception("Méthode appelé de la class " . __CLASS__ . "::". $method ."() non définit");
-		}
-		
-		return call_user_func_array(array($this->auth_model, $method), $arguments);
-	
-	}
-	
-	
-	public function __get($var)
-	{
-		return get_instance()->$var;
-	}
 	
 	
 
@@ -86,11 +61,65 @@ class AuthCx
 	
 	
 	/**
+	 * @param (string) $email l'email du destinataire
+	 * @param (string) $activateCode le code d'activation qui aura été crypté
+	 * 
+	 * @return (string) print debug pour email
+	 */
+	public function send_email_activation($email, $activateCode)
+	{
+		$data = array();
+		$this->CI->load->library('email');
+		$this->CI->config->load('email');
+		
+		// on récupère le tableau email du fichier config
+		$confEmail = $this->CI->config->item('email');
+		
+		// On stocke le lien d'activation dans la variable activation_link dédié à la vue
+		$data['activation_link'] = base_url("auth/activation/" . $activateCode);
+		$content = $this->CI->load->view('email/activation', $data, true);
+		
+		$this->CI->email->from($confEmail['website'], $this->CI->config->item('site_name'));
+		$this->CI->email->to($email);
+		$this->CI->email->subject("Activation de votre Compte :: " . $this->CI->config->item('site_name'));
+		$this->CI->email->message($content);
+						
+		$this->CI->email->send();
+		// on affiche le debugger si l'email n'a pas été envoyé (valable qu'en mode développement)
+		$this->CI->email->print_debugger();
+	}
+	
+	
+	/**
 	 *  @return boolean
 	 */
-	public function regsiter($data)
+	public function register($data, $codeGroup = null)
 	{
-		// appel du model et traitemetn des valeurs
+		$this->CI->load->model('users_model');
+		$this->CI->load->model('groups_model');
+		$this->CI->load->model('infoUsers_model');
+		
+		// insertion du code d'activation que l'on enverra par email
+		//$data['activation_code'] = sha1(time());
+		
+		// on insére les données utilisateurs dans la table users
+		$queryInsertUser = $this->CI->users_model->add_user($data);
+		$LastUserId = $this->CI->users_model->insert_id();
+		
+		// on récupère les données du groups correspondantes au code que nous recevons
+		if($codeGroup)
+		{
+			$groupRow = $this->CI->groups_model->get_group_by_code($codeGroup)->row();
+		
+			$insertUsersToGroups = $this->CI->db->insert_string('users_groups', array('users_id' => $LastUserId, 
+													   'groups_id' => intval($groupRow->id) ));
+			$this->CI->db->query($insertUsersToGroups);
+		}
+
+		if($queryInsertUser === true)
+		{
+			$this->send_email_activation($data['email'], $data['activation_code']);
+		}													   
 	}
 	
 	
@@ -152,6 +181,7 @@ class AuthCx
 	 * 
 	 * @return (string) print debug pour email
 	 */
+	/*
 	public function send_email_activation($email, $haskey, $vars = null)
 	{
 		$this->CI->load->library('email');
@@ -172,6 +202,6 @@ class AuthCx
 		return $this->CI->email->print_debugger();
 		
 	}
-
+	*/
 
 }

@@ -27,5 +27,4 @@ class Home extends CX_Controller
     }
 
 
-
 }

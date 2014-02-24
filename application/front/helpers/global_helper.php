@@ -6,7 +6,9 @@ if(! function_exists('is_logged'))
 {
 	function is_logged()
 	{
-		if( $this->session->userdata('user_data') )
+		$ci =& get_instance();
+		
+		if( $ci->session->userdata('user_data') )
 		{
 			return true;
 		} else {

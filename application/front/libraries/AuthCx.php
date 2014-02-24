@@ -83,17 +83,6 @@ class AuthCx
 	
 	
 	
-			
-	/**
-	 *  @return void
-	 */
-	public function logout()
-	{
-		// traitement pour la déconnexion
-	}
-	
-	
-	
 	/**
 	 *	retourne le tableau des paramètres utilisateur stocké en sessions
 	 *	
@@ -101,9 +90,9 @@ class AuthCx
 	 */
 	public function get_user_data()
 	{
-		if( $this->session->userdata('user_data') )
+		if( $this->CI->session->userdata('user_data') )
 		{
-			return $this->session->userdata('user_data');
+			return $this->CI->session->userdata('user_data');
 		}
 	}
 	

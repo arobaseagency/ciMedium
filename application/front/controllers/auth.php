@@ -76,7 +76,15 @@ class Auth extends CX_Controller
 
     public function logout()
     {
-
+		$this->load->model('users_model');
+		$user_data = $this->authcx->get_user_data();
+		
+		$this->users_model->update_status(0, $user_data['id']);
+		
+		$this->session->unset_userdata('user_data');
+		$this->session->set_flashdata('msg', 'error~ Vous avez bien été déconnecté');
+		
+		redirect(base_url());
     }
 
     public function forgotPassword()

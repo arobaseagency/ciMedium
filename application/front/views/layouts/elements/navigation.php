@@ -75,6 +75,7 @@
                         </ul>
                     </li>
 
+					<?php if(!is_logged()): ?>
                     <li>
                         <a href="<?php echo base_url('auth/inscription'); ?>" title="Inscription voyance en ligne">
                             <i class="icon-edit icon-white"></i> Inscription
@@ -82,7 +83,7 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-user icon-white"></i> Login
+                            <i class="icon-lock icon-white"></i> Login
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
@@ -91,6 +92,44 @@
                             </li>
                         </ul>
                     </li>
+					<?php else: ?>
+						
+					<li>
+						<a id="tp-message" href="#">
+							<span class="badge badge-info">6</span>
+							<i class="icon-envelope icon-white"></i> Messages
+						</a>
+					</li>
+					
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-user icon-white"></i> User
+							<strong class="caret"></strong>
+						</a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+							<li>
+								<a href="#"><i class="icon-cog"></i> Compte</a>
+							</li>
+							<li>
+								<a href="#"><i class="icon-edit"></i> Editer Profile</a>
+							</li>
+							<li>
+								<a href="#"><i class="icon-time"></i> Historique</a>
+							</li>
+							<li>
+								<a href="#"><i class="icon-gift"></i> Vos Crédits</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="<?php echo site_url('auth/logout'); ?>" title="Désirez-vous vous Déconnecter ?">
+									<i class="icon-off"></i> Déconnection
+								</a>
+							</li>
+						</ul>
+					</li>
+					
+					<?php endif; ?>
+                    
                     <li class="divider-vertical"></li>
                     <li class="dropdown tpl-flag">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Français">

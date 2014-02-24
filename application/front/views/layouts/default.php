@@ -15,6 +15,8 @@
 <body>
 <a id="hover-zetop" href="#" title="Retour en Haut"><img src="<?php echo assets('/img/jsicon-top.png'); ?>" alt="retour en haut automatiquement"></a>
 
+<?php tp_flash_msg(); ?>
+
 <a id="logo" class="hidden-phone" href="#" title="Voyance Online - Retour Accueil">
     <img src="<?php echo asset_img('logo-site.png'); ?>" alt="logo voyance online">
 </a>

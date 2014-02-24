@@ -85,7 +85,7 @@
 
 
     // animation flash message box
-    $('#flash-msg').delay(700).fadeIn('slow');
+    $('#flash-msg').delay(700).fadeIn('normal');
     
 
 })(jQuery);

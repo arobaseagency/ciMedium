@@ -43,6 +43,25 @@ class Users_model extends CX_Model
             return true;
         }
     }
+	
+	
+	
+	public function get_user_to_group($id)
+	{
+		$query = $this->db->select('*')->from($this->table)
+								->join('users_groups', 'users_groups.users_id = users.id')
+								->join('groups', 'groups.id = users_groups.groups_id')
+								->where('users.id', $id)
+								->get();
+								
+		return $query;
+	}
+	
+	
+	public function update_status($boolean, $id)
+	{
+		$this->db->update($this->table, array('online' => $boolean), 'id = '. $id);
+	}
 
 
 }

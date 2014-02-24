@@ -9,19 +9,70 @@ class Auth extends CX_Controller
         parent::__construct();
 
         $this->layout->initLayout('two-column');
-        $this->load->library('AuthCx');
+		
+		$this->load->model('users_model');
+		$this->load->model('groups_model');
 		
     }
 
-    public function index()
-    {
-
-    }
 
     public function login()
     {
-
+    	// pour éviter le bug lorsque l'on renvoit du json
+    	$this->output->enable_profiler(false);
+		
+		$this->load->library('form_validation');
+		$jsonData = array();
+		
+		if($this->input->is_ajax_request())
+		{
+			
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean|valid_email');
+			$this->form_validation->set_rules('password', 'Mot de passe', 'trim|required|xss_clean|callback_check_login');
+			
+			if($this->form_validation->run())
+			{
+				// on met en session les données utilisateurs
+				$this->authcx->login($this->input->post());
+				
+				$jsonData['status'] = 1;
+				$jsonData['redirect'] = $_SERVER['HTTP_REFERER'];
+				
+				$this->output->set_content_type('application/json')
+							->set_output(json_encode($jsonData));
+			} 
+			else 
+			{
+				$jsonData['status'] = 0;
+				$jsonData['msgErrors'] = validation_errors();
+				
+				$this->output->set_content_type('application/json')
+							->set_output(json_encode($jsonData));
+			}
+			
+		}
     }
+	
+	/**
+	 *  Callback Valid form pour form_validation login()
+	 */
+	public function check_login($password)
+	{
+		$this->load->library('encrypt');
+		$postEmail = $this->input->post('email');
+		
+		$query = $this->db->get_where('users', array('email' => $postEmail))->row_array();
+		
+		if($this->encrypt->decode($query['password']) == $password && $query['email'] == $postEmail)
+		{
+			return true;
+		} else {
+			$this->form_validation->set_message("check_login", "Le Mot de passe ou l'email n'existe pas");
+			return false;
+		}	
+	}
+	
+	
 
     public function logout()
     {
@@ -58,17 +109,6 @@ class Auth extends CX_Controller
                 );
 				
 				$this->authcx->register($dataUser, $post['code']);
-				
-                $statutQuery = false;
-				if($statutQuery)
-				{
-					// Si l'enregistrement a réussi on redirige vers la page d'accueil
-                	//redirect('', 'location');
-                	Console::log(sha1($post['email']));
-					$hashKeyActivation = sha1($post['email']);
-					
-					$this->auth_lib->send_email_activation($post['email'], $hashKeyActivation);
-				}
 
             }
         }

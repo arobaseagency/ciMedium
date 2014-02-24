@@ -20,13 +20,10 @@ class Home extends CX_Controller
 
     public function index()
     {
-    	
-		$hash = time();
-		Console::log(sha1($hash));
-
         parent::$items['title'] = "Mon titre de page !";
 
         $this->layout->view('accueil', parent::$items);
+		
     }
 
 

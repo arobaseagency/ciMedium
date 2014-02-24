@@ -20,6 +20,7 @@ class AuthCx
     public function __construct()
     {
         $this->CI =& get_instance();
+		$this->CI->load->library('session');
 		
         log_message('debug', "Auth Library initialized");
     }
@@ -42,22 +43,70 @@ class AuthCx
 	
 	
 	/**
-	 * @param $string 
-	 * @return (string) hash
+	 *  Enregistrement des informations utilisateur en sessions
+	 *  
 	 */
-	public function hash_string($string)
+	public function login($inputPost)
 	{
+		$this->CI->load->model('users_model');
+		$row = $this->CI->db->get_where('users', array('email' => $inputPost['email']) )->row_array();
+		
+		// mise à jour du status online dans la table users
+		$this->CI->users_model->update_status(1, $row['id']);
+		
+		// on récupère toutes les données utilisateurs et le groups auquel il appartient
+		$data = $this->CI->users_model->get_user_to_group($row['id'])->row_array();
+		
+		$userSession = array(
+			'user_data' => array(
+				'id' => $data['users_id'],
+				'username' => $data['username'],
+				'email' => $data['email'],
+				'group_id' => $data['groups_id'],
+				'group_name' => $data['name'],
+				'group_code' => $data['code'],
+				'level' => $data['level'],
+				'online' => 1
+			)
+		);
+		
+		/*
+		if($inputPost['remember_me'])
+		{
+			$userSession['user_data']['remember_me'] = $inputPost['remember_me'];
+		}
+		*/
+		
+		$this->CI->session->set_userdata($userSession);
 		
 	}
 	
 	
 	
-	public function verify($input, $existingHash)
+			
+	/**
+	 *  @return void
+	 */
+	public function logout()
 	{
-		$hash = crypt($input, $existingHash);
-		
-		return $hash === $existingHash;
+		// traitement pour la déconnexion
 	}
+	
+	
+	
+	/**
+	 *	retourne le tableau des paramètres utilisateur stocké en sessions
+	 *	
+	 *	@return array 
+	 */
+	public function get_user_data()
+	{
+		if( $this->session->userdata('user_data') )
+		{
+			return $this->session->userdata('user_data');
+		}
+	}
+	
 	
 	
 	/**
@@ -93,7 +142,7 @@ class AuthCx
 	/**
 	 *  @return boolean
 	 */
-	public function register($data, $codeGroup = null)
+	public function register($data, $codeGroup)
 	{
 		$this->CI->load->model('users_model');
 		$this->CI->load->model('groups_model');
@@ -122,26 +171,6 @@ class AuthCx
 		}													   
 	}
 	
-	
-	/**
-	 *  @return void
-	 */
-	public function logout()
-	{
-		// traitement pour la déconnexion
-	}
-	
-	
-	public function login($data)
-	{
-		// appel du model et traitement des données
-	}
-	
-	
-	public function get_user_id()
-	{
-		
-	}
 	
 	
 	/**
@@ -172,36 +201,5 @@ class AuthCx
     }
 
 
-	
-	
-	/**
-	 * @param (string) $email l'email du destinataire
-	 * @param (string) $haskey l'email qui aura été crypté
-	 * @param (array) $vars si vous souhaitez passer des données pour le template de mail
-	 * 
-	 * @return (string) print debug pour email
-	 */
-	/*
-	public function send_email_activation($email, $haskey, $vars = null)
-	{
-		$this->CI->load->library('email');
-		$this->CI->config->load('email');
-		
-		$data = array();
-		$data['activation_link'] = base_url("auth/activation/" . $haskey);
-		
-		$content = $this->CI->load->view('email/activation', $data, true);
-		
-		$this->CI->email->from($this->CI->config->item('site_email'), $this->CI->config->item('site_name'))
-						->to($email)
-						->subject("Activation de votre Compte")
-						->message($content);
-						
-		$this->CI->email->send();
-		
-		return $this->CI->email->print_debugger();
-		
-	}
-	*/
 
 }

@@ -87,34 +87,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <form id="login-form" class="form-horizontal">
-                                  <div class="control-group">
-                                    <label class="control-label" for="inputEmail">Email</label>
-                                    <div class="controls">
-                                      <input type="text" id="inputEmail" class="input-medium" placeholder="Email">
-                                    </div>
-                                  </div>
-                                  <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Password</label>
-                                    <div class="controls">
-                                      <input type="password" id="inputPassword" class="input-medium" placeholder="Password">
-                                    </div>
-                                  </div>
-                                  <div class="control-group">
-                                    <div class="controls">
-                                      <label class="checkbox">
-                                        <input type="checkbox"> Remember me
-                                        <a href="#" rel="tooltip" title="Si vous désirez rester connecter"><i class="icon-info-sign"></i></a>
-                                      </label>
-                                      <div class="divider"></div>
-                                      <p>
-                                          <i class="icon-circle-arrow-right"></i>
-                                          <a href="#">Mot de passe Oublié</a>
-                                      </p>
-                                      <button type="submit" class="btn btn-primary">Login</button>
-                                    </div>
-                                  </div>
-                                </form>
+                                <?php $this->load->view('auth/login'); ?>
                             </li>
                         </ul>
                     </li>

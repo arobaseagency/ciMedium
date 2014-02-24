@@ -22,5 +22,18 @@ $config = array(
             'field' => 'email',
             'rules' => 'trim|required|valid_email|xss_clean'
         )
-    )
+    ),
+    
+	
+	'login' => array(
+		array(
+			'field' => 'email',
+			'rules' => 'trim|requried|xss_clean|valid_email'
+		),
+		
+		array(
+			'field' => 'password',
+			'rules' => 'trim|required|xss_clean'
+		)
+	)
 );

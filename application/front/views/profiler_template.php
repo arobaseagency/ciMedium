@@ -35,6 +35,7 @@
 </style>
 
 <script type="text/javascript">
+	
 current = null;
 currentvar = null;
 currentli = null;

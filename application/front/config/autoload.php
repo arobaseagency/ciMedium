@@ -54,6 +54,7 @@ $autoload['packages'] = array(APPPATH.'third_party');
 
 $autoload['libraries'] = array('database',
                                'session',
+                               'authcx',
 							   'parser',
                                'layout');
 
@@ -74,7 +75,8 @@ $autoload['helper'] = array('url',
 							'html',
                             'form',
 							'language',
-							'date');
+							'date',
+							'global');
 
 
 /*

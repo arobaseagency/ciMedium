@@ -73,6 +73,8 @@ form .needful {
   margin-top: 10em;
 }
 
+#navigation { text-transform: capitalize; }
+
 /* ______________________________________________________________ */
 
 #logo {
@@ -237,6 +239,13 @@ form .needful {
   top: -8em;
   left: 0;
 }
+
+/*_____________________ CONTENUE PROFILE _____________________________*/
+#sidebar-user {
+	
+}
+
+#sidebar-user .nav { text-transform: capitalize; }
 
 
 /*_____________________ FOOTER _____________________________*/

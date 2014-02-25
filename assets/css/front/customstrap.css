@@ -113,14 +113,18 @@ hr {border-top: 1px solid #C7C7C7;}
   margin-bottom: -1px;
 }
 .nav-tabs>li>a {
-  border-radius: 0;
-  background: #f2f2f2;
-  border: 1px solid #ddd;
+	border-radius: 0;
+	background: #9DD625;
+	border: 1px solid #C7C6C6;
+	color: #FFF;
 }
+.nav-tabs>li>a:hover { background: #B1CC78; }
 .nav-tabs>.active>a, .nav-tabs>.active>a:hover {
-  border-top: 4px solid #b9e23d;
+  /* border-top: 4px solid #b9e23d; */
+	background: #F5F5F5;
 }
 .tab-content {
+  background: #F5F5F5;
   border: 1px solid #DDD;
   padding: 1em;
   min-height: 180px;

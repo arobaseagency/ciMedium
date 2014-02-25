@@ -1,4 +1,4 @@
-<div class="row">
+<div id="sidebar-user" class="row">
     <div class="span3">
     	<span class="label label-warning"><?php echo auth_data('group_name'); ?></span>
         <figure>
@@ -21,20 +21,35 @@
 			<li class="nav-header">
 				Informations Profile
 			</li>
-			<li class="active">
-				<a href="#">Vos Informations</a>
+			<li <?php tp_active('compte'); ?>>
+				<a href="<?php echo site_url('profile/compte'); ?>">
+					<i class="icon-cog"></i> mon compte
+				</a>
 			</li>
-			<li>
-				<a href="#">Changer email / mot de passe</a>
+			<li <?php tp_active('informations'); ?>>
+				<a href="<?php echo site_url('profile/informations'); ?>">
+					<i class="icon-edit"></i> editer mes informations
+				</a>
 			</li>
+			<li <?php tp_active('messages'); ?>>
+				<a href="<?php echo site_url('profile/messages'); ?>">
+					<i class="icon-envelope"></i> mes messages
+				</a>
+			</li>			
+			
+			<!-- HEADER GESTION DU COMPTE -->
 			<li class="nav-header">
 				Gestion de votre Compte
 			</li>
-			<li>
-				<a href="#">Profile</a>
+			<li <?php tp_active('historique'); ?>>
+				<a href="<?php echo site_url('profile/historique'); ?>">
+					<i class="icon-time"></i> historique
+				</a>
 			</li>
-			<li>
-				<a href="#">Settings</a>
+			<li <?php tp_active('credit'); ?>>
+				<a href="<?php echo site_url('profile/credit'); ?>">
+					<i class="icon-gift"></i> créditer mon compte
+				</a>
 			</li>
 			<li class="divider"></li>
 		</ul>
@@ -42,7 +57,9 @@
         <div class="accordion" id="accordion-553022">
             <div class="accordion-group">
                 <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-553022" href="#accordion-element-408954">Panneau de Gestion</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-553022" href="#accordion-element-408954">
+                    	<i class="icon-plus"></i> Panneau de Gestion
+                    </a>
                 </div>
 
                 <div id="accordion-element-408954" class="accordion-body collapse in">
@@ -70,7 +87,7 @@
 
             <div class="accordion-group">
                 <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-553022" href="#accordion-element-8105">Aide &amp; FAQ</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-553022" href="#accordion-element-8105"><i class="icon-plus"></i> Aide &amp; FAQ</a>
                 </div>
 
                 <div id="accordion-element-8105" class="accordion-body collapse">
@@ -80,12 +97,6 @@
                 </div>
             </div>
 
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-553022" href="#accordion-element-5">Forfait &amp; Paiement</a>
-                </div>
-
-            </div>
         </div>
     </div><!-- FIN BLOC ACCORDEON -->
 

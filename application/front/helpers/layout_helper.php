@@ -42,3 +42,23 @@ function tp_flash_msg()
         echo $html;
     }
 }
+
+
+
+/*
+ * fonction permettant d'afficher le status active ou non sur un lien de menu
+ */
+function tp_active($uriName)
+{
+	$ci =& get_instance();
+	
+	$uri = $ci->uri->segment(2);
+	if($uriName == strtolower($uri))
+	{
+		echo 'class="active"';
+	}
+}
+
+
+
+

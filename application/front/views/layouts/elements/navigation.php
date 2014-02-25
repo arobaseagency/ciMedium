@@ -96,7 +96,7 @@
 					<?php else: ?>
 						
 					<li>
-						<a id="tp-message" href="#">
+						<a id="tp-message" href="<?php echo site_url('profile/messages'); ?>">
 							<span class="label label-important">6</span>
 							<i class="icon-envelope icon-white"></i> Messages
 						</a>
@@ -109,16 +109,22 @@
 						</a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
 							<li>
-								<a href="#"><i class="icon-cog"></i> Compte</a>
+								<a href="<?php echo site_url('profile/compte'); ?>"><i class="icon-cog"></i> mon compte</a>
 							</li>
 							<li>
-								<a href="#"><i class="icon-edit"></i> Editer Profile</a>
+								<a href="<?php echo site_url('profile/informations'); ?>">
+									<i class="icon-edit"></i> mes informations
+								</a>
 							</li>
 							<li>
-								<a href="#"><i class="icon-time"></i> Historique</a>
+								<a href="<?php echo site_url('profile/historique'); ?>">
+									<i class="icon-time"></i> historique
+								</a>
 							</li>
 							<li>
-								<a href="#"><i class="icon-gift"></i> Vos Crédits</a>
+								<a href="<?php echo site_url('profile/crediter'); ?>">
+									<i class="icon-gift"></i> Vos Crédits
+								</a>
 							</li>
 							<li class="divider"></li>
 							<li>

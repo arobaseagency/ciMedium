@@ -36,6 +36,12 @@ class Profile extends CX_Controller
 	public function messages()
 	{
 		$this->layout->view('profile/message');
-	}	
+	}
+	
+	
+	public function historique()
+	{
+		$this->layout->view('profile/historique');
+	}
 	
 }

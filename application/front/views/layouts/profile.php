@@ -30,12 +30,15 @@
 
 	<div class="row">
         <aside id="sidebar-left" class="span3">
-			<?php include 'elements/sidebar-left.php'; ?>
+			<?php include 'elements/sidebar-user.php'; ?>
             <!-- FIN ROW -->
 		</aside>
 
 		<!-- CONTENEUR -->
 		<section class="span9">
+			<h1><?php echo ucfirst($this->uri->segment(2)); ?></h1>
+			<hr />
+			
 			<?php echo $layout_content; ?>
 		</section>
 		
@@ -48,5 +51,6 @@
 </div>
 
 <?php include 'elements/script-default.php'; ?>
+<script type="text/javascript" src="<?php echo asset_js('front/users'); ?>"></script>
 </body>
 </html>

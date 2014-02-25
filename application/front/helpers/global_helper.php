@@ -16,3 +16,16 @@ if(! function_exists('is_logged'))
 		}
 	}
 }
+
+
+if(! function_exists('auth_data'))
+{
+	function auth_data($name)
+	{
+		$ci =& get_instance();
+		
+		$data = $ci->session->userdata('user_data');
+		
+		return $data[$name];
+	}
+}

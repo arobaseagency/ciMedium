@@ -9,6 +9,8 @@ h1, h2, h3, h4 {line-height: normal;}
 
 hr {border-top: 1px solid #C7C7C7;}
 
+.progress { height: 15px; }
+
 .navbar .nav>li>a, .navbar .brand { padding: 10px 10px 10px; }
 .nav .nav>li>a:focus, .navbar .nav>li>a:hover {
     color: #fff;

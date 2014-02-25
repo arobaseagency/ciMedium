@@ -8,7 +8,7 @@ class Profile extends CX_Controller
 
     public function __construct()
     {
-		parent::_construct();
+		parent::__construct();
 		
 		$this->layout->initLayout('profile');
     }
@@ -16,8 +16,26 @@ class Profile extends CX_Controller
     
     public function index()
     {
-     	echo "ici";
-		
+     	
+		$this->compte();
     }
-
+	
+	
+	public function compte()
+	{
+		$this->layout->view('profile/compte');
+	}
+	
+	
+	public function informations()
+	{
+		$this->layout->view('profile/information');
+	}
+	
+	
+	public function messages()
+	{
+		$this->layout->view('profile/message');
+	}	
+	
 }

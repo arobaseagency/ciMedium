@@ -23,7 +23,7 @@ class Home extends CX_Controller
         parent::$items['title'] = "Mon titre de page !";
 
         $this->layout->view('accueil', parent::$items);
-		
+        
     }
 
 

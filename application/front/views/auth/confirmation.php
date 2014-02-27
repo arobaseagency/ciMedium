@@ -50,6 +50,30 @@
             </p>
         </div>
         <?php endif; ?>
+        
+        
+        <?php if($codepage == 'logged'): ?>
+        <h1>Interdiction</h1>
+        <hr>
+        <div class="alert alert-info">
+            <h2>Vous n'êtes pas Connecté</h2>
+            <p>
+                Vous devez être connecté pour accéder à cette page et avoir les autorisations requises.
+            </p>
+        </div>
+        <?php endif; ?>
+        
+        
+        <?php if($codepage == 'noaccess'): ?>
+        <h1>Forbidden</h1>
+        <hr>
+        <div class="alert alert-error">
+            <h2>Pas d'Accès</h2>
+            <p>
+                Vous n'êtes pas autorisé à accéder à cette page, vous n'âvez pas les droits suffisant requis.
+            </p>
+        </div>
+        <?php endif; ?>
     </div>
 
 </article>

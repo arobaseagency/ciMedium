@@ -14,7 +14,7 @@ class CX_Controller extends CI_Controller
 
         // Pour envoyer des variables dans la console déclarer Console::log(<variable>)
         $this->load->library('Console');
-
+        
         $meta = array(
             array("name" => "robots",
                   "content" => "index, follow"),
@@ -27,9 +27,10 @@ class CX_Controller extends CI_Controller
         );
 
         self::$items['meta'] = $meta;
+        
     }
-
-
+    
+    
     public function _roles_sessions()
     {
 

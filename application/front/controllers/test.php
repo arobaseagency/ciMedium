@@ -9,6 +9,7 @@ class Test extends CX_Controller
         parent::__construct();
 
         $this->output->enable_profiler(true);
+        
     }
 
 

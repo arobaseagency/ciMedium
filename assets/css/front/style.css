@@ -10,6 +10,17 @@ body {
 
 /* ______________________ CSS GENERIQUE ______________________ */
 
+.nostyle-text, .nostyle-text:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.txt-price {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 18px;
+}
+
 .img-loader-medium {
   background: url('../../img/front/loader.gif') no-repeat center center rgba(255, 255, 255, 0.7);
   display: none;

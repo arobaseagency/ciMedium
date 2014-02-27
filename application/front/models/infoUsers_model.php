@@ -36,5 +36,6 @@ class InfoUsers_model extends CX_Model
             return true;
         }
     }
+    
 
 }

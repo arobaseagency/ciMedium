@@ -87,5 +87,33 @@
     // animation flash message box
     $('#flash-msg').delay(700).fadeIn('normal');
     
+    
+    // Panneau d'Aide ide Side-help qui apporte l'adie à l'utilisateur
+    $('#btn-sidehelp').bind('click', function() {
+        var idSideHelp = $('#side-help');
+        var _widthInit = idSideHelp.width();
+        
+        var outputWidth = null;
+        if(_widthInit === 0 || _widthInit === 1) {
+            outputWidth = '600px';
+        } else {
+            outputWidth = '0';
+        }
+        
+        idSideHelp.animate({
+            width: outputWidth
+        });
+        return false;
+    });
+    /*
+    $('#side-help').find('#btn-sidehelp').bind('click', function() {
+        
+        //$('#side-help').animate({ width: 'toggle' });
+        $('#side-help').slideToggle('slow');
+        
+        return false;
+    });
+    */
+    
 
 })(jQuery);

@@ -26,21 +26,6 @@ class AuthCx
     }
 	
 	
-
-	/**
-	 *  Oublie de mot de passe
-	 * 
-	 * 	@return mixed boolean / array
-	 */
-    public function forgot_password($id)
-	{
-		if($this->users_model->forgot_password($id))
-		{
-			
-		}
-	}
-	
-	
 	
 	/**
 	 *  Enregistrement des informations utilisateur en sessions
@@ -52,7 +37,13 @@ class AuthCx
 		$row = $this->CI->db->get_where('users', array('email' => $inputPost['email']) )->row_array();
 		
 		// mise à jour du status online dans la table users
-		$this->CI->users_model->update_status(1, $row['id']);
+		//$this->CI->users_model->update_status(1, $row['id']);
+		$dataUpdate = array(
+		  'ip' => $_SERVER['REMOTE_ADDR'],
+		  'online' => 1,
+		  'update_at' => datetime_now()
+		);
+		$this->CI->db->update('users', $dataUpdate, 'id = ' . $row['id']);
 		
 		// on récupère toutes les données utilisateurs et le groups auquel il appartient
 		$data = $this->CI->users_model->get_user_to_group($row['id'])->row_array();
@@ -84,7 +75,8 @@ class AuthCx
 	
 	
 	/**
-	 *	retourne le tableau des paramètres utilisateur stocké en sessions
+	 *	Disposer de toutes les données utilisateurs mises en sessions
+	 * 	retourne le tableau des paramètres utilisateur stocké en sessions
 	 *	
 	 *	@return array 
 	 */
@@ -163,6 +155,21 @@ class AuthCx
 	
 	
 	/**
+	 *  Oublie de mot de passe
+	 * 
+	 * 	@return mixed boolean / array
+	 */
+    public function forgot_password($id)
+	{
+		if($this->users_model->forgot_password($id))
+		{
+			
+		}
+	}
+	
+	
+	
+	/**
 	 *  @param $id 
 	 *  @return boolean
 	 */
@@ -174,7 +181,31 @@ class AuthCx
 	}
 	
 	
-	public function in_groups($check_group, $id = false, $check_all = false)
+	public function in_groups($check_group)
+	{
+		$userData = $this->CI->session->userdata('user_data');
+		
+		if(in_array($userData['group_code'], $check_group))
+		{
+			return true;
+		} else {
+			redirect('auth/confirmation/noaccess');
+		}
+	}
+	
+	
+	public function access_logged()
+	{
+		if($this->CI->session->userdata('user_data'))
+		{
+			return true;
+		} else {
+			redirect('auth/confirmation/logged');
+		}
+	}
+	
+	
+	public function access($level)
 	{
 		
 	}

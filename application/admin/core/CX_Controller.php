@@ -4,13 +4,12 @@
 class CX_Controller extends CI_Controller
 {
 
-    public $auth;
 
     public function __construct()
     {
         parent::__construct();
 
-        echo "controller base !";
+        $this->output->enable_profiler(true);
 
     }
 

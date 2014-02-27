@@ -26,4 +26,18 @@
 	    </div>
 	</div>
 	
+	<div id="side-help">
+	    <div class="row-fluid">
+	        <div id="btn-sidehelp" class="label label-info">
+	            <h5>
+	                <i class="icon-chevron-left icon-white"></i> 
+	                <a class="nostyle-text" href="#" title="Si vous désirez savoir comment utiliser nos services vous pouvez actionner le panneau d'aide">Aide</a> 
+	                <i class="icon-question-sign icon-white"></i>
+	            </h5>
+	        </div>
+	        <div class="span5">
+	        </div>
+	    </div>
+	</div>
+	
 </article>

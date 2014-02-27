@@ -13,12 +13,20 @@
 			<input type="password" class="input-medium" name="password" placeholder="votre mot de passe">
 		</div>
 	</div>
+	<?php /* ?>
 	<div class="control-group">
 		<div class="controls">
 			<label class="checkbox">
 				<input type="checkbox" name="remember_me" value="1">
 				Rester Connecté <a href="#" rel="tooltip" title="Si vous souhaitez garder votre session ouverte"><i class="icon-info-sign"></i></a> </label>
-			<div class="divider"></div>
+			
+		</div>
+	</div>
+	<?php */ ?>
+	
+	<div class="control-group">
+	    <div class="controls">
+	        <div class="divider"></div>
 			<p>
 				<i class="icon-circle-arrow-right"></i>
 				<a href="#">Mot de passe Oublié</a>
@@ -26,7 +34,7 @@
 			<button type="submit" name="login" class="btn btn-primary">
 				Login
 			</button>
-		</div>
+	    </div>
 	</div>
 </form>
 

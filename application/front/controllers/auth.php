@@ -79,7 +79,8 @@ class Auth extends CX_Controller
 		$this->load->model('users_model');
 		$user_data = $this->authcx->get_user_data();
 		
-		$this->users_model->update_status(0, $user_data['id']);
+		//$this->users_model->update_status(0, $user_data['id']);
+		$this->db->update('users', array('online' => 1, 'update_at' => datetime_now()), 'id = ' . $user_data['id']);
 		
 		$this->session->unset_userdata('user_data');
 		$this->session->set_flashdata('msg', 'error~ Vous avez bien été déconnecté');
@@ -180,6 +181,16 @@ class Auth extends CX_Controller
                 $tpl['codepage'] = "yet_activate";
                 $this->layout->setTitle("Compte déjà activé");
                 break;
+				
+			case "logged":
+				$tpl['codepage'] = "logged";
+				$this->layout->setTitle("Vous devez être connecté");
+				break;
+				
+			case "noaccess":
+				$tpl['codepage'] = "noaccess";
+				$this->layout->setTitle("Vous n'êtes pas autorisé");
+				break;
 
             default:
                 show_404();

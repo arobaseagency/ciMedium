@@ -45,7 +45,9 @@ class Users_model extends CX_Model
     }
 	
 	
-	
+	/*
+	 *	Obtenir les informations du groupe d'appartenance à l'utilisateur 
+	 */
 	public function get_user_to_group($id)
 	{
 		$query = $this->db->select('*')->from($this->table)

@@ -10,6 +10,9 @@ class Profile extends CX_Controller
     {
 		parent::__construct();
 		
+		$this->authcx->access_logged();
+		$this->authcx->in_groups( array('voyant', 'consultant') );
+		
 		$this->layout->initLayout('profile');
     }
     
@@ -29,7 +32,13 @@ class Profile extends CX_Controller
 	
 	public function informations()
 	{
-		$this->layout->view('profile/information');
+		$vars = array();
+		
+		$vars['user'] = $this->session->userdata('user_data');
+		$vars['userInfo'] = $this->db->get_where('info_users', array('id' => auth_data('id')))->row();
+		
+		
+		$this->layout->view('profile/information', $vars);
 	}
 	
 	

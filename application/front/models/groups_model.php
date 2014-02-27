@@ -24,11 +24,20 @@ class Groups_model extends CX_Model
 
         return $query;
     }
+	
+	
+	/**
+	 * Récupère les données qui seront chercher en rapport avec le code du group
+	 * 
+	 * @param (mixt) $search 
+	 * @return 
+	 */
+	public function find_group_in($search)
+	{
+		$query = $this->db->select('*')->from($this->table)->where_in('code', $search)->get();
+		
+		return $query;
+	}
 
-
-    public function get_all_groups()
-    {
-
-    }
 
 }

@@ -17,7 +17,7 @@
 
 <?php tp_flash_msg(); ?>
 
-<a id="logo" class="hidden-phone" href="#" title="Voyance Online - Retour Accueil">
+<a id="logo" class="hidden-phone" href="<?php echo site_url(); ?>" title="Voyance Online - Retour Accueil">
     <img src="<?php echo asset_img('logo-site.png'); ?>" alt="logo voyance online">
 </a>
 
@@ -37,6 +37,10 @@
 		<!-- CONTENEUR -->
 		<section class="span9">
 			<h1><?php echo ucfirst($this->uri->segment(2)); ?></h1>
+			
+            <span class="pull-right badge badge-success">
+                <span class="txt-price">24</span>.00 € Crédit
+            </span>
 			<hr />
 			
 			<?php echo $layout_content; ?>

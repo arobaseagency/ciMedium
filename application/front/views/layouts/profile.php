@@ -10,6 +10,7 @@
     <?php include 'elements/head.php'; ?>
 
     <?php include 'elements/stylesheet-head.php'; ?>
+    <link href="<?php echo asset_css('pickmeup.min'); ?>" rel="stylesheet">
 </head>
 
 <body>
@@ -55,6 +56,7 @@
 </div>
 
 <?php include 'elements/script-default.php'; ?>
+<script type="text/javascript" src="<?php echo asset_js('jquery.pickmeup.min'); ?>"></script>
 <script type="text/javascript" src="<?php echo asset_js('front/users'); ?>"></script>
 </body>
 </html>

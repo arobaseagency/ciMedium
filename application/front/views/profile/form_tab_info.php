@@ -53,8 +53,10 @@
 	       <div class="control-group <?php tp_class_error('date_naissance'); ?>">
 	           	<label class="control-label">Date de naissance:</label> 
 	           
-                <div class="controls">
-                   <input type="text" class="input-small" name="date_naissance" maxlength="10" <?php echo (isset($userInfo['date_naissance'])) ? 'value="'. $userInfo['date_naissance'] .'"' : 'placeholder="AAAA-MM-JJ"' ; ?> />
+                <div class="controls input-append" style="display:block;">
+                   <input type="text" class="input-small pickerdate" data-pmu-view="years" data-pmu-format="Y-m-d" name="date_naissance" maxlength="10" <?php echo (isset($userInfo['date_naissance'])) ? 'value="'. $userInfo['date_naissance'] .'"' : 'placeholder="AAAA-MM-JJ"' ; ?> />
+                   <span class="add-on"><i class="icon-calendar"></i></span>
+                   
                    <?php echo tp_form_error('date_naissance'); ?>
                 </div>
 	           

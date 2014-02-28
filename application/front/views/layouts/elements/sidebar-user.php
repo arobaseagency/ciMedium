@@ -14,8 +14,8 @@
 		<ul class="nav nav-list">
 			<li class="nav-header">
 				Profile complété à
-				<div class="progress progress-striped" style="margin-bottom:0;">
-				  <div class="bar" style="width: 60%;"></div>
+				<div class="progress" style="margin-bottom:0;">
+				  <div class="bar bar-info" style="width: 60%;"></div>
 				</div>
 			</li>
 			<li class="nav-header">

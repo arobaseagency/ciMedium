@@ -80,11 +80,18 @@ class AuthCx
 	 *	
 	 *	@return array 
 	 */
-	public function get_user_data()
+	public function get_user_data($dataname = false)
 	{
 		if( $this->CI->session->userdata('user_data') )
 		{
-			return $this->CI->session->userdata('user_data');
+			$userdata = $this->CI->session->userdata('user_data');
+			
+			if(isset($dataname))
+			{
+				return $userdata[$dataname];
+			} else {
+				return $userdata;
+			}
 		}
 	}
 	

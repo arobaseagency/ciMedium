@@ -248,32 +248,12 @@
 #flash-msg {
   z-index: 300;
   position: absolute;
-  top: 30%;
-  left: 5%;
+  bottom: 10%;
+  left: 10%;
   width: 19%;
   display: none;
   opacity: 0.9;
   border: 1px solid #808080;
-}
-
-/* -------------------- SIDE HELP PANNEAU D'AIDE -----------------------*/
-#side-help {
-    background: #1D1D1D;
-    border: 1px dashed;
-    min-height: 400px;
-    position: fixed;
-    z-index: 30;
-    top: 10%;
-    right: -3px;
-    opacity: 0.8;
-}
-#side-help h5 {
-    margin: 4px 0;
-}
-#btn-sidehelp {
-    position: absolute;
-    left: -72px;
-    top: 0;
 }
 
 

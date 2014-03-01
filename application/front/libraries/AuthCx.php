@@ -80,7 +80,7 @@ class AuthCx
 	 *	
 	 *	@return array 
 	 */
-	public function get_user_data($dataname = false)
+	public function get_user_data($dataname = null)
 	{
 		if( $this->CI->session->userdata('user_data') )
 		{

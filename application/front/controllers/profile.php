@@ -9,7 +9,7 @@ class Profile extends CX_Controller
     public function __construct()
     {
 		parent::__construct();
-		
+		$this->output->enable_profiler(false);
 		$this->authcx->access_logged();
 		$this->authcx->in_groups( array('voyant', 'consultant') );
 		
@@ -83,6 +83,39 @@ class Profile extends CX_Controller
 		
 		$this->layout->view('profile/information', $vars);
 	}
+	
+	
+	
+	public function sign_astral()
+    {
+        $this->load->library('form_validation');
+        
+        $jsonData = array();
+        $this->output->set_content_type('application/json');
+        
+        if($this->input->is_ajax_request())
+        {
+            
+            $this->form_validation->set_rules('sign_astral', 'Sign Astral', 'trim|xss_clean|matches[regex_match[/^sagitaire|belier|balance|cancer|scorpion|lion|taureau|poisson|vierge|verseau|gemeaux|capricorne$/]');
+            
+            if($this->form_validation->run())
+            {
+                
+                $jsonData['status'] = 1;
+                $jsonData['sign'] = $this->input->post('sign_astral');
+                
+                //echo json_encode($jsonData);
+            
+            } else {
+                $jsonData['status'] = 0;
+                $jsonData['msgErrors'] = validation_errors();
+                
+                //echo json_encode($jsonData);
+            }
+        }
+        
+        $this->output->set_output(json_encode($jsonData));
+    }
 	
 	
 	public function messages()

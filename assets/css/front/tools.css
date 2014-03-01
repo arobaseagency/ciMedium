@@ -256,4 +256,52 @@
   border: 1px solid #808080;
 }
 
+/* ---------------SIGNS DU ZODIAC------------------------ */
+#zodiac-panel {
+/*
+background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyYWRpYWxHcmFkaWVudCBpZD0iZyI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjYjdiM2M3Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNTA1YjY4Ii8+PC9yYWRpYWxHcmFkaWVudD48cmVjdCB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiM1MDViNjgiIC8+PHJlY3QgeD0iLTguODIzNSUiIHk9Ii0xMDAlIiB3aWR0aD0iMTE3LjY0NzElIiBoZWlnaHQ9IjIwMCUiIGZpbGw9InVybCgjZykiIC8+PC9zdmc+);
+background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 500, color-stop(0%, #b7b3c7), color-stop(100%, #505b68));
+background-image: -webkit-radial-gradient(center top, farthest-side circle, #b7b3c7 0%, #505b68 100%);
+background-image: -moz-radial-gradient(center top, farthest-side circle, #b7b3c7 0%, #505b68 100%);
+background-image: -ms-radial-gradient(center top, farthest-side circle, #b7b3c7 0%, #505b68 100%);
+background-image: -o-radial-gradient(center top, farthest-side circle, #b7b3c7 0%, #505b68 100%);
+background-image: radial-gradient(farthest-side circle at center top, #b7b3c7 0%, #505b68 100%);
+*/
+}
+#zodiac-panel {margin: 0;list-style-type: none;overflow: hidden;width:760px;margin:auto;}
+#zodiac-panel li {float:left;}
+.zodiac-sign {
+    background-image: url('../../img/front/zodiac-signs.png');
+    background-position-x: -0px;
+    display: block;
+    height: 170px; 
+    width: 190px;
+    /*transition: all .4s ease-in;*/
+}
+.zodiac-sign span { 
+    background-image: url('../../img/front/zodiac-signs.png'); 
+    background-position-y: -170px;
+    display: block;
+    width: 190px;
+    height: 170px;
+    opacity: 0;
+    transition: opacity .4s ease-in;
+}
+.zodiac-sign:hover span, .zodiac-sign[rel=active] span  {opacity: 1;}
+
+.balance { background-position:  -0px -0px;}
+.belier { background-position:  -190px -0px; }
+.cancer { background-position:  -380px -0px; }
+.capricorne { background-position:  -570px -0px; }
+.gemeaux { background-position:  -760px -0px;  }
+.lion { background-position:  -950px -0px; }
+.poisson { background-position:  -1140px -0px; }
+.sagitaire { background-position:  -1330px -0px; }
+.scorpion { background-position:  -1520px -0px; }
+.taureau { background-position:  -1710px -0px; }
+.verseau { background-position:  -1900px -0px; }
+.vierge { background-position:  -2090px -0px; }
+
+
+
 

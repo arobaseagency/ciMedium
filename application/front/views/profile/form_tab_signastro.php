@@ -1,67 +1,21 @@
 <form id="f-sign-astral" action="<?php echo site_url('profile/sign_astral'); ?>" method="post">
     
-    
+    <?php $conf = $this->config->item('global'); ?>
     <ul id="zodiac-panel">
+    	<?php foreach($conf['signs'] as $sign): ?>
+    		<?php
+    			if(isset($userInfo['sign_astral']) and $userInfo['sign_astral'] == $sign):
+					$signStatus = 'rel="active"';
+				else:
+					$signStatus = null;
+				endif;
+    		?>
         <li>
-            <a href="#" class="zodiac-sign sagitaire" title="sagitaire">
-                <span class="zodiac-sign sagitaire"></span>
+            <a href="#" class="zodiac-sign <?php echo $sign; ?>" title="<?php echo $sign; ?>" <?php echo $signStatus; ?> >
+                <span class="zodiac-sign <?php echo $sign; ?>"></span>
             </a>
         </li>
-        <li>
-            <a href="#" class="zodiac-sign belier" title="belier">
-                <span class="zodiac-sign belier"></span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="zodiac-sign balance" title="balance">
-                <span class="zodiac-sign balance"></span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="zodiac-sign taureau" title="taureau">
-                <span class="zodiac-sign taureau"></span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="zodiac-sign cancer" title="cancer">
-                <span class="zodiac-sign cancer"></span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="zodiac-sign poisson" title="poisson">
-                <span class="zodiac-sign poisson"></span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="zodiac-sign capricorne" title="capricorne">
-                <span class="zodiac-sign capricorne"></span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="zodiac-sign vierge" title="vierge">
-                <span class="zodiac-sign vierge"></span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="zodiac-sign gemeaux" title="gemeaux">
-                <span class="zodiac-sign gemeaux"></span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="zodiac-sign verseau" title="verseau">
-                <span class="zodiac-sign verseau"></span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="zodiac-sign scorpion" title="scorpion">
-                <span class="zodiac-sign scorpion"></span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="zodiac-sign lion" title="lion">
-                <span class="zodiac-sign lion"></span>
-            </a>
-        </li>
+        <?php endforeach; ?>
     </ul>
     
     <input type="hidden" name="sign_astral">
@@ -85,7 +39,12 @@ $(document).ready(function() {
         }, function(dataReturn) {
             
             if(dataReturn.status === 1) {
-                
+            	form.find('a[rel=active]').removeAttr('rel');
+                form.find('a[title=' + dataReturn.sign + ']').attr('rel', 'active');
+                $('#flash-msg').remove();
+                $('body').append(dataReturn.msgSuccess);
+                $('#flash-msg').delay(4000).hide('normal', function() { $(this).remove(); });
+
             }
             
         });

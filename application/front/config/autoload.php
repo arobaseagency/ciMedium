@@ -92,7 +92,9 @@ $autoload['helper'] = array('url',
 |
 */
 
-$autoload['config'] = array('form_validation');
+$autoload['config'] = array('form_validation',
+							'global'
+							);
 
 
 /*

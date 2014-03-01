@@ -22,7 +22,7 @@
 	    </div>
 	    
 	    <div id="tb-descriptif" class="tab-pane fade">
-	        <?php include 'form_tab_descriptif.php'; ?>
+	        <?php include 'form_tab_password.php'; ?>
 	    </div>
 	</div>
 	

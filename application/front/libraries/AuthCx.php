@@ -78,7 +78,7 @@ class AuthCx
 	 *	Disposer de toutes les données utilisateurs mises en sessions
 	 * 	retourne le tableau des paramètres utilisateur stocké en sessions
 	 *	
-	 *	@return array 
+	 *	@return array or single value if $dataname is specify
 	 */
 	public function get_user_data($dataname = null)
 	{

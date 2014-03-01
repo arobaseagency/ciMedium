@@ -17,21 +17,6 @@ class Profile extends CX_Controller
     }
 	
 	
-	public function validate_datebirth($input)
-	{
-		if(isset($input))
-		{
-			if(!preg_match("/([0-9]{4})-([0-9]{2})-([0-9]){2}/", $input))
-			{
-				$this->form_validation->set_message('validate_datebirth', "La %s doit être au format yyyy-mm-dd");
-				return false;
-			} else {
-				return true;
-			}
-		}
-	}
-    
-    
     public function index()
     {
      	
@@ -83,6 +68,24 @@ class Profile extends CX_Controller
 		
 		$this->layout->view('profile/information', $vars);
 	}
+
+	
+	/**
+	 *  Callback de validation pour les dates d'anniversaires du formulaire edition informations
+	 */
+	public function validate_datebirth($input)
+	{
+		if(isset($input))
+		{
+			if(!preg_match("/([0-9]{4})-([0-9]{2})-([0-9]){2}/", $input))
+			{
+				$this->form_validation->set_message('validate_datebirth', "La %s doit être au format yyyy-mm-dd");
+				return false;
+			} else {
+				return true;
+			}
+		}
+	}
 	
 	
 	
@@ -100,23 +103,36 @@ class Profile extends CX_Controller
             
             if($this->form_validation->run())
             {
+            	$this->load->model('infoUsers_model');
+				$idUser = $this->authcx->get_user_data('id');
+				
+				$dataDb = array('sign_astral' => $this->input->post('sign_astral'));
+				$this->infoUsers_model->update_insert($idUser, $dataDb);
                 
                 $jsonData['status'] = 1;
                 $jsonData['sign'] = $this->input->post('sign_astral');
+				
+				$jsonData['msgSuccess'] = "<div style='display:block;' id='flash-msg' class='alert alert-info'>".
+										  "<button type='button' class='close' data-dismiss='alert'>&times;</button>".
+										  "Votre Sign astrologique a bien été enregistré ! </div>";
                 
-                //echo json_encode($jsonData);
-            
-            } else {
-                $jsonData['status'] = 0;
-                $jsonData['msgErrors'] = validation_errors();
-                
-                //echo json_encode($jsonData);
             }
         }
         
         $this->output->set_output(json_encode($jsonData));
     }
-	
+
+
+
+	public function password_edit()
+	{
+		if($this->input->post())
+		{
+			
+		}
+	}
+
+
 	
 	public function messages()
 	{

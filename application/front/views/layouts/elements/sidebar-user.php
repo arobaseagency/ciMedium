@@ -2,7 +2,7 @@
     <div class="span3">
     	<span class="label label-warning"><?php echo auth_data('group_name'); ?></span>
         <figure>
-        	<img class="img-circle img-polaroid" alt="140x140" src="http://lorempixel.com/160/160/" class="img-polaroid">
+        	<img class="img-circle img-polaroid" alt="140x140" src="<?php echo asset_img('front/noavatar.jpg'); ?>">
         </figure>
         <h3 class="text-center">
         	<?php echo ucfirst(auth_data('username')); ?>

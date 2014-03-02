@@ -10,12 +10,13 @@
     </div>
 
     <div class="span3">
-    	
+
 		<ul class="nav nav-list">
 			<li class="nav-header">
-				Profile complété à
+                <?php $percent = tp_complete_profile(); ?>
+				Profile complété à <?php echo $percent; ?>%
 				<div class="progress" style="margin-bottom:0;">
-				  <div class="bar bar-info" style="width: 60%;"></div>
+				  <div class="bar <?php echo ($percent >= 10) ? 'bar-info' : 'bar-danger'; ?>" style="width: <?php echo $percent; ?>%"></div>
 				</div>
 			</li>
 			<li class="nav-header">
@@ -35,8 +36,8 @@
 				<a href="<?php echo site_url('profile/messages'); ?>">
 					<i class="icon-envelope"></i> mes messages
 				</a>
-			</li>			
-			
+			</li>
+
 			<!-- HEADER GESTION DU COMPTE -->
 			<li class="nav-header">
 				Gestion de votre Compte
@@ -53,7 +54,7 @@
 			</li>
 			<li class="divider"></li>
 		</ul>
-    	
+
         <div class="accordion" id="accordion-553022">
             <div class="accordion-group">
                 <div class="accordion-heading">

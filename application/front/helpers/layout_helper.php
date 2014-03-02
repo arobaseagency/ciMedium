@@ -51,7 +51,7 @@ function tp_flash_msg()
 function tp_active($uriName)
 {
 	$ci =& get_instance();
-	
+
 	$uri = $ci->uri->segment(2);
 	if($uriName == strtolower($uri))
 	{
@@ -59,7 +59,38 @@ function tp_active($uriName)
 	}
 }
 
+/**
+ * fonction qui affiche en % pourcentage le taux de completion
+ * du profile utilisateur
+ */
+function tp_complete_profile()
+{
+	$ci =& get_instance();
 
+	if($ci->session->userdata('user_data') !== null)
+	{
+		$userSession = $ci->session->userdata('user_data');
+		//$userData = $ci->db->get_where('info_users', array('users_id' => $userSession['id']))->row();
+		$query = $ci->db->where('users_id', $userSession['id'])
+                        ->get('info_users')
+                        ->row_array();
 
+		$totalInfo = count($query) - 2;
+        $counter = 0;
+        foreach($query as $cle => $value)
+        {
+            if($cle != 'id' and $cle != 'users_id')
+            {
+                if($value != null or $value != '')
+                {
+                    $counter += 1;
+                }
+            }
+        }
 
+        $percent = ($counter / $totalInfo) * 100;
 
+		return $percent;
+
+	}
+}

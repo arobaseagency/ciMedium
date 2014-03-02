@@ -1,5 +1,5 @@
 <form class="form-horizontal" action="<?php site_url('profile/informations/edit'); ?>" method="post">
-	<h4>Veuillez remplir vos informations</h4>
+	<legend>Veuillez remplir vos informations</legend>
 	
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit ratione officia illum nesciunt officiis dolores laudantium delectus non eius voluptatibus deserunt eligendi ipsa necessitatibus fugit magni iste hic. Dolorem reiciendis.</p>
 	<hr>

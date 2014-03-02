@@ -1,3 +1,4 @@
+
 <style type="text/css">
 	#codeigniter-profiler { clear: both; background: #000000; opacity: 0.8; padding: 0 5px; font-family: Helvetica, sans-serif; font-size: 10px; line-height: 12px; position: fixed; width: 99.20%; min-width: 69em; z-index: 1000; }
 	#codeigniter-profiler:hover { background: #000; opacity: 1.0; }
@@ -35,7 +36,7 @@
 </style>
 
 <script type="text/javascript">
-	
+
 current = null;
 currentvar = null;
 currentli = null;
@@ -317,3 +318,4 @@ function remove_class(obj, clas){
 <?php endif; ?>
 
 </div>	<!-- /codeigniter_profiler -->
+

@@ -9,10 +9,10 @@ class Auth extends CX_Controller
         parent::__construct();
 
         $this->layout->initLayout('two-column');
-		
+
 		$this->load->model('users_model');
 		$this->load->model('groups_model');
-		
+
     }
 
 
@@ -20,39 +20,39 @@ class Auth extends CX_Controller
     {
     	// pour éviter le bug lorsque l'on renvoit du json
     	$this->output->enable_profiler(false);
-		
+
 		$this->load->library('form_validation');
 		$jsonData = array();
-		
+
 		if($this->input->is_ajax_request())
 		{
-			
+
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean|valid_email');
 			$this->form_validation->set_rules('password', 'Mot de passe', 'trim|required|xss_clean|callback_check_login');
-			
+
 			if($this->form_validation->run())
 			{
 				// on met en session les données utilisateurs
 				$this->authcx->login($this->input->post());
-				
+
 				$jsonData['status'] = 1;
 				$jsonData['redirect'] = $_SERVER['HTTP_REFERER'];
-				
-				$this->output->set_content_type('application/json')
-							->set_output(json_encode($jsonData));
-			} 
-			else 
-			{
-				$jsonData['status'] = 0;
-				$jsonData['msgErrors'] = validation_errors();
-				
+
 				$this->output->set_content_type('application/json')
 							->set_output(json_encode($jsonData));
 			}
-			
+			else
+			{
+				$jsonData['status'] = 0;
+				$jsonData['msgErrors'] = validation_errors();
+
+				$this->output->set_content_type('application/json')
+							->set_output(json_encode($jsonData));
+			}
+
 		}
     }
-	
+
 	/**
 	 *  Callback Valid form pour form_validation login()
 	 */
@@ -60,31 +60,31 @@ class Auth extends CX_Controller
 	{
 		$this->load->library('encrypt');
 		$postEmail = $this->input->post('email');
-		
+
 		$query = $this->db->get_where('users', array('email' => $postEmail))->row_array();
-		
+
 		if($this->encrypt->decode($query['password']) == $password && $query['email'] == $postEmail)
 		{
 			return true;
 		} else {
 			$this->form_validation->set_message("check_login", "Le Mot de passe ou l'email n'existe pas");
 			return false;
-		}	
+		}
 	}
-	
-	
+
+
 
     public function logout()
     {
 		$this->load->model('users_model');
 		$user_data = $this->authcx->get_user_data();
-		
+
 		//$this->users_model->update_status(0, $user_data['id']);
 		$this->db->update('users', array('online' => 1, 'update_at' => datetime_now()), 'id = ' . $user_data['id']);
-		
+
 		$this->session->unset_userdata('user_data');
 		$this->session->set_flashdata('msg', 'error~ Vous avez bien été déconnecté');
-		
+
 		redirect(base_url());
     }
 
@@ -98,7 +98,6 @@ class Auth extends CX_Controller
      **/
     public function registration()
     {
-		
         $this->load->library('form_validation');
         if($this->input->post())
         {
@@ -116,13 +115,10 @@ class Auth extends CX_Controller
                     'create_at' => date('Y-m-d H:i:s'),
                     'activation_code' => sha1(time()),
                 );
-				
-				$this->authcx->register($dataUser, $post['code']);
 
+				$this->authcx->register($dataUser, $post['code']);
             }
         }
-
-
         $this->layout->view('auth/inscription');
     }
 
@@ -132,19 +128,19 @@ class Auth extends CX_Controller
         if($key)
         {
 			$rowUser = $this->db->get_where('users', array('activation_code' => $key))->row();
-			
+
 			if(count($rowUser) == 1 and $rowUser->actived == false)
 			{
 				$data = array("actived" => 1);
 				$this->db->update('users', $data, "id = ".$rowUser->id);
-				
+
 				// rajouter method AuthCX afin de se connecter et d'envoyer en session les variables
-				
+
 				redirect('/auth/confirmation/activation-compte');
 			} else {
 				redirect('/auth/confirmation/deja-actif');
 			}
-			
+
         } else {
             show_404();
         }
@@ -176,17 +172,17 @@ class Auth extends CX_Controller
                 $tpl['codepage'] = "activate";
                 $this->layout->setTitle("Activation de votre Compte");
                 break;
-			
+
 			case "deja-actif":
                 $tpl['codepage'] = "yet_activate";
                 $this->layout->setTitle("Compte déjà activé");
                 break;
-				
+
 			case "logged":
 				$tpl['codepage'] = "logged";
 				$this->layout->setTitle("Vous devez être connecté");
 				break;
-				
+
 			case "noaccess":
 				$tpl['codepage'] = "noaccess";
 				$this->layout->setTitle("Vous n'êtes pas autorisé");

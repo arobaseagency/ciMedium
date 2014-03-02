@@ -76,6 +76,12 @@ class InfoUsers_model extends CX_Model
         }
 
 	}
+	
+	
+	public function statistic_complete_profile($iduser)
+	{
+		
+	}
     
 
 }

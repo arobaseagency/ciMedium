@@ -10,7 +10,7 @@ $config = array(
         array(
         	'label' => "nom d'utilisateur",
             'field' => 'username',
-            'rules' => 'trim|required|xss_clean|min_length[5]|max_length[12]'
+            'rules' => 'trim|required|xss_clean|min_length[5]|max_length[12]|is_unique[users.username]'
         ),
         array(
         	'label' => "Mot de passe",
@@ -24,23 +24,23 @@ $config = array(
         ),
         array(
             'field' => 'email',
-            'rules' => 'trim|required|valid_email|xss_clean'
+            'rules' => 'trim|required|valid_email|xss_clean|is_unique[users.email]'
         )
     ),
-    
-	
+
+
 	'login' => array(
 		array(
 			'field' => 'email',
 			'rules' => 'trim|required|xss_clean|valid_email'
 		),
-		
+
 		array(
 			'field' => 'password',
 			'rules' => 'trim|required|xss_clean'
 		)
 	),
-	
+
 	'profile/information' => array(
 		array(
 			'field' => 'email',

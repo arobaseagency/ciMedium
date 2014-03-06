@@ -1,8 +1,15 @@
 <div id="sidebar-user" class="row">
     <div class="span3">
     	<span class="label label-warning"><?php echo auth_data('group_name'); ?></span>
-        <figure>
-        	<img class="img-circle img-polaroid" alt="140x140" src="<?php echo asset_img('front/noavatar.jpg'); ?>">
+        <figure id="picture-avatar">
+        	<img class="img-polaroid" alt="140x140" src="<?php echo asset_img('front/noavatar.jpg'); ?>">
+
+            <div class="btn-group btn-group-vertical">
+                <a href="#modal-sideuser" data-toggle="modal" rel="tooltip" title="Uploader Votre photo" class="btn btn-mini">
+                    <i class="icon-picture"></i>
+                </a>
+                <a href="#" rel="tooltip" title="Supprimer votre photo" class="btn btn-mini"><i class="icon-remove"></i></a>
+            </div>
         </figure>
         <h3 class="text-center">
         	<?php echo ucfirst(auth_data('username')); ?>
@@ -19,6 +26,7 @@
 				  <div class="bar <?php echo ($percent >= 10) ? 'bar-info' : 'bar-danger'; ?>" style="width: <?php echo $percent; ?>%"></div>
 				</div>
 			</li>
+
 			<li class="nav-header">
 				Informations Profile
 			</li>
@@ -100,5 +108,20 @@
 
         </div>
     </div><!-- FIN BLOC ACCORDEON -->
+
+
+<!-- MODAL BOX -->
+<div id="modal-sideuser" class="modal hide fade" role="dialog">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>title</h3>
+    </div>
+    <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem itaque quae vitae eveniet tempora numquam recusandae dignissimos facilis eos saepe reiciendis commodi corporis neque doloribus unde nostrum id eligendi rerum.</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-primary">save</a>
+    </div>
+</div>
 
 </div>

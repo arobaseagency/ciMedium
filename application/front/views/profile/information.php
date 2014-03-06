@@ -67,8 +67,8 @@ $(document).ready(function() {
 
        $.post("<?php echo site_url('profile/password_edit'); ?>", {
             old_password: $('input[name=old_password]').val(),
-            password: $('input[name=password]').val(),
-            confirm_password: $('input[name=confirm_password]').val()
+            new_password: $('input[name=new_password]').val(),
+            confirm_pass: $('input[name=confirm_pass]').val()
        }, function(dataBack){
             formular.html(dataBack);
        });

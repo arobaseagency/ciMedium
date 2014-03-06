@@ -58,12 +58,11 @@ class Auth extends CX_Controller
 	 */
 	public function check_login($password)
 	{
-		$this->load->library('encrypt');
 		$postEmail = $this->input->post('email');
 
 		$query = $this->db->get_where('users', array('email' => $postEmail))->row_array();
 
-		if($this->encrypt->decode($query['password']) == $password && $query['email'] == $postEmail)
+		if($query['password'] == sha1($password) && $query['email'] == $postEmail)
 		{
 			return true;
 		} else {
@@ -105,15 +104,13 @@ class Auth extends CX_Controller
             {
                 $post = $this->input->post();
 
-                $this->load->library('encrypt');
-
                 $dataUser = array(
                     'username'  => $post['username'],
                     'email'     => $post['email'],
-                    'password'  => $this->encrypt->encode($post['password']),
+                    'password'  => sha1($post['password']),
                     'ip'        => $_SERVER['REMOTE_ADDR'],
                     'create_at' => date('Y-m-d H:i:s'),
-                    'activation_code' => sha1(time()),
+                    'activation_code' => md5(time()),
                 );
 
 				$this->authcx->register($dataUser, $post['code']);

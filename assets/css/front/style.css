@@ -267,9 +267,15 @@ form .needful {
 #sidebar-user {
 
 }
-
 #sidebar-user .nav { text-transform: capitalize; }
-
+#picture-avatar {position: relative;}
+#picture-avatar .btn-group {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  right: 13%;
+  top: 13%;
+}
 
 /*_____________________ FOOTER _____________________________*/
 

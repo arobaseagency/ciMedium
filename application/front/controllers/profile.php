@@ -119,7 +119,6 @@ class Profile extends CX_Controller
 
             }
         }
-
         $this->output->set_output(json_encode($jsonData));
     }
 
@@ -132,17 +131,23 @@ class Profile extends CX_Controller
 
 		if($this->input->is_ajax_request())
 		{
-            $this->form_validation->set_rules('old_password', 'Mot de passe Actuel', 'trim|xss_clean|required');
-            $this->form_validation->set_rules('password', 'Nouveau password', 'trim|xss_clean|required|min_length[5]|max_length[12]|matches[compare_password]');
-            $this->form_validation->set_rules('compare_password', 'trim|xss_clean|required|min_length[5]|max_length[12]');
-
+            $this->form_validation->set_rules('old_password', 'Mot de passe Actuel', 'trim|xss_clean|required|callback_form_checkpassword');
+            $this->form_validation->set_rules('new_password', 'Nouveau password', 'trim|xss_clean|required|min_length[5]|max_length[12]|matches[confirm_pass]');
+            $this->form_validation->set_rules('confirm_pass', 'password confirmation', 'trim|xss_clean|required');
 
             if($this->form_validation->run())
             {
+                $iduser = $this->authcx->get_user_data('id');
+                $dataDb = array(
+                    'password' => sha1($this->input->post('new_password'))
+                );
+                $this->db->trans_start();
+                $this->db->update('users', $dataDb, "id = {$iduser}");
+                $this->db->trans_complete();
 
-            }
-            else
-            {
+                if($this->db->trans_status() === false){ log_message('error', "insertion nouveau mot de passe échoué id utilisatuer=".$iduser); }
+
+                $vars['validationSuccessPassword'] = true;
             }
 
             $this->load->view('profile/form_tab_password', $vars);
@@ -151,7 +156,22 @@ class Profile extends CX_Controller
         }
 	}
 
-    
+
+    public function form_checkpassword($input)
+    {
+        if($this->authcx->get_user_data())
+        {
+            $iduser = $this->authcx->get_user_data('id');
+            $obj = $this->db->get_where('users', array('id' => $iduser))->row();
+            if($obj->password == sha1($input))
+            {
+                return true;
+            } else {
+                $this->form_validation->set_message('form_checkpassword', "Ce n'est pas le bon mot de passe actuel");
+                return false;
+            }
+        }
+    }
 
 
 

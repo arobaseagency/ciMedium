@@ -4,7 +4,10 @@
 
 	<div class="span5 offset3">
         <?php if(isset($validationSuccessPassword)): ?>
-        <div class="alert alert-info"><p>Votre nouveau mot de passé a été enregistré avec succès</p></div>
+        <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <p>Votre nouveau mot de passé a bien été enregistré avec succès</p>
+        </div>
         <?php endif; ?>
 
         <?php  if(validation_errors() == true): ?>
@@ -24,17 +27,17 @@
         </div>
 
 		<div class="control-password">
-            <label class="control-label" for="password">
+            <label class="control-label" for="new_password">
                 <span class="needful">*</span>Votre Nouveau Mot de passe:
             </label>
-            <input type="password" name="password">
+            <input type="password" name="new_password">
         </div>
 
 		<div class="control-group">
-            <label class="control-label" for="compare_password">
+            <label class="control-label" for="confirm_pass">
                 <span class="needful">*</span>Confirmer Votre Mot de passe:
             </label>
-            <input type="password" name="compare_password">
+            <input type="password" name="confirm_pass">
         </div>
 
 		<p>

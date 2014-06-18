@@ -274,12 +274,12 @@ background-image: radial-gradient(farthest-side circle at center top, #b7b3c7 0%
     background-image: url('../../img/front/zodiac-signs.png');
     background-position-x: -0px;
     display: block;
-    height: 170px; 
+    height: 170px;
     width: 190px;
     /*transition: all .4s ease-in;*/
 }
-.zodiac-sign span { 
-    background-image: url('../../img/front/zodiac-signs.png'); 
+.zodiac-sign span {
+    background-image: url('../../img/front/zodiac-signs.png');
     background-position-y: -170px;
     display: block;
     width: 190px;
@@ -287,7 +287,9 @@ background-image: radial-gradient(farthest-side circle at center top, #b7b3c7 0%
     opacity: 0;
     transition: opacity .3s ease-in;
 }
-.zodiac-sign:hover span, .zodiac-sign[rel=active] span  {opacity: 1;}
+.zodiac-sign:hover span, .zodiac-sign[rel=active] span  {
+    opacity: 1;
+}
 
 .balance { background-position:  -0px -0px;}
 .belier { background-position:  -190px -0px; }
@@ -303,5 +305,52 @@ background-image: radial-gradient(farthest-side circle at center top, #b7b3c7 0%
 .vierge { background-position:  -2090px -0px; }
 
 
-
-
+/* hover fadein */
+.zodiac-sign:hover .balance,
+.zodiac-sign[rel=active] .balance {
+  background-position: 0px 170px;
+}
+.zodiac-sign:hover .belier,
+.zodiac-sign[rel=active] .belier {
+  background-position: -190px 170px;
+}
+.zodiac-sign:hover .cancer,
+.zodiac-sign[rel=active] .cancer {
+  background-position: -380px 170px;
+}
+.zodiac-sign:hover .capricorne,
+.zodiac-sign[rel=active] .capricorne {
+  background-position: -570px 170px;
+}
+.zodiac-sign:hover .gemeaux,
+.zodiac-sign[rel=active] .gemeaux {
+  background-position: -760px 170px;
+}
+.zodiac-sign:hover .lion,
+.zodiac-sign[rel=active] .lion {
+  background-position: -950px 170px;
+}
+.zodiac-sign:hover .poisson,
+.zodiac-sign[rel=active] .poisson {
+  background-position: -1140px 170px;
+}
+.zodiac-sign:hover .sagitaire,
+.zodiac-sign[rel=active] .sagitaire {
+  background-position: -1330px 170px;
+}
+.zodiac-sign:hover .scorpion,
+.zodiac-sign[rel=active] .scorpion {
+  background-position: -1520px 170px;
+}
+.zodiac-sign:hover .taureau,
+.zodiac-sign[rel=active] .taureau {
+  background-position: -1710px 170px;
+}
+.zodiac-sign:hover .verseau,
+.zodiac-sign[rel=active] .verseau {
+  background-position: -1900px 170px;
+}
+.zodiac-sign:hover .vierge,
+.zodiac-sign[rel=active] .vierge {
+  background-position: -2090px 170px;
+}

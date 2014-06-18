@@ -13,6 +13,7 @@ class Auth extends CX_Controller
 		$this->load->model('users_model');
 		$this->load->model('groups_model');
 
+
     }
 
 

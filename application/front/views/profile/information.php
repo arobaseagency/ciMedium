@@ -50,7 +50,8 @@ $(document).ready(function() {
                 form.find('a[title=' + dataReturn.sign + ']').attr('rel', 'active');
                 $('#flash-msg').remove();
                 $('body').append(dataReturn.msgSuccess);
-                $('#flash-msg').delay(3000).hide('normal', function() { $(this).remove(); });
+                //$('#flash-msg').delay(3000).hide('normal', function() { $(this).remove(); });
+                $('#flash-msg').hide().show('normal').delay(3000).hide('normal', function() { $(this).remove(); });
             }
         });
 

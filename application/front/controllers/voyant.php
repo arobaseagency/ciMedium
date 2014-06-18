@@ -11,6 +11,7 @@ class Voyant extends CX_Controller
         parent::__construct();
 
         $this->layout->initLayout('voyant');
+        
     }
 
 

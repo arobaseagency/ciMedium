@@ -10,5 +10,6 @@
 .hgignore
 
 .komodotools/
-application/*/logs
-application/*/cache
+user_guide/*
+application/*/logs/*
+application/*/cache/*

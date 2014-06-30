@@ -37,7 +37,7 @@
 |
 */
 
-$autoload['packages'] = array(APPPATH.'third_party');
+$autoload['packages'] = array(APPPATH.'third_party/MX');
 
 
 /*
@@ -75,7 +75,7 @@ $autoload['helper'] = array('url',
 							'html',
                             'form',
 							'language',
-							'date',
+                            'phpti',
 							'global');
 
 

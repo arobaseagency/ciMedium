@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Auth extends CX_Controller
+class Auth extends MX_Controller
 {
 
     public function __construct()
@@ -90,7 +90,7 @@ class Auth extends CX_Controller
 
     public function forgotPassword()
     {
-
+        
     }
 
     /**
@@ -98,6 +98,7 @@ class Auth extends CX_Controller
      **/
     public function registration()
     {
+
         $this->load->library('form_validation');
         if($this->input->post())
         {

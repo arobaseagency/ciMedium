@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class CX_Model extends CI_Model
+class MY_Model extends CI_Model
 {
 
     protected $table;
@@ -17,8 +17,8 @@ class CX_Model extends CI_Model
     {
         parent::__construct();
     }
-	
-	
+
+
 	/*
      *  @param $lastId (int)
      *  @return (int) $this->db->insert_id()
@@ -30,8 +30,8 @@ class CX_Model extends CI_Model
     {
         $this->last_id = $lastQueryId;
     }
-	
-	
+
+
 
     /*
      *  Retourne le dernier ID de la requête en respectant le nom utilisé dans codeIgniter
@@ -44,11 +44,11 @@ class CX_Model extends CI_Model
         return $this->last_id;
     }
 
-    
-	
+
+
 	/**
 	 * @param (int) $id
-	 * 
+	 *
 	 * retourne la requête, il faut ensuite afficher le résultat avec les méthodes de CI model
 	 * result(), row() ou bien row_array() etc...
 	 */
@@ -56,7 +56,7 @@ class CX_Model extends CI_Model
 	{
 		return $this->db->get_where($this->table, array('id' => $id));
 	}
-	
+
 
     /*
      *  insert new data

@@ -115,7 +115,7 @@ $config['enable_hooks'] = TRUE;
 | http://codeigniter.com/user_guide/general/creating_libraries.html
 |
 */
-$config['subclass_prefix'] = 'CX_';
+$config['subclass_prefix'] = 'MY_';
 
 
 /*
@@ -377,3 +377,11 @@ $config['proxy_ips'] = '';
 | directory.
 |
 */
+
+
+/*
+ *   For modules HMVC
+ */
+$config['modules_locations'] = array(
+    APPPATH . 'modules/' => '../modules/',
+);

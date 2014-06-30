@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Users_model extends CX_Model
+class Users_model extends MY_Model
 {
 
     protected $table = 'users';
@@ -11,8 +11,8 @@ class Users_model extends CX_Model
     {
         parent::__construct();
     }
-	
-	
+
+
     public function add_user($data = array(), $datainfos = null)
     {
         $this->db->trans_start();
@@ -43,10 +43,10 @@ class Users_model extends CX_Model
             return true;
         }
     }
-	
-	
+
+
 	/*
-	 *	Obtenir les informations du groupe d'appartenance à l'utilisateur 
+	 *	Obtenir les informations du groupe d'appartenance à l'utilisateur
 	 */
 	public function get_user_to_group($id)
 	{
@@ -55,15 +55,13 @@ class Users_model extends CX_Model
 								->join('groups', 'groups.id = users_groups.groups_id')
 								->where('users.id', $id)
 								->get();
-								
+
 		return $query;
 	}
-	
-	
+
+
 	public function update_status($boolean, $id)
 	{
 		$this->db->update($this->table, array('online' => $boolean), 'id = '. $id);
 	}
-
-
 }

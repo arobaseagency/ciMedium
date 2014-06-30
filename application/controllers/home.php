@@ -9,7 +9,7 @@
  *  de la page d'accueil du site
  *
  **/
-class Home extends CX_Controller
+class Home extends Base_Controller
 {
 
     public function __construct()
@@ -20,9 +20,10 @@ class Home extends CX_Controller
 
     public function index()
     {
-        parent::$items['title'] = "Mon titre de page !";
+        $tpl['meta'] = '';
+        $tpl['title'] = "Mon titre de page !";
 
-        $this->layout->view('accueil', parent::$items);
+        $this->layout->view('accueil', $tpl);
     }
 
 

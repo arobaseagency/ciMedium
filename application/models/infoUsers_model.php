@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class InfoUsers_model extends CX_Model
+class InfoUsers_model extends MY_Model
 {
 
     protected $table = 'info_users';
@@ -37,12 +37,12 @@ class InfoUsers_model extends CX_Model
             return true;
         }
     }
-	
-	
+
+
 	public function update_insert($id, $data = array())
 	{
 		$idExist = $this->db->get_where($this->table, array('users_id' => $id))->row();
-		
+
 		$this->db->trans_start();
 		foreach($data as $name => $value)
 		{
@@ -51,12 +51,12 @@ class InfoUsers_model extends CX_Model
 				$this->db->set($name, $value);
 				$this->db->where('id', $id);
 				$this->db->update($this->tableRelation);
-				
+
 				continue;
 			}
 			$this->db->set($name, $value);
 		}
-		
+
 		if(empty($idExist))
 		{
 			$this->db->set('users_id', $id);
@@ -65,7 +65,7 @@ class InfoUsers_model extends CX_Model
 			$this->db->where('users_id', $id);
 			$this->db->update($this->table);
 		}
-		
+
 		$this->db->trans_complete();
         if($this->db->trans_status() === FALSE)
         {
@@ -76,12 +76,10 @@ class InfoUsers_model extends CX_Model
         }
 
 	}
-	
-	
+
+
 	public function statistic_complete_profile($iduser)
 	{
-		
-	}
-    
 
+	}
 }

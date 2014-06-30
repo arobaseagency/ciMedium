@@ -11,7 +11,9 @@
 
 .komodotools/
 user_guide/*
-application/logs/*
+
 application/cache/*
-application/*/logs/*
-application/*/cache/*
+!application/cache/index.html
+application/logs/*
+!application/logs/index.html
+

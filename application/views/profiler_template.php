@@ -1,6 +1,6 @@
 
 <style type="text/css">
-	#codeigniter-profiler { clear: both; background: #000000; opacity: 0.8; padding: 0 5px; font-family: Helvetica, sans-serif; font-size: 10px; line-height: 12px; position: fixed; width: 99.20%; min-width: 69em; z-index: 1000; }
+	#codeigniter-profiler { clear: both; background: #000000; opacity: 0.8; padding: 0 5px; font-family: Helvetica, sans-serif; font-size: 10px; line-height: 10px; position: fixed; width: 99.20%; min-width: 69em; z-index: 1000; }
 	#codeigniter-profiler:hover { background: #000; opacity: 1.0; }
 
 	#codeigniter-profiler.bottom-right { bottom:0; right: 0;-webkit-box-shadow: -1px -1px 10px #C0C0C0; -moz-box-shadow: -1px -1px 10px #C0C0C0; box-shadow: -1px -1px 10px #C0C0C0; }
@@ -11,7 +11,7 @@
 	.ci-profiler-box { padding: 10px; margin: 0 0 10px 0; max-height: 300px; overflow: auto; color: #fff; font-family: Monaco, 'Lucida Console', 'Courier New', monospace; font-size: 11px !important; }
 	.ci-profiler-box h2 { font-family: Helvetica, sans-serif; font-weight: bold; font-size: 16px !important; padding: 0; line-height: 2.0; text-shadow:none; }
 
-	#ci-profiler-menu a:link, #ci-profiler-menu a:visited { display: inline-block; padding: 3px 0; margin: 0; color: #337ACF; text-decoration: none; font-weight: bold; cursor: pointer; text-align: center; width: 15.5%; border-bottom: 4px solid #444; }
+	#ci-profiler-menu a:link, #ci-profiler-menu a:visited { display: inline-block; padding: 2px 0; margin: 0; color: #337ACF; text-decoration: none; font-weight: bold; cursor: pointer; text-align: center; width: 15.5%; border-bottom: 4px solid #444; }
 	#ci-profiler-menu a:hover, #ci-profiler-menu a.current { background-color: #2B2B2B; border-color: #999; }
 	#ci-profiler-menu a span { display: block; font-weight: bold; font-size: 14px !important; line-height: 1.2; }
     #ci-profiler-menu a#ci-profiler-menu-exit {border-bottom:none;padding:7px 0;}

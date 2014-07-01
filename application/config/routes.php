@@ -45,7 +45,7 @@ $route['voyant/chat-webcam'] = "voyant/index";
 # route pour l'authentification
 $route['auth/inscription'] = "auth/registration";
 
-//$route['default_controller'] = "welcome";
+
 $route['default_controller'] = "home";
 $route['404_override'] = "";
 

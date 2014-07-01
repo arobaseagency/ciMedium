@@ -54,9 +54,9 @@ $autoload['packages'] = array(APPPATH.'third_party/MX');
 
 $autoload['libraries'] = array('database',
                                'session',
-                               'authcx',
+                               'ion_auth',
 							   'parser',
-                               'layout');
+                               );
 
 
 /*
@@ -76,7 +76,7 @@ $autoload['helper'] = array('url',
                             'form',
 							'language',
                             'phpti',
-							'global');
+							'app');
 
 
 /*

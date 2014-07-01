@@ -20,10 +20,8 @@ class Home extends Base_Controller
 
     public function index()
     {
-        $tpl['meta'] = '';
-        $tpl['title'] = "Mon titre de page !";
-
-        $this->layout->view('accueil', $tpl);
+        echo realpath(dirname(__DIR__));
+        $this->load->view('home.phtml');
     }
 
 

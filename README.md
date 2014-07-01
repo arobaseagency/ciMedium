@@ -1,5 +1,5 @@
 ciMedium
 ========
-voyance v2.0
+voyance v3.0
 
 Test de Code et architecture

@@ -37,7 +37,7 @@
 |
 */
 
-$autoload['packages'] = array(APPPATH.'third_party/MX');
+$autoload['packages'] = array();
 
 
 /*
@@ -75,7 +75,6 @@ $autoload['helper'] = array('url',
 							'html',
                             'form',
 							'language',
-                            'phpti',
 							'app');
 
 
@@ -92,8 +91,7 @@ $autoload['helper'] = array('url',
 |
 */
 
-$autoload['config'] = array('form_validation',
-							'global'
+$autoload['config'] = array('global'
 							);
 
 

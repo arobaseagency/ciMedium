@@ -3,6 +3,8 @@
 // The name of the directory where templates are located.
 $config['template_dir'] = dirname(FCPATH) . '/../application/views/';
 
+$config['template_dir_module'] = dirname(FCPATH) . '/../application/modules/';
+
 // The directory where compiled templates are located
 $config['compileDir']   = dirname(FCPATH) . '/../compile/';
 

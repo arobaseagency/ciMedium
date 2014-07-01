@@ -1,4 +1,4 @@
-<?php include 'application/views/layout.phtml'; ?>
+<?php #include 'application/views/layout.phtml'; ?>
 
 <?php startblock('container'); ?>
 

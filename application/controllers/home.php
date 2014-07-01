@@ -20,7 +20,7 @@ class Home extends Base_Controller
 
     public function index()
     {
-        echo realpath(dirname(__DIR__));
+
         $this->load->view('home.phtml');
     }
 

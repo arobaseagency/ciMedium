@@ -42,12 +42,17 @@
 $route['voyant/chat-webcam/(:any)'] = "voyant/chat_webcam/$1";
 $route['voyant/chat-webcam'] = "voyant/index";
 
-# route pour l'authentification
-$route['auth/inscription'] = "auth/registration";
 
+# AUTHENTIFICATION
+$route['auth/create_user'] = "auth/auth/create_user";
+$route['auth/deactivate_user'] = "auth/auth/deactivate_user";
+$route['auth/reset_password/(:any)'] = "auth/auth/reset_password/$1";
+$route['auth/reset_password'] = "auth/auth/reset_password";
+$route['auth/forgot_password'] = "auth/auth/forgot_password";
+$route['auth/change_password'] = "auth/auth/change_password";
+$route['auth/login'] = "auth/auth/login";
+$route['auth'] = "auth/auth/index";
 
-$route['admin/dashboard'] = "admin/panel";
-$route['admin'] = $route['admin/dashboard'];
 
 $route['default_controller'] = "home";
 $route['404_override'] = "";

@@ -3,36 +3,34 @@
 	<span class="img-loader-medium"></span>
 
 	<div class="control-group">
-		<label class="control-label" for="inputEmail">Email</label>
+		<label class="control-label" for="identity">Email / Username</label>
 		<div class="controls">
-			<input type="text" class="input-medium" name="email" placeholder="mon@email.com">
+			<input type="text" class="input-medium" name="identity" placeholder="mon@email.com">
 		</div>
 	</div>
 	<div class="control-group">
-		<label class="control-label" for="inputPassword">Password</label>
+		<label class="control-label" for="password">Password</label>
 		<div class="controls">
 			<input type="password" class="input-medium" name="password" placeholder="votre mot de passe">
 		</div>
 	</div>
-	<?php /* ?>
 	<div class="control-group">
 		<div class="controls">
 			<label class="checkbox">
-				<input type="checkbox" name="remember_me" value="1">
-				Rester Connecté <a href="#" rel="tooltip" title="Si vous souhaitez garder votre session ouverte"><i class="icon-info-sign"></i></a> </label>
+				<input type="checkbox" name="remember" value="1">
+				<?php echo lang('login_remember_label'); ?> <a href="#" rel="tooltip" title="Si vous souhaitez garder votre session ouverte"><i class="icon-info-sign"></i></a> </label>
 
 		</div>
 	</div>
-	<?php */ ?>
 
 	<div class="control-group">
 	    <div class="controls">
 	        <div class="divider"></div>
 			<p>
 				<i class="icon-circle-arrow-right"></i>
-				<a href="#">Mot de passe Oublié</a>
+				<a href="auth/forgot_password"><?php echo lang('login_forgot_password');?></a>
 			</p>
-			<button type="submit" name="login" class="btn btn-primary">
+			<button type="submit" name="submit" class="btn btn-primary">
 				Login
 			</button>
 	    </div>
@@ -40,10 +38,7 @@
 </form>
 
 <script>
-(function($) {
-
 $(document).ready(function() {
-
 
 	$("#login-form").bind('submit', function(e) {
 
@@ -73,7 +68,4 @@ $(document).ready(function() {
 	});
 
 });
-
-})(jQuery);
 </script>
-

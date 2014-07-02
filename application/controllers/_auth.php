@@ -13,7 +13,6 @@ class Auth extends MX_Controller
 		$this->load->model('users_model');
 		$this->load->model('groups_model');
 
-
     }
 
 
@@ -90,7 +89,7 @@ class Auth extends MX_Controller
 
     public function forgotPassword()
     {
-        
+
     }
 
     /**

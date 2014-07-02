@@ -75,6 +75,7 @@ $autoload['helper'] = array('url',
 							'html',
                             'form',
 							'language',
+                            'phpti',
 							'app');
 
 

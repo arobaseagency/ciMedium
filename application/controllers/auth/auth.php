@@ -1,8 +1,9 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends Base_Controller {
+class Auth extends Base_Controller
+{
 
-	function __construct()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
@@ -13,7 +14,7 @@ class Auth extends Base_Controller {
 	}
 
 	//redirect if needed, otherwise display the user list
-	function index()
+	public function index()
 	{
         $data = array();
 
@@ -39,12 +40,12 @@ class Auth extends Base_Controller {
 				$data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
 
-			$this->_render_page('auth/index', $data);
+			$this->load->view('auth/index.phtml', $data);
 		}
 	}
 
 	//log the user in
-	function login()
+	public function login()
 	{
 		$data['title'] = "Login";
 
@@ -89,12 +90,24 @@ class Auth extends Base_Controller {
 				'type' => 'password',
 			);
 
-			$this->_render_page('auth/login', $data);
+			$this->load->view('auth/login.phtml', $data);
 		}
 	}
 
+
+    /*
+     *  Si c'est le formulaire de login en ajax on le traite ici
+     */
+    public function _login_ajax()
+    {
+        // Code à implémenter
+    }
+
+
+
+
 	//log the user out
-	function logout()
+	public function logout()
 	{
 		$data['title'] = "Logout";
 
@@ -106,8 +119,12 @@ class Auth extends Base_Controller {
 		redirect('auth/login', 'refresh');
 	}
 
-	//change password
-	function change_password()
+
+
+	/*
+     *  Changer le mot de passe
+     */
+	public function change_password()
 	{
 		$this->form_validation->set_rules('old', $this->lang->line('change_password_validation_old_password_label'), 'required');
 		$this->form_validation->set_rules('new', $this->lang->line('change_password_validation_new_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[new_confirm]');
@@ -152,7 +169,7 @@ class Auth extends Base_Controller {
 			);
 
 			//render
-			$this->_render_page('auth/change_password', $data);
+			$this->load->view('auth/change_password', $data);
 		}
 		else
 		{
@@ -174,8 +191,10 @@ class Auth extends Base_Controller {
 		}
 	}
 
+
+
 	//forgot password
-	function forgot_password()
+	public function forgot_password()
 	{
 		$this->form_validation->set_rules('email', $this->lang->line('forgot_password_validation_email_label'), 'required|valid_email');
 		if ($this->form_validation->run() == false)
@@ -195,7 +214,7 @@ class Auth extends Base_Controller {
 
 			//set any errors and display the form
 			$data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-			$this->_render_page('auth/forgot_password', $data);
+			$this->load->view('auth/forgot_password', $data);
 		}
 		else
 		{
@@ -229,6 +248,8 @@ class Auth extends Base_Controller {
 			}
 		}
 	}
+
+
 
 	//reset password - final step for forgotten password
 	public function reset_password($code = NULL)
@@ -277,7 +298,7 @@ class Auth extends Base_Controller {
 				$data['code'] = $code;
 
 				//render
-				$this->_render_page('auth/reset_password', $data);
+				$this->load->view('auth/reset_password', $data);
 			}
 			else
 			{
@@ -321,6 +342,8 @@ class Auth extends Base_Controller {
 	}
 
 
+
+
 	//activate the user
 	function activate($id, $code=false)
 	{
@@ -347,7 +370,11 @@ class Auth extends Base_Controller {
 		}
 	}
 
-	//deactivate the user
+
+
+	/*
+     * Desactiver l'utilisateur
+     */
 	function deactivate($id = NULL)
 	{
 		$id = $this->config->item('use_mongodb', 'ion_auth') ? (string) $id : (int) $id;
@@ -362,7 +389,7 @@ class Auth extends Base_Controller {
 			$data['csrf'] = $this->_get_csrf_nonce();
 			$data['user'] = $this->ion_auth->user($id)->row();
 
-			$this->_render_page('auth/deactivate_user', $data);
+			$this->load->view('auth/deactivate_user', $data);
 		}
 		else
 		{
@@ -387,7 +414,10 @@ class Auth extends Base_Controller {
 		}
 	}
 
-	//create a new user
+
+	/*
+     *  Créer un nouvel utilisateur
+     */
 	function create_user()
 	{
 		$data['title'] = "Create User";
@@ -477,12 +507,16 @@ class Auth extends Base_Controller {
 				'value' => $this->form_validation->set_value('password_confirm'),
 			);
 
-			$this->_render_page('auth/create_user', $data);
+			$this->load->view('auth/create_user', $data);
 		}
 	}
 
-	//edit a user
-	function edit_user($id)
+
+
+	/*
+     *  Editer un utilisateur
+     */
+	public function edit_user($id)
 	{
 		$data['title'] = "Edit User";
 
@@ -607,11 +641,15 @@ class Auth extends Base_Controller {
 			'type' => 'password'
 		);
 
-		$this->_render_page('auth/edit_user', $data);
+		$this->load->view('auth/edit_user', $data);
 	}
 
-	// create a new group
-	function create_group()
+
+
+	/*
+     *  Créer un nouveau Groupe
+     */
+	public function create_group()
 	{
 		$data['title'] = $this->lang->line('create_group_title');
 
@@ -654,12 +692,16 @@ class Auth extends Base_Controller {
 				'value' => $this->form_validation->set_value('description'),
 			);
 
-			$this->_render_page('auth/create_group', $data);
+			$this->load->view('auth/create_group', $data);
 		}
 	}
 
-	//edit a group
-	function edit_group($id)
+
+
+    /*
+     *  Editer un groupe
+     */
+	public function edit_group($id)
 	{
 		// bail if no group id given
 		if(!$id || empty($id))
@@ -717,11 +759,12 @@ class Auth extends Base_Controller {
 			'value' => $this->form_validation->set_value('group_description', $group->description),
 		);
 
-		$this->_render_page('auth/edit_group', $data);
+		$this->load->view('auth/edit_group', $data);
 	}
 
 
-	function _get_csrf_nonce()
+
+	public function _get_csrf_nonce()
 	{
 		$this->load->helper('string');
 		$key   = random_string('alnum', 8);
@@ -732,7 +775,9 @@ class Auth extends Base_Controller {
 		return array($key => $value);
 	}
 
-	function _valid_csrf_nonce()
+
+
+	public function _valid_csrf_nonce()
 	{
 		if ($this->input->post($this->session->flashdata('csrfkey')) !== FALSE &&
 			$this->input->post($this->session->flashdata('csrfkey')) == $this->session->flashdata('csrfvalue'))
@@ -743,16 +788,6 @@ class Auth extends Base_Controller {
 		{
 			return FALSE;
 		}
-	}
-
-	function _render_page($view, $data=null, $render=false)
-	{
-
-		$this->viewdata = (empty($data)) ? $data: $data;
-
-		$view_html = $this->load->view($view, $this->viewdata, $render);
-
-		if (!$render) return $view_html;
 	}
 
 }

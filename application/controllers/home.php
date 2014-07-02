@@ -20,7 +20,6 @@ class Home extends Base_Controller
 
     public function index()
     {
-
         $this->load->view('home.phtml');
     }
 

@@ -39,7 +39,7 @@ class Auth extends Base_Controller {
 				$data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
 
-			$this->_render_page('auth/index', $data);
+			$this->load->view('auth/index.phtml', $data);
 		}
 	}
 
@@ -89,7 +89,7 @@ class Auth extends Base_Controller {
 				'type' => 'password',
 			);
 
-			$this->_render_page('auth/login', $data);
+			$this->load->view('auth/login.phtml', $data);
 		}
 	}
 
@@ -152,7 +152,7 @@ class Auth extends Base_Controller {
 			);
 
 			//render
-			$this->_render_page('auth/change_password', $data);
+			$this->load->view('auth/change_password', $data);
 		}
 		else
 		{
@@ -195,7 +195,7 @@ class Auth extends Base_Controller {
 
 			//set any errors and display the form
 			$data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-			$this->_render_page('auth/forgot_password', $data);
+			$this->load->view('auth/forgot_password', $data);
 		}
 		else
 		{
@@ -277,7 +277,7 @@ class Auth extends Base_Controller {
 				$data['code'] = $code;
 
 				//render
-				$this->_render_page('auth/reset_password', $data);
+				$this->load->view('auth/reset_password', $data);
 			}
 			else
 			{
@@ -362,7 +362,7 @@ class Auth extends Base_Controller {
 			$data['csrf'] = $this->_get_csrf_nonce();
 			$data['user'] = $this->ion_auth->user($id)->row();
 
-			$this->_render_page('auth/deactivate_user', $data);
+			$this->load->view('auth/deactivate_user', $data);
 		}
 		else
 		{
@@ -477,7 +477,7 @@ class Auth extends Base_Controller {
 				'value' => $this->form_validation->set_value('password_confirm'),
 			);
 
-			$this->_render_page('auth/create_user', $data);
+			$this->load->view('auth/create_user', $data);
 		}
 	}
 
@@ -607,7 +607,7 @@ class Auth extends Base_Controller {
 			'type' => 'password'
 		);
 
-		$this->_render_page('auth/edit_user', $data);
+		$this->load->view('auth/edit_user', $data);
 	}
 
 	// create a new group
@@ -654,7 +654,7 @@ class Auth extends Base_Controller {
 				'value' => $this->form_validation->set_value('description'),
 			);
 
-			$this->_render_page('auth/create_group', $data);
+			$this->load->view('auth/create_group', $data);
 		}
 	}
 
@@ -717,7 +717,7 @@ class Auth extends Base_Controller {
 			'value' => $this->form_validation->set_value('group_description', $group->description),
 		);
 
-		$this->_render_page('auth/edit_group', $data);
+		$this->load->view('auth/edit_group', $data);
 	}
 
 
@@ -743,16 +743,6 @@ class Auth extends Base_Controller {
 		{
 			return FALSE;
 		}
-	}
-
-	function _render_page($view, $data=null, $render=false)
-	{
-
-		$this->viewdata = (empty($data)) ? $data: $data;
-
-		$view_html = $this->load->view($view, $this->viewdata, $render);
-
-		if (!$render) return $view_html;
 	}
 
 }
